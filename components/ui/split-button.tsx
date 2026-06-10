@@ -12,8 +12,8 @@ const tones: Record<Tone, string> = {
 };
 
 const sizes: Record<Size, { box: string; label: string; arrow: string }> = {
-  sm: { box: "h-11", label: "px-5 text-[1.0625rem]", arrow: "size-11" },
-  md: { box: "h-12", label: "px-6 text-[1.1875rem]", arrow: "size-12" },
+  sm: { box: "h-11", label: "px-5 text-lead", arrow: "size-11" },
+  md: { box: "h-12", label: "px-6 text-h5", arrow: "size-12" },
 };
 
 /**
@@ -44,7 +44,7 @@ export function SplitButton({
     >
       <span
         className={cn(
-          "flex items-center whitespace-nowrap rounded-[4px] font-medium tracking-[-0.038em] text-ink transition-colors duration-300",
+          "flex items-center whitespace-nowrap rounded-sm font-medium text-ink transition-colors duration-300",
           tones[tone],
           s.box,
           s.label
@@ -54,7 +54,7 @@ export function SplitButton({
       </span>
       <span
         className={cn(
-          "flex items-center justify-center rounded-[8px] text-ink transition-colors duration-300",
+          "flex items-center justify-center rounded-sm text-ink transition-colors duration-300",
           tones[tone],
           s.arrow
         )}

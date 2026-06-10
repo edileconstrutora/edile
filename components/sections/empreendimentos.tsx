@@ -1,14 +1,13 @@
 import Image from "next/image";
+import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { SplitButton } from "@/components/ui/split-button";
 import { Reveal } from "@/components/ui/reveal";
 import { Carousel } from "@/components/ui/carousel";
+import { Chamfer } from "@/components/ui/chamfer";
+import { IconBadge } from "@/components/ui/icon-badge";
 import { ArrowUpRight, Home, Building } from "@/components/ui/icons";
-
-// Canto chanfrado superior-direito do card.
-const cardChamfer =
-  "polygon(0 0, calc(100% - 4rem) 0, 100% 4rem, 100% 100%, 0 100%)";
 
 // Ícone por tipo de empreendimento.
 const typeIcons = { casa: Home, predio: Building } as const;
@@ -61,9 +60,11 @@ const empreendimentos: Empreendimento[] = [
 function EmpreendimentoCard({ item }: { item: Empreendimento }) {
   const TypeIcon = typeIcons[item.type];
   return (
-    <article
-      className="relative h-full bg-petrol-950 p-6"
-      style={{ clipPath: cardChamfer }}
+    <Chamfer
+      as="article"
+      corner="tr"
+      size="4rem"
+      className="h-full bg-petrol-950 p-6"
     >
       <div className="flex flex-col-reverse gap-7 md:flex-row md:gap-8">
         <div className="relative aspect-[3/4] w-full overflow-hidden md:w-[340px] md:shrink-0">
@@ -77,20 +78,18 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
         </div>
 
         <div className="flex flex-1 flex-col justify-between gap-8">
-          <span className="inline-flex w-fit items-center justify-center rounded-[1px] bg-gold p-2 text-ink">
+          <IconBadge tone="gold">
             <TypeIcon className="size-8" />
-          </span>
+          </IconBadge>
 
           <div className="flex flex-col items-start gap-6">
-            <h3 className="text-[1.4375rem] leading-[1.2] tracking-[-0.04em] text-paper">
-              {item.name}
-            </h3>
-            <p className="max-w-[44rem] text-[1.125rem] leading-[1.5] text-paper/70">
+            <h3 className="t-h4 text-paper">{item.name}</h3>
+            <p className="t-body max-w-[44rem] leading-normal text-paper/70">
               {item.description}
             </p>
             <a
               href="#"
-              className="inline-flex items-center gap-2.5 rounded-[2px] border border-paper/30 px-7 py-2.5 text-[1rem] tracking-[-0.02em] text-paper transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ink"
+              className="inline-flex items-center gap-2.5 rounded-xs border border-paper/30 px-7 py-2.5 text-small text-paper transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ink"
             >
               Conhecer empreendimento
               <ArrowUpRight className="size-5" />
@@ -98,26 +97,21 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
           </div>
         </div>
       </div>
-    </article>
+    </Chamfer>
   );
 }
 
 export function Empreendimentos() {
   return (
-    <section
-      id="empreendimentos"
-      className="relative overflow-hidden bg-mist py-[80px] md:py-[120px]"
-    >
+    <Section id="empreendimentos" className="overflow-hidden bg-mist">
       <Container className="relative">
         {/* Cabeçalho */}
         <Reveal className="mb-14 flex flex-col gap-8 md:mb-20 md:grid md:grid-cols-[1fr_auto_1fr] md:items-end md:gap-10">
           <Eyebrow className="md:pb-2">Empreendimentos</Eyebrow>
 
           <div className="md:text-center">
-            <h2 className="text-[clamp(2.5rem,5vw,4.125rem)] font-[440] leading-[1.05] tracking-[-0.065em] text-ink">
-              Projetos recentes
-            </h2>
-            <p className="mt-4 max-w-[500px] text-[1.125rem] leading-[1.4] text-ink-soft md:mx-auto">
+            <h2 className="t-display-lg text-ink">Projetos recentes</h2>
+            <p className="t-body mt-4 max-w-[500px] leading-snug text-ink-soft md:mx-auto">
               Uma seleção de projetos residenciais e comerciais que mostram nossa
               forma de pensar o espaço.
             </p>
@@ -145,6 +139,6 @@ export function Empreendimentos() {
           </Carousel>
         </Reveal>
       </Container>
-    </section>
+    </Section>
   );
 }

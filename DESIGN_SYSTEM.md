@@ -32,23 +32,27 @@ Use sempre via utilitários Tailwind: `bg-petrol-900`, `text-ink-soft`, `border-
 
 ### Tipografia — use as classes semânticas (não setar tamanho manualmente)
 
-**Regra dos títulos (inegociável):** peso leve (300/400 — **nunca bold**), em **caixa normal** (sentence case), tracking levemente fechado. Escreva o texto em caixa normal no JSX.
+**Regra dos títulos (inegociável):** peso leve (**440** — nunca bold), em **caixa normal** (sentence case), tracking levemente fechado. Escreva o texto em caixa normal no JSX.
 **Caixa alta é exclusiva do hero** (assinatura da marca) e dos **rótulos** (`.t-eyebrow`). Não usar uppercase em títulos de seção/card.
 
-Escala generosa/premium (títulos grandes, corpo confortável):
+Escala generosa/premium (títulos grandes, corpo confortável). **Sempre via as classes `.t-*` — nunca `text-[...]`:**
 
 | Classe | Papel | Tamanho · peso · tracking |
 |---|---|---|
-| `.t-display` | Títulos de impacto (CTA). | clamp 3→5.75rem · 300 · -0.02em |
-| `.t-h2` | Título de seção. | clamp 2.5→4rem · 300 · -0.015em |
-| `.t-h3` | Título de card/bloco. | 1.875rem · 400 · -0.01em |
-| `.t-h4` | Subtítulo/destaque. | 1.5rem · 400 · 0 |
-| `.t-body-lg` / `.t-body` / `.t-small` | Texto corrido (caixa normal). | 1.25 / 1.0625 / 0.9375rem |
-| `.t-eyebrow` | Rótulo/kicker UPPERCASE. Use via `<Eyebrow>` (formato `/ RÓTULO`). | 0.8125rem · 500 · 0.12em |
-| Hero (h1) | Único título em **CAIXA ALTA**: peso 300, espaçado. Inline em `hero.tsx`. | — |
+| `.t-display` | Título de impacto (CTA grande). | clamp 3→5.75rem · 440 · -0.065em |
+| `.t-display-lg` | h1 do hero · título de seção em destaque (Empreendimentos). | clamp 2.75→4.125rem · 440 · -0.065em |
+| `.t-h2` | Título de seção (padrão). | clamp 2.5→3.375rem · 440 · -0.065em |
+| `.t-h3` | Título grande (links do menu mobile). | 1.875rem · 440 · -0.05em |
+| `.t-h4` | Título de card / post / pilar. | 1.4375rem · 440 · -0.043em |
+| `.t-h5` | Subtítulo de card / bloco. | 1.1875rem · 440 · -0.038em |
+| `.t-stat` | Número de indicador (use via `<Stat>`). | 3.25rem · 440 · -0.06em |
+| `.t-body-lg` / `.t-body` / `.t-lead` / `.t-small` | Texto corrido (caixa normal). | 1.25 / 1.125 / 1.0625 / 0.9375rem |
+| `.t-eyebrow` | Rótulo/kicker. Use via `<Eyebrow>` (formato `// RÓTULO`). | 0.9375rem · 400 · -0.01em |
+
+Os tokens também geram **utilitários de tamanho** (só `font-size`): `text-micro` (13px), `text-small`, `text-lead`, `text-body`, `text-body-lg`, `text-h5`. Use-os para casos pontuais (links de UI) ou para alternância responsiva — ex.: subtítulo do hero `text-body md:text-body-lg`. Leading via utilitários padrão (`leading-snug`/`leading-normal`/`leading-tight`).
 
 ### Raio · Sombra · Layout · Motion
-- **Tudo reto (sem raio): botões, cards e imagens.** Exceção única: `IconButton` (setas de slider) é circular por design, conforme a referência. Tokens `rounded-*` reservados para casos pontuais futuros.
+- **Geometria quase reta.** Cantos-fio sutis via tokens: `rounded-hair` (1px), `rounded-xs` (2px), `rounded-sm` (4px) — badges, cards de conteúdo e botões. `IconButton` é circular (setas de slider). Cortes diagonais (chanfros) via `<Chamfer>`. Nunca `rounded-[Npx]`.
 - Sombra: `shadow-[var(--shadow-soft)]` · `shadow-[var(--shadow-lift)]` (hover de card). Premium = pouca sombra.
 - Container: largura máx `--container-max` (1350px) via `<Container>`.
 - Easing padrão: `ease-[var(--ease-out-soft)]`.
@@ -60,23 +64,29 @@ Escala generosa/premium (títulos grandes, corpo confortável):
 | Componente | Para quê |
 |---|---|
 | `<Container>` | Largura máxima + padding lateral fluido. Envolve o conteúdo de toda seção. |
-| `<Section tone>` | Bloco com padding vertical generoso (clamp 96→176px) e fundo (`paper`/`petrol`/`sage`). |
-| `<SectionHeader eyebrow title action? tone>` | **Abre toda seção**: regra hairline no topo + rótulo `/` + título grande (`t-h2`), alinhado à esquerda. |
+| `<Section tone>` | Bloco com padding vertical (80px mobile · 120px desktop) e fundo (`paper`/`petrol`/`sage`). Para `mist`, passe `className="bg-mist"`. |
+| `<SectionIntro eyebrow title description? align eyebrowTone>` | **Abre a seção**: rótulo `//` + título (`t-h2`) + descrição opcional. `align`: `left` (padrão) / `center`. Use dentro de um `<Reveal>`. |
 | `<Divider tone>` | Linha hairline para estruturar seções. tones: `dark` (fundo claro) / `light` (fundo escuro). |
-| `<Eyebrow tone>` | Kicker no formato `/ RÓTULO`. tones: `petrol`/`sage`/`muted`/`light`. |
-| `<Button variant size withArrow href?>` | CTA. variants: `solid`/`outline`/`ghost`/`light`. Renderiza `<a>` se receber `href`. |
+| `<Eyebrow tone>` | Kicker no formato `// RÓTULO`. tones: `petrol`/`sage`/`muted`/`light`. |
 | `<SplitButton href tone size>` | **CTA primário** dividido em rótulo + caixa de seta diagonal (segmentos juntos). tones: `gold` (hero/seções) · `white` (sobre fundo escuro, ex.: menu). |
+| `<Button variant size withArrow href?>` | CTA genérico (reserva). variants: `solid`/`outline`/`ghost`/`light`. |
 | `<IconButton tone>` | Botão circular de ícone (setas de carrossel). |
-| `<Card hover>` | Superfície de card. **Cantos retos (sem raio) e sem stroke** — separação por sombra sutil (`shadow-soft`), elevação no hover. |
-| `<Carousel controls arrowTone>` | Carrossel (Embla). Cada filho = um slide. |
+| `<IconBadge tone>` | Selo quadrado (`rounded-hair`) para um ícone. tones: `gold` (fundo claro/card) · `translucent` (fundo escuro). |
+| `<Chamfer corner size as>` | Container com canto(s) chanfrado(s) — assinatura geométrica. `corner`: `tr` / `tr-bl` (define `--cx`/`--cy` via className). Envolve imagens, carrosséis ou cards. |
+| `<AvatarStack ring label? labelClassName>` | Prova social: avatares sobrepostos + rótulo. `ring`: `paper` / `petrol` (casa com o fundo). |
+| `<Stat variant value …>` | Indicador numérico. `variant`: `inline` (faixa de stats) / `block` (bento — título + descrição + número + unidade). |
+| `<Card hover>` | Superfície de card (reserva). Sem stroke — separação por sombra (`shadow-soft`), elevação no hover. |
+| `<Carousel controls arrowTone>` | Carrossel (Embla) para conteúdo variado. Cada filho = um slide. |
+| `<FadeCarousel images alt>` | Carrossel de imagens em crossfade automático (barra de progresso). |
 | `<Reveal delay y>` | Fade + translate ao entrar na viewport. |
 | `<Logo>` | Wordmark EDILE (SVG, `currentColor`). Herda a cor do texto — `text-paper` no escuro. |
-| `icons.tsx` | Ícones SVG (setas, chevrons, sociais, menu). |
+| `icons.tsx` | Ícones SVG (setas, chevrons, sociais, menu, glifos). |
 
 ### Regras de uso
 - **Página nova** = composição de `<Section>` → `<Container>` → primitivos. Veja `app/page.tsx`.
-- Título de seção: padrão `Eyebrow` + `h2.t-h2`, centralizado, dentro de um `<Reveal>`.
-- CTA primário sobre fundo claro = `<Button variant="solid">`; sobre fundo escuro = `variant="light"`.
+- Abertura de seção: `<SectionIntro>` dentro de um `<Reveal>` (não repetir Eyebrow + h2 manualmente).
+- CTA primário = `<SplitButton>` (`tone="gold"` em fundo claro · `tone="white"` em fundo escuro).
+- Imagem/card com chanfro = `<Chamfer>`; nunca declarar `clipPath` inline na seção.
 - Faltou um componente? **Crie em `components/ui/`** seguindo o padrão (props tipadas, tokens, `cn()`), documente aqui, e só então use.
 
 ---
@@ -86,5 +96,5 @@ Escala generosa/premium (títulos grandes, corpo confortável):
 - Tom: incorporadora de alto padrão — sóbrio, confiante, sem exageros publicitários.
 
 ## Stack
-Next.js (App Router) · Tailwind v4 (tokens em CSS) · Geist · Lenis (scroll suave) · Framer Motion · Embla.
+Next.js (App Router) · Tailwind v4 (tokens em CSS) · Inter (`next/font`) · Lenis (scroll suave) · Framer Motion · Embla.
 Deploy: Vercel (`next build` deve passar limpo).

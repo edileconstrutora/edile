@@ -5,12 +5,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { SplitButton } from "@/components/ui/split-button";
-
-const avatars = [
-  "/images/avatars/a1.webp",
-  "/images/avatars/a2.webp",
-  "/images/avatars/a3.webp",
-];
+import { AvatarStack } from "@/components/ui/avatar-stack";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -80,11 +75,11 @@ export function Hero() {
               className="-z-10 hidden object-fill md:block"
             />
 
-            <h1 className="text-balance text-[clamp(2.75rem,1rem+4vw,4.125rem)] font-[440] leading-[1.06] tracking-[-0.065em] text-paper">
+            <h1 className="t-display-lg text-balance text-paper">
               Cada detalhe pensado para o incomum.
             </h1>
 
-            <p className="mt-7 max-w-[30rem] text-balance text-[clamp(1rem,0.85rem+0.5vw,1.1875rem)] leading-[1.5] text-paper/85">
+            <p className="mt-7 max-w-[30rem] text-balance text-body leading-normal text-paper/85 md:text-body-lg">
               Arquitetura, acabamentos e experiências em sintonia com o alto
               padrão — feitos para quem busca o extraordinário.
             </p>
@@ -95,29 +90,7 @@ export function Hero() {
               </SplitButton>
 
               {/* Prova social */}
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2.5">
-                  {avatars.map((src, i) => (
-                    <span
-                      key={src}
-                      className="relative size-9 overflow-hidden rounded-full ring-2 ring-petrol-950"
-                    >
-                      <Image
-                        src={src}
-                        alt={`Cliente EDILE ${i + 1}`}
-                        fill
-                        sizes="36px"
-                        className="object-cover"
-                      />
-                    </span>
-                  ))}
-                </div>
-                <p className="text-[0.9375rem] leading-[1.25] text-paper/85">
-                  Mais de 2 mil
-                  <br />
-                  clientes satisfeitos
-                </p>
-              </div>
+              <AvatarStack ring="petrol" labelClassName="text-paper/85" />
             </div>
           </motion.div>
         </Container>

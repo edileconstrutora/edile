@@ -51,7 +51,7 @@ export function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-[17px] font-medium text-paper/85 transition-colors hover:text-paper"
+                className="text-lead font-medium text-paper/85 transition-colors hover:text-paper"
               >
                 {l.label}
               </Link>
@@ -107,7 +107,7 @@ export function Navbar() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-[clamp(1.875rem,7vw,2.75rem)] font-[440] tracking-[-0.04em] transition-colors hover:text-ink-soft"
+              className="t-h3 transition-colors hover:text-ink-soft"
             >
               {l.label}
             </Link>

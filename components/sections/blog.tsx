@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionIntro } from "@/components/ui/section-intro";
 
 const posts = [
   {
@@ -28,24 +28,17 @@ const posts = [
 export function Blog() {
   return (
     <Section id="blog" tone="paper" className="overflow-hidden bg-mist">
-      {/* Linhas verticais de coluna */}
-      <div className="pointer-events-none absolute inset-0">
-        <Container className="relative h-full px-0">
-          <span className="absolute inset-y-0 left-1/4 w-px bg-ink/[0.05]" />
-          <span className="absolute inset-y-0 left-1/2 w-px bg-ink/[0.05]" />
-          <span className="absolute inset-y-0 left-3/4 w-px bg-ink/[0.05]" />
-        </Container>
-      </div>
-
       <Container className="relative">
         {/* Cabeçalho centralizado */}
-        <Reveal className="mb-12 flex flex-col items-center gap-2 text-center md:mb-16">
-          <Eyebrow>Blog</Eyebrow>
-          <h2 className="t-h2 text-ink">Ideias recentes</h2>
-          <p className="t-body mt-2 max-w-[460px] text-ink-soft">
-            Perspectivas sobre arquitetura, materiais, mercado e a forma de morar
-            bem.
-          </p>
+        <Reveal className="mb-12 md:mb-16">
+          <SectionIntro
+            align="center"
+            eyebrow="Blog"
+            title="Ideias recentes"
+            titleClassName="text-ink"
+            description="Perspectivas sobre arquitetura, materiais, mercado e a forma de morar bem."
+            descriptionClassName="max-w-[460px]"
+          />
         </Reveal>
 
         {/* Posts */}
@@ -54,9 +47,9 @@ export function Blog() {
             <Reveal key={p.title} delay={i * 0.08}>
               <a
                 href="#"
-                className="group flex h-full flex-col gap-4 rounded-[2px] bg-paper p-3 transition-shadow duration-300 ease-[var(--ease-out-soft)] hover:shadow-[0_14px_44px_-16px_rgba(10,11,18,0.22)]"
+                className="group flex h-full flex-col gap-4 rounded-xs bg-paper p-3"
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1px]">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-hair">
                   <Image
                     src={p.image}
                     alt={p.title}
@@ -66,12 +59,12 @@ export function Blog() {
                   />
                 </div>
                 <div className="flex flex-col gap-2 px-2 pb-2">
-                  <div className="flex items-center gap-2.5 text-[0.9375rem] text-ink-soft">
+                  <div className="flex items-center gap-2.5 text-small text-ink-soft">
                     <span>{p.category}</span>
                     <span className="size-1.5 rounded-full bg-ink-faint/70" />
                     <span>{p.date}</span>
                   </div>
-                  <h3 className="text-[1.4375rem] leading-[1.2] tracking-[-0.043em] text-ink transition-colors duration-300 group-hover:text-ink-soft">
+                  <h3 className="t-h4 text-ink transition-colors duration-300 group-hover:text-ink-soft">
                     {p.title}
                   </h3>
                 </div>

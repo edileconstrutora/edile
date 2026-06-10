@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { SplitButton } from "@/components/ui/split-button";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionIntro } from "@/components/ui/section-intro";
 import { cn } from "@/lib/utils";
 
 const faqs = [
@@ -43,16 +43,14 @@ function FaqItem({
   onToggle: () => void;
 }) {
   return (
-    <div className="rounded-[1px] bg-paper">
+    <div className="rounded-hair bg-mist">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={open}
         className="flex w-full items-start justify-between gap-6 p-6 text-left"
       >
-        <span className="text-[1.1875rem] leading-[1.4] tracking-[-0.038em] text-ink">
-          {q}
-        </span>
+        <span className="t-h5 text-ink">{q}</span>
         {/* Toggle +/- */}
         <span className="relative mt-0.5 size-6 shrink-0">
           <span className="absolute left-1/2 top-1/2 h-px w-3.5 -translate-x-1/2 -translate-y-1/2 bg-ink-soft" />
@@ -71,7 +69,7 @@ function FaqItem({
         )}
       >
         <div className="overflow-hidden">
-          <p className="max-w-[640px] px-6 pb-6 text-[1.125rem] leading-[1.4] text-ink-soft">
+          <p className="t-body max-w-[640px] px-6 pb-6 leading-snug text-ink-soft">
             {a}
           </p>
         </div>
@@ -84,16 +82,18 @@ export function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <Section id="faq" className="bg-mist">
+    <Section id="faq">
       <Container>
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
           {/* Coluna esquerda */}
           <Reveal className="lg:w-[460px] lg:shrink-0">
-            <Eyebrow>FAQ</Eyebrow>
-            <h2 className="t-h2 mt-3 text-balance text-ink">Ficou com dúvidas?</h2>
-            <p className="t-body mt-4 max-w-[420px] text-ink-soft">
-              Reunimos as perguntas mais comuns sobre como trabalhamos.
-            </p>
+            <SectionIntro
+              eyebrow="FAQ"
+              title="Ficou com dúvidas?"
+              titleClassName="text-balance text-ink"
+              description="Reunimos as perguntas mais comuns sobre como trabalhamos."
+              descriptionClassName="max-w-[420px]"
+            />
             <div className="mt-9">
               <SplitButton href="#contato" tone="gold">
                 Fale conosco

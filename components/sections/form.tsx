@@ -3,14 +3,11 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
+import { Chamfer } from "@/components/ui/chamfer";
 import { cn } from "@/lib/utils";
 
-// Chanfro no canto superior-direito do card.
-const chamferTR =
-  "polygon(0 0, calc(100% - 3rem) 0, 100% 3rem, 100% 100%, 0 100%)";
-
 const fieldClass =
-  "w-full border-b border-line bg-transparent pb-3 text-[1.125rem] tracking-[-0.02em] text-ink placeholder:text-ink-soft transition-colors duration-300 focus:border-ink focus:outline-none";
+  "w-full border-b border-line bg-transparent pb-3 text-body text-ink placeholder:text-ink-soft transition-colors duration-300 focus:border-ink focus:outline-none";
 
 export function Form() {
   return (
@@ -29,14 +26,9 @@ export function Form() {
       <Container className="relative">
         <div className="flex py-16 md:py-24 lg:min-h-[720px] lg:items-center">
           <Reveal className="w-full max-w-[580px]">
-            <div
-              className="bg-paper p-8 sm:p-10 md:p-12"
-              style={{ clipPath: chamferTR }}
-            >
-              <h2 className="text-[2.5rem] font-[440] leading-[1.02] tracking-[-0.055em] text-ink sm:text-[3rem]">
-                Vamos trabalhar juntos
-              </h2>
-              <p className="mt-4 max-w-[340px] text-[1.125rem] leading-[1.4] text-ink-soft">
+            <Chamfer corner="tr" size="3rem" className="bg-paper p-8 sm:p-10 md:p-12">
+              <h2 className="t-h2 text-ink">Vamos trabalhar juntos</h2>
+              <p className="t-body mt-4 max-w-[340px] leading-snug text-ink-soft">
                 Envie sua mensagem e retornamos o mais breve possível.
               </p>
 
@@ -75,12 +67,12 @@ export function Form() {
                 />
                 <button
                   type="submit"
-                  className="mt-2 w-full rounded-[2px] bg-gold py-3.5 text-[1.125rem] tracking-[-0.02em] text-ink transition-colors duration-300 hover:bg-gold-bright"
+                  className="mt-2 w-full rounded-xs bg-gold py-3.5 text-body text-ink transition-colors duration-300 hover:bg-gold-bright"
                 >
                   Enviar mensagem
                 </button>
               </form>
-            </div>
+            </Chamfer>
           </Reveal>
         </div>
       </Container>

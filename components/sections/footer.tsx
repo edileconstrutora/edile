@@ -38,13 +38,11 @@ export function Footer() {
     <footer className="bg-petrol-950 text-paper">
       <Container className="pt-[70px]">
         {/* Newsletter + colunas */}
-        <div className="flex flex-col gap-12 border-t border-paper/10 pt-12 lg:flex-row lg:justify-between lg:gap-10">
+        <div className="flex flex-col gap-12 pt-12 lg:flex-row lg:justify-between lg:gap-10">
           {/* Newsletter */}
           <div className="lg:max-w-[360px] lg:flex-1">
-            <p className="text-[0.9375rem] tracking-[-0.01em] text-paper/60">
-              Newsletter
-            </p>
-            <p className="mt-1.5 text-[1.1875rem] tracking-[-0.038em] text-paper">
+            <p className="text-small text-paper/60">Newsletter</p>
+            <p className="mt-1.5 t-h5 text-paper">
               Receba novidades e lançamentos
             </p>
 
@@ -53,15 +51,15 @@ export function Footer() {
                 <input
                   type="email"
                   placeholder="Seu e-mail"
-                  className="w-full bg-transparent text-[0.875rem] tracking-[-0.01em] text-paper placeholder:text-paper/50 focus:outline-none"
+                  className="w-full bg-transparent text-micro text-paper placeholder:text-paper/50 focus:outline-none"
                 />
               </div>
               <button
                 type="button"
-                className="group mt-5 inline-flex items-center gap-2.5 text-[0.8125rem] uppercase tracking-[0.06em] text-paper"
+                className="group mt-5 inline-flex items-center gap-2.5 text-micro uppercase tracking-wider text-paper"
               >
                 Inscrever
-                <span className="inline-flex size-[18px] items-center justify-center rounded-[2px] border border-paper/40 bg-paper/15 transition-colors duration-300 group-hover:bg-paper/25">
+                <span className="inline-flex size-[18px] items-center justify-center rounded-xs border border-paper/40 bg-paper/15 transition-colors duration-300 group-hover:bg-paper/25">
                   <ArrowUpRight className="size-3" />
                 </span>
               </button>
@@ -75,15 +73,13 @@ export function Footer() {
                 key={col.title}
                 className={i === 0 ? "col-span-2 sm:col-span-1" : undefined}
               >
-                <p className="mb-5 text-[0.9375rem] tracking-[-0.01em] text-paper/60">
-                  {col.title}
-                </p>
+                <p className="mb-5 text-small text-paper/60">{col.title}</p>
                 <ul className="space-y-3">
                   {col.links.map((l) => (
                     <li key={l.label}>
                       <Link
                         href={l.href}
-                        className="text-[1rem] tracking-[-0.02em] text-paper/85 transition-colors duration-300 hover:text-paper"
+                        className="text-small text-paper/85 transition-colors duration-300 hover:text-paper"
                       >
                         {l.label}
                       </Link>
@@ -101,7 +97,7 @@ export function Footer() {
         </div>
 
         {/* Barra inferior */}
-        <div className="flex flex-col gap-3 border-t border-paper/10 py-6 text-[0.9375rem] text-paper/65 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-3 border-t border-paper/10 py-6 text-small text-paper/65 md:flex-row md:items-center md:justify-between">
           <p>
             © {new Date().getFullYear()} EDILE Incorporadora. Todos os direitos
             reservados.

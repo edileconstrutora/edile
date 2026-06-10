@@ -22,8 +22,8 @@ const variants: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, string> = {
-  sm: "h-10 px-5 text-[0.8125rem]",
-  md: "h-12 px-7 text-[0.8125rem]",
+  sm: "h-10 px-5 text-micro",
+  md: "h-12 px-7 text-micro",
 };
 
 type BaseProps = {
@@ -43,7 +43,7 @@ type ButtonAsLink = BaseProps & { href: string } & Omit<
   >;
 
 const baseClass =
-  "group/btn inline-flex items-center justify-center gap-2.5 whitespace-nowrap font-medium uppercase tracking-[0.08em] " +
+  "group/btn inline-flex items-center justify-center gap-2.5 whitespace-nowrap font-medium uppercase tracking-wider " +
   "transition-colors duration-300 ease-[var(--ease-out-soft)] " +
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-petrol-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper " +
   "disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
