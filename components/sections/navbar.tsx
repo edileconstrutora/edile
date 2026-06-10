@@ -9,8 +9,9 @@ import { Logo } from "@/components/ui/logo";
 import { SplitButton } from "@/components/ui/split-button";
 import { Menu, Close } from "@/components/ui/icons";
 
-const navLinks = [
-  { label: "Quem somos", hash: "#sobre" },
+// `href` = rota direta · `hash` = âncora de seção (vira "/#x" fora da home).
+const navLinks: { label: string; hash?: string; href?: string }[] = [
+  { label: "Quem somos", href: "/sobre" },
   { label: "Empreendimentos", hash: "#empreendimentos" },
   { label: "Investidores", hash: "#proposito" },
 ];
@@ -28,6 +29,9 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
   // Âncoras funcionam a partir de qualquer página: na home usa "#x",
   // fora dela usa "/#x" (volta pra home e rola até a seção).
   const to = (hash: string) => (onHome ? hash : `/${hash}`);
+  // Rota direta usa `href`; âncora usa `hash` (resolvida por `to`).
+  const linkHref = (l: { hash?: string; href?: string }) =>
+    l.href ?? to(l.hash ?? "#top");
   const homeHref = onHome ? "#top" : "/";
 
   useEffect(() => {
@@ -61,8 +65,8 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
           <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
             {navLinks.map((l) => (
               <Link
-                key={l.hash}
-                href={to(l.hash)}
+                key={l.label}
+                href={linkHref(l)}
                 className="text-lead font-medium text-paper/85 transition-colors hover:text-paper"
               >
                 {l.label}
@@ -116,8 +120,8 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
         <nav className="flex flex-1 flex-col items-center justify-center gap-3">
           {navLinks.map((l) => (
             <Link
-              key={l.hash}
-              href={to(l.hash)}
+              key={l.label}
+              href={linkHref(l)}
               onClick={() => setOpen(false)}
               className="t-h3 transition-colors hover:text-ink-soft"
             >

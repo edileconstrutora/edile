@@ -179,3 +179,12 @@ export function Columns(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function Shield(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <path d="M12 3.25 19 5.75v5.5c0 4.4-3 6.9-7 8.25-4-1.35-7-3.85-7-8.25v-5.5L12 3.25Z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}

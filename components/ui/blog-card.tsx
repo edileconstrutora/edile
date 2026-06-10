@@ -1,14 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Post } from "@/lib/posts";
 
 /**
  * Card de post: imagem + (categoria · data) + título. Hover de scale só na
  * imagem (card sem sombra). Reutilizado na home e na página /blog.
  */
-export function BlogCard({ image, category, date, title, href = "#" }: Post) {
+export function BlogCard({ slug, image, category, date, title }: Post) {
   return (
-    <a
-      href={href}
+    <Link
+      href={`/blog/${slug}`}
       className="group flex h-full flex-col gap-4 rounded-xs bg-paper p-3"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-hair">
@@ -30,6 +31,6 @@ export function BlogCard({ image, category, date, title, href = "#" }: Post) {
           <span className="line-clamp-3">{title}</span>
         </h3>
       </div>
-    </a>
+    </Link>
   );
 }

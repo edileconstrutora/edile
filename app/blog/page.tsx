@@ -34,7 +34,7 @@ export default function BlogPage() {
           <Container>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((p, i) => (
-                <Reveal key={p.title} delay={(i % 3) * 0.08}>
+                <Reveal key={p.slug} delay={(i % 3) * 0.08}>
                   <BlogCard {...p} />
                 </Reveal>
               ))}

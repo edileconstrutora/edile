@@ -8,6 +8,7 @@ type EyebrowTone = "petrol" | "sage" | "muted" | "light";
  * Abertura de seção: rótulo `/` + título grande + descrição opcional.
  * Substitui a repetição de Eyebrow + h2 nas seções. Use dentro de um `<Reveal>`.
  * `align="center"` aperta os espaçamentos (cabeçalhos centralizados).
+ * `eyebrow` é opcional — sem ele, o título abre a seção sozinho.
  */
 export function SectionIntro({
   eyebrow,
@@ -19,7 +20,7 @@ export function SectionIntro({
   titleClassName,
   descriptionClassName,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   eyebrowTone?: EyebrowTone;
   title: ReactNode;
   description?: ReactNode;
@@ -31,11 +32,11 @@ export function SectionIntro({
   const center = align === "center";
   return (
     <div className={cn("flex flex-col", center && "items-center text-center", className)}>
-      <Eyebrow tone={eyebrowTone}>{eyebrow}</Eyebrow>
+      {eyebrow && <Eyebrow tone={eyebrowTone}>{eyebrow}</Eyebrow>}
       <h2
         className={cn(
           "t-h2 text-balance",
-          center ? "mt-2" : "mt-3",
+          eyebrow && (center ? "mt-2" : "mt-3"),
           titleClassName
         )}
       >

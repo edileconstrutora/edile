@@ -113,10 +113,16 @@ export function Footer() {
             Todos os direitos reservados.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="transition-colors hover:text-paper">
+            <Link
+              href="/politica-de-privacidade"
+              className="transition-colors hover:text-paper"
+            >
               Política de privacidade
             </Link>
-            <Link href="#" className="transition-colors hover:text-paper">
+            <Link
+              href="/termos-de-uso"
+              className="transition-colors hover:text-paper"
+            >
               Termos de uso
             </Link>
           </div>
