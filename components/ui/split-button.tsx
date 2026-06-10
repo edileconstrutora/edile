@@ -11,9 +11,14 @@ const tones: Record<Tone, string> = {
   white: "bg-white group-hover/sb:bg-paper",
 };
 
+// `md` é responsivo: tamanho `sm` no mobile, cheio a partir de md (desktop).
 const sizes: Record<Size, { box: string; label: string; arrow: string }> = {
   sm: { box: "h-11", label: "px-5 text-lead", arrow: "size-11" },
-  md: { box: "h-12", label: "px-6 text-h5", arrow: "size-12" },
+  md: {
+    box: "h-11 md:h-12",
+    label: "px-5 text-lead md:px-6 md:text-h5",
+    arrow: "size-11 md:size-12",
+  },
 };
 
 /**

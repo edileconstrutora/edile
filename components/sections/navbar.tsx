@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
@@ -9,14 +10,25 @@ import { SplitButton } from "@/components/ui/split-button";
 import { Menu, Close } from "@/components/ui/icons";
 
 const navLinks = [
-  { label: "Quem somos", href: "#quem-somos" },
-  { label: "Empreendimentos", href: "#empreendimentos" },
-  { label: "Investidores", href: "#proposito" },
+  { label: "Quem somos", hash: "#sobre" },
+  { label: "Empreendimentos", hash: "#empreendimentos" },
+  { label: "Investidores", hash: "#proposito" },
 ];
 
-export function Navbar() {
+/**
+ * `solid` força o fundo escuro sempre (use em páginas de fundo claro, onde
+ * a navbar transparente ficaria ilegível). Na home (hero escuro) deixe sem.
+ */
+export function Navbar({ solid = false }: { solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+
+  // Âncoras funcionam a partir de qualquer página: na home usa "#x",
+  // fora dela usa "/#x" (volta pra home e rola até a seção).
+  const to = (hash: string) => (onHome ? hash : `/${hash}`);
+  const homeHref = onHome ? "#top" : "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -30,15 +42,15 @@ export function Navbar() {
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,border-color] duration-500 ease-[var(--ease-out-soft)]",
-          scrolled
-            ? "border-b border-paper/10 bg-petrol-950/50 backdrop-blur-xl backdrop-saturate-150"
+          solid || scrolled
+            ? "border-b border-paper/10 bg-petrol-950/80 backdrop-blur-xl backdrop-saturate-150"
             : "border-b border-transparent bg-transparent"
         )}
       >
         <Container className="relative flex h-20 items-center justify-between text-paper">
           {/* Logo (esquerda) */}
           <Link
-            href="#top"
+            href={homeHref}
             aria-label="EDILE — início"
             className="shrink-0 text-paper"
           >
@@ -49,8 +61,8 @@ export function Navbar() {
           <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
             {navLinks.map((l) => (
               <Link
-                key={l.href}
-                href={l.href}
+                key={l.hash}
+                href={to(l.hash)}
                 className="text-lead font-medium text-paper/85 transition-colors hover:text-paper"
               >
                 {l.label}
@@ -60,7 +72,7 @@ export function Navbar() {
 
           {/* CTA (direita, desktop) */}
           <div className="hidden lg:block">
-            <SplitButton href="#contato" tone="white" size="sm">
+            <SplitButton href={to("#contato")} tone="white" size="sm">
               Comece agora
             </SplitButton>
           </div>
@@ -86,7 +98,7 @@ export function Navbar() {
       >
         <Container className="flex h-20 shrink-0 items-center justify-between">
           <Link
-            href="#top"
+            href={homeHref}
             aria-label="EDILE — início"
             onClick={() => setOpen(false)}
           >
@@ -104,8 +116,8 @@ export function Navbar() {
         <nav className="flex flex-1 flex-col items-center justify-center gap-3">
           {navLinks.map((l) => (
             <Link
-              key={l.href}
-              href={l.href}
+              key={l.hash}
+              href={to(l.hash)}
               onClick={() => setOpen(false)}
               className="t-h3 transition-colors hover:text-ink-soft"
             >
@@ -113,7 +125,7 @@ export function Navbar() {
             </Link>
           ))}
           <SplitButton
-            href="#contato"
+            href={to("#contato")}
             tone="gold"
             className="mt-8"
             onClick={() => setOpen(false)}

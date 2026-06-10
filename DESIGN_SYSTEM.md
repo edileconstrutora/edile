@@ -72,6 +72,8 @@ Os tokens também geram **utilitários de tamanho** (só `font-size`): `text-mic
 | `<Container>` | Largura máxima + padding lateral fluido. Envolve o conteúdo de toda seção. |
 | `<Section tone>` | Bloco com padding vertical (80px mobile · 120px desktop) e fundo (`paper`/`petrol`/`sage`). Para `mist`, passe `className="bg-mist"`. |
 | `<SectionIntro eyebrow title description? align eyebrowTone>` | **Abre a seção**: rótulo `//` + título (`t-h2`) + descrição opcional. `align`: `left` (padrão) / `center`. Use dentro de um `<Reveal>`. |
+| `<PageHero eyebrow title description?>` | **Hero de página interna** (ex.: /blog): rótulo `//` à esquerda + **h1** grande (`t-display`, 92px) + descrição na coluna central, texto à esquerda. Fundo transparente + respiro p/ a navbar (a página define fundo + linhas). |
+| `<ColumnLines tone?>` | **3 linhas verticais** (bordas + centro) como grade de fundo. Ponha num pai `relative` — preenche a altura toda. `tone`: `dark` (fundo claro) / `light` (fundo escuro). |
 | `<Divider tone>` | Linha hairline para estruturar seções. tones: `dark` (fundo claro) / `light` (fundo escuro). |
 | `<Eyebrow tone>` | Kicker no formato `// RÓTULO`. tones: `petrol`/`sage`/`muted`/`light`. |
 | `<SplitButton href tone size>` | **CTA primário** dividido em rótulo + caixa de seta diagonal (segmentos juntos). tones: `gold` (hero/seções) · `white` (sobre fundo escuro, ex.: menu). |
@@ -84,6 +86,7 @@ Os tokens também geram **utilitários de tamanho** (só `font-size`): `text-mic
 | `<Card hover>` | Superfície de card (reserva). Sem stroke — separação por sombra (`shadow-soft`), elevação no hover. |
 | `<Carousel controls arrowTone>` | Carrossel (Embla) para conteúdo variado. Cada filho = um slide. |
 | `<FadeCarousel images alt>` | Carrossel de imagens em crossfade automático (barra de progresso). |
+| `<BlogCard image category date title href?>` | Card de post (imagem + categoria · data + título). Dados em `lib/posts.ts`. Usado na home e na página `/blog`. |
 | `<Reveal delay y>` | Fade + translate ao entrar na viewport. |
 | `<Logo>` | Wordmark EDILE (SVG, `currentColor`). Herda a cor do texto — `text-paper` no escuro. |
 | `icons.tsx` | Ícones SVG (setas, chevrons, sociais, menu, glifos). |
@@ -94,6 +97,9 @@ Os tokens também geram **utilitários de tamanho** (só `font-size`): `text-mic
 - CTA primário = `<SplitButton>` (`tone="gold"` em fundo claro · `tone="white"` em fundo escuro).
 - Imagem/card com chanfro = `<Chamfer>`; nunca declarar `clipPath` inline na seção.
 - Faltou um componente? **Crie em `components/ui/`** seguindo o padrão (props tipadas, tokens, `cn()`), documente aqui, e só então use.
+- **Página interna nova** (ex.: `/blog`) = `app/<rota>/page.tsx` com `<Navbar solid />` + `<main className="relative overflow-hidden bg-mist">` + `<Footer />`. Dentro do `<main>`: `<ColumnLines />` (grade que desce a página toda) → `<PageHero>` → `<Section className="bg-transparent">`s de conteúdo (transparentes, pra mostrar o fundo+linhas). A página inteira é **uma banda só**. Links de âncora viram `/#secao` fora da home. Exporte `metadata`. **Todo hero abre com h1 + 3 linhas verticais.**
+- **Cards de conteúdo:** título com no máx. **3 linhas** (`line-clamp-3` num `<span>` interno — direto no elemento flex o `-webkit-box` quebra). Ver `BlogCard`.
+- **CTA primário (`<SplitButton>`):** o tamanho `md` é **responsivo** — menor no mobile, cheio no desktop. Use `md` (padrão) no hero/CTAs grandes; `sm` em botões secundários.
 
 ---
 

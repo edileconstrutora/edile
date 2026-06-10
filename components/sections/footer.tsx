@@ -22,17 +22,17 @@ const columns: { title: string; links: FooterLink[] }[] = [
   {
     title: "Navegação",
     links: [
-      { label: "Início", href: "#top" },
-      { label: "Empreendimentos", href: "#empreendimentos" },
-      { label: "Sobre", href: "#sobre" },
-      { label: "Investidores", href: "#proposito" },
+      { label: "Início", href: "/" },
+      { label: "Empreendimentos", href: "/#empreendimentos" },
+      { label: "Sobre", href: "/#sobre" },
+      { label: "Investidores", href: "/#proposito" },
     ],
   },
   {
     title: "Mais",
     links: [
-      { label: "Fale conosco", href: "#contato" },
-      { label: "Blog", href: "#" },
+      { label: "Fale conosco", href: "/#contato" },
+      { label: "Blog", href: "/blog" },
       { label: "Trabalhe conosco", href: "#" },
     ],
   },
