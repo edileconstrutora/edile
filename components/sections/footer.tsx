@@ -1,85 +1,116 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
-import { Instagram, LinkedIn, Facebook } from "@/components/ui/icons";
+import { ArrowUpRight } from "@/components/ui/icons";
 
-const columns = [
-  {
-    title: "Empreendimentos",
-    links: ["Residencial", "Corporativo", "Litoral", "Em lançamento"],
-  },
-  {
-    title: "Institucional",
-    links: ["Quem somos", "Investidores", "Sustentabilidade", "Trabalhe conosco"],
-  },
-  {
-    title: "Atendimento",
-    links: ["Portal do cliente", "Fale conosco", "WhatsApp", "Imprensa"],
-  },
-];
+type FooterLink = { label: string; href: string };
 
-const socials = [
-  { label: "Instagram", Icon: Instagram },
-  { label: "LinkedIn", Icon: LinkedIn },
-  { label: "Facebook", Icon: Facebook },
+const columns: { title: string; links: FooterLink[] }[] = [
+  {
+    title: "Contato",
+    links: [
+      { label: "+55 11 4000-0000", href: "tel:+551140000000" },
+      { label: "contato@edile.com.br", href: "mailto:contato@edile.com.br" },
+      { label: "São Paulo, SP", href: "#" },
+    ],
+  },
+  {
+    title: "Navegação",
+    links: [
+      { label: "Início", href: "#top" },
+      { label: "Empreendimentos", href: "#empreendimentos" },
+      { label: "Sobre", href: "#sobre" },
+      { label: "Investidores", href: "#proposito" },
+    ],
+  },
+  {
+    title: "Mais",
+    links: [
+      { label: "Fale conosco", href: "#contato" },
+      { label: "Blog", href: "#" },
+      { label: "Trabalhe conosco", href: "#" },
+    ],
+  },
 ];
 
 export function Footer() {
   return (
     <footer className="bg-petrol-950 text-paper">
-      <Container className="py-20">
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-4 lg:grid-cols-6">
-          {/* Marca */}
-          <div className="col-span-2 lg:col-span-3">
-            <Logo className="h-8 w-auto text-paper" />
-            <p className="t-body mt-5 max-w-sm text-paper/60">
-              Incorporadora de alto padrão. Arquitetura, acabamentos e
-              experiências em sintonia com o incomum.
+      <Container className="pt-[70px]">
+        {/* Newsletter + colunas */}
+        <div className="flex flex-col gap-12 border-t border-paper/10 pt-12 lg:flex-row lg:justify-between lg:gap-10">
+          {/* Newsletter */}
+          <div className="lg:max-w-[360px] lg:flex-1">
+            <p className="text-[0.9375rem] tracking-[-0.01em] text-paper/60">
+              Newsletter
             </p>
-            <div className="mt-8 flex items-center gap-5">
-              {socials.map(({ label, Icon }) => (
-                <Link
-                  key={label}
-                  href="#"
-                  aria-label={label}
-                  className="text-paper/60 transition-colors hover:text-paper"
-                >
-                  <Icon className="size-5" />
-                </Link>
-              ))}
-            </div>
+            <p className="mt-1.5 text-[1.1875rem] tracking-[-0.038em] text-paper">
+              Receba novidades e lançamentos
+            </p>
+
+            <form className="mt-8 w-full max-w-[360px]">
+              <div className="border-b border-paper/25 py-3">
+                <input
+                  type="email"
+                  placeholder="Seu e-mail"
+                  className="w-full bg-transparent text-[0.875rem] tracking-[-0.01em] text-paper placeholder:text-paper/50 focus:outline-none"
+                />
+              </div>
+              <button
+                type="button"
+                className="group mt-5 inline-flex items-center gap-2.5 text-[0.8125rem] uppercase tracking-[0.06em] text-paper"
+              >
+                Inscrever
+                <span className="inline-flex size-[18px] items-center justify-center rounded-[2px] border border-paper/40 bg-paper/15 transition-colors duration-300 group-hover:bg-paper/25">
+                  <ArrowUpRight className="size-3" />
+                </span>
+              </button>
+            </form>
           </div>
 
-          {/* Colunas */}
-          {columns.map((col) => (
-            <div key={col.title}>
-              <h3 className="t-eyebrow mb-5 text-paper/50">{col.title}</h3>
-              <ul className="space-y-3">
-                {col.links.map((l) => (
-                  <li key={l}>
-                    <Link
-                      href="#"
-                      className="t-small text-paper/75 transition-colors hover:text-paper"
-                    >
-                      {l}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Colunas de links */}
+          <div className="grid grid-cols-2 gap-x-10 gap-y-10 sm:grid-cols-3 lg:gap-x-16">
+            {columns.map((col, i) => (
+              <div
+                key={col.title}
+                className={i === 0 ? "col-span-2 sm:col-span-1" : undefined}
+              >
+                <p className="mb-5 text-[0.9375rem] tracking-[-0.01em] text-paper/60">
+                  {col.title}
+                </p>
+                <ul className="space-y-3">
+                  {col.links.map((l) => (
+                    <li key={l.label}>
+                      <Link
+                        href={l.href}
+                        className="text-[1rem] tracking-[-0.02em] text-paper/85 transition-colors duration-300 hover:text-paper"
+                      >
+                        {l.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-paper/10 pt-8 md:flex-row md:items-center">
-          <p className="t-small text-paper/50">
+        {/* Marca d'água */}
+        <div className="mb-10 mt-12 overflow-hidden md:mb-14 md:mt-16" aria-hidden>
+          <Logo className="h-auto w-full text-paper/[0.05]" />
+        </div>
+
+        {/* Barra inferior */}
+        <div className="flex flex-col gap-3 border-t border-paper/10 py-6 text-[0.9375rem] text-paper/65 md:flex-row md:items-center md:justify-between">
+          <p>
             © {new Date().getFullYear()} EDILE Incorporadora. Todos os direitos
             reservados.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="t-small text-paper/50 hover:text-paper/80">
+            <Link href="#" className="transition-colors hover:text-paper">
               Política de privacidade
             </Link>
-            <Link href="#" className="t-small text-paper/50 hover:text-paper/80">
+            <Link href="#" className="transition-colors hover:text-paper">
               Termos de uso
             </Link>
           </div>

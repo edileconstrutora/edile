@@ -63,13 +63,13 @@ export function Hero() {
       </div>
 
       {/* Conteúdo — mobile: sobre a imagem (topo) · desktop: painel chanfrado na base-esquerda */}
-      <div className="relative z-10 order-1 md:absolute md:inset-x-0 md:bottom-0 md:flex md:pb-16">
+      <div className="relative z-10 order-1 md:absolute md:inset-x-0 md:top-0 md:flex md:pt-36">
         <Container className="w-full md:px-0 lg:px-0">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative isolate w-full bg-petrol-950 px-6 pb-10 pt-28 sm:px-8 md:w-1/2 md:bg-transparent md:px-16 md:py-12"
+            className="relative isolate mt-32 w-full bg-petrol-950 px-6 pb-10 pt-10 sm:px-8 md:mt-0 md:w-1/2 md:bg-transparent md:px-16 md:py-12"
           >
             {/* Fundo chanfrado (apenas desktop) */}
             <Image
@@ -80,7 +80,7 @@ export function Hero() {
               className="-z-10 hidden object-fill md:block"
             />
 
-            <h1 className="text-balance text-[clamp(2.25rem,1rem+4vw,4.125rem)] font-[440] leading-[1.06] tracking-[-0.065em] text-paper">
+            <h1 className="text-balance text-[clamp(2.75rem,1rem+4vw,4.125rem)] font-[440] leading-[1.06] tracking-[-0.065em] text-paper">
               Cada detalhe pensado para o incomum.
             </h1>
 

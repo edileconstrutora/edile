@@ -63,7 +63,7 @@
   --text-body-lg: 1.25rem;
   --text-h4: 1.5rem;
   --text-h3: 1.875rem;
-  --text-h2: clamp(2.25rem, 1.4rem + 3vw, 3.375rem); /* até 54px */
+  --text-h2: clamp(2.5rem, 1.4rem + 3vw, 3.375rem); /* mobile 40px → até 54px */
   --text-display: clamp(3rem, 1.5rem + 6.2vw, 5.75rem);
 
   /* ---------- Raio (arquitetural, contido) ---------- */
@@ -184,5 +184,15 @@ html.lenis body {
   *::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+/* Barra de progresso do FadeCarousel (Propósito) */
+@keyframes fade-carousel-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }

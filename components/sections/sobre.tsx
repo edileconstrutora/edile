@@ -13,7 +13,7 @@ export function Sobre() {
   return (
     <Section tone="paper" id="sobre">
       <Container className="max-w-[1280px]">
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-[70px]">
+        <div className="flex flex-col-reverse items-center gap-12 lg:flex-row lg:gap-[70px]">
           {/* Imagem chanfrada */}
           <Reveal className="w-full max-w-[490px] lg:shrink-0">
             <div

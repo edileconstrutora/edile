@@ -125,3 +125,40 @@ export function Close(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+// Ícones dos pilares (seção Propósito) — viewBox 24, traço fino.
+const glyph = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.6,
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+} as const;
+
+export function Frame(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <path d="M4 8.5v-3A1.5 1.5 0 0 1 5.5 4h3M15.5 4h3A1.5 1.5 0 0 1 20 5.5v3M20 15.5v3a1.5 1.5 0 0 1-1.5 1.5h-3M8.5 20h-3A1.5 1.5 0 0 1 4 18.5v-3" />
+      <rect x="9.25" y="9.25" width="5.5" height="5.5" rx="1" />
+    </svg>
+  );
+}
+
+export function Aperture(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <circle cx="12" cy="12" r="8.25" />
+      <path d="M7.25 16.75 16.75 7.25" />
+    </svg>
+  );
+}
+
+export function Columns(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <rect x="4" y="4" width="16" height="16" rx="1.5" />
+      <path d="M10 4v16" />
+    </svg>
+  );
+}

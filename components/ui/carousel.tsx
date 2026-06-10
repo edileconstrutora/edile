@@ -9,6 +9,7 @@ import {
 } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import type { EmblaOptionsType } from "embla-carousel";
+import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { cn } from "@/lib/utils";
 import { IconButton } from "./icon-button";
 import { ChevronLeft, ChevronRight } from "./icons";
@@ -18,6 +19,7 @@ type CarouselProps = {
   options?: EmblaOptionsType;
   className?: string;
   viewportClassName?: string;
+  containerClassName?: string;
   slideClassName?: string;
   /** Posição das setas de navegação. */
   controls?: "sides" | "bottom" | "none";
@@ -33,15 +35,19 @@ export function Carousel({
   options,
   className,
   viewportClassName,
+  containerClassName,
   slideClassName,
   controls = "sides",
   arrowTone = "dark",
 }: CarouselProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    loop: false,
-    ...options,
-  });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      align: "start",
+      loop: false,
+      ...options,
+    },
+    [WheelGesturesPlugin()]
+  );
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
 
@@ -54,10 +60,9 @@ export function Carousel({
   useEffect(() => {
     if (!emblaApi) return;
     emblaApi.on("select", onSelect).on("reInit", onSelect);
-    // sincroniza estado inicial fora do corpo do effect (evita setState síncrono)
-    const raf = requestAnimationFrame(onSelect);
+    // sincroniza o estado inicial num microtask (sem setState síncrono nem depender de rAF)
+    queueMicrotask(onSelect);
     return () => {
-      cancelAnimationFrame(raf);
       emblaApi.off("select", onSelect).off("reInit", onSelect);
     };
   }, [emblaApi, onSelect]);
@@ -81,7 +86,7 @@ export function Carousel({
   return (
     <div className={cn("relative", className)}>
       <div ref={emblaRef} className={cn("overflow-hidden", viewportClassName)}>
-        <div className="flex">
+        <div className={cn("flex", containerClassName)}>
           {slides.map((slide, i) => (
             <div
               key={i}
@@ -109,9 +114,25 @@ export function Carousel({
       )}
 
       {controls === "bottom" && (
-        <div className="mt-8 flex gap-3">
-          {PrevBtn}
-          {NextBtn}
+        <div className="mt-10 flex justify-center gap-4">
+          <IconButton
+            tone={arrowTone}
+            onClick={prev}
+            disabled={!canPrev}
+            aria-label="Anterior"
+            className="size-[52px]"
+          >
+            <ChevronLeft className="size-[1.375rem]" />
+          </IconButton>
+          <IconButton
+            tone={arrowTone}
+            onClick={next}
+            disabled={!canNext}
+            aria-label="Próximo"
+            className="size-[52px]"
+          >
+            <ChevronRight className="size-[1.375rem]" />
+          </IconButton>
         </div>
       )}
     </div>

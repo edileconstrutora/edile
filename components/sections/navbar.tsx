@@ -29,8 +29,10 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-colors duration-500 ease-[var(--ease-out-soft)]",
-          scrolled ? "bg-petrol-950" : "bg-transparent"
+          "fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,border-color] duration-500 ease-[var(--ease-out-soft)]",
+          scrolled
+            ? "border-b border-paper/10 bg-petrol-950/50 backdrop-blur-xl backdrop-saturate-150"
+            : "border-b border-transparent bg-transparent"
         )}
       >
         <Container className="relative flex h-20 items-center justify-between text-paper">

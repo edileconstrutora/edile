@@ -19,7 +19,7 @@ export function Stats() {
                 delay={i * 0.1}
                 className="flex items-center gap-4 sm:w-[300px]"
               >
-                <p className="text-[clamp(3.25rem,6vw,5.375rem)] font-[440] leading-none tracking-[-0.085em] text-ink">
+                <p className="text-[3.25rem] font-[440] leading-none tracking-[-0.085em] text-ink">
                   {s.value}
                 </p>
                 <p className="t-body max-w-[8rem] leading-[1.4] text-ink-soft">

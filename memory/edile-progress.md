@@ -1,65 +1,49 @@
 ---
 name: edile-progress
-description: Roadmap das seções do site EDILE e ONDE PARAMOS. Ler no início de toda conversa do projeto EDILE e atualizar a cada seção concluída.
-metadata: 
+description: Roadmap/estado do site EDILE. Ler no início de toda conversa do projeto. O site está COMPLETO (todas as seções no DS novo) — agora é polir/ajustar.
+metadata:
   node_type: memory
   type: project
   originSessionId: 65909256-9a93-4df4-a37f-f54b56ce91b9
 ---
 
-# EDILE — progresso da reorganização de seções
+# EDILE — estado do site
 
-Construir **1 seção por vez**, ajustar responsividade, validar build, e **atualizar este arquivo** a cada passo.
+**SITE COMPLETO** ✅ — todas as seções construídas no design system novo. Fase atual: **polimento/ajustes finos** (responsividade, copy, imagens reais). Construído conduzido pelo Figma `aVLsjWvrmgxDDxdZdu4sRI` (o usuário manda node-id por seção; textos/imagens do Figma são placeholders, ele troca depois).
 
-## Estrutura-alvo (ordem)
-1. **Hero** — ✅ concluído
-2. **Sobre** — ✅ feito (`components/sections/sobre.tsx`, Figma 6724:3462). Imagem chanfrada (`sobre.jpg`, canto sup-dir) à esq + `// Sobre` + h2 54px + sub-rótulo "NOSSA VISÃO" + corpo 18px + SplitButton gold sm "Saiba mais".
-2b. **Stats** — ✅ feito (`components/sections/stats.tsx`, Figma 6723:3367, logo abaixo do Sobre). Linha hairline no topo + 3 números 86px (#0a0b12, tracking -0.085em, weight 440) com rótulo 18px ao lado: 180+ Empreendimentos entregues · 95% Clientes satisfeitos · 15+ Anos de experiência. `justify-between` desktop, empilha no mobile.
-3. **Empreendimentos** — ✅ refeito (`components/sections/empreendimentos.tsx`, Figma 6734:501). Fundo `mist` #f5f6f7 + 3 linhas verticais. Header: eyebrow esq · "Projetos recentes" (66px) centro + subtítulo · SplitButton gold sm "Ver todos" dir (grid `[1fr_auto_1fr]`). Card branco **chanfrado canto sup-dir** (clip-path 4rem): imagem 400×400 + ícone por tipo (`featured.type`: "casa"→`Home` home-smile · "predio"→`Building` building-06) + h3 23px "Villagio Residence" + desc 18px + botão outline sentence-case "Conhecer empreendimento". (era carrossel; agora 1 card destaque)
-4. **Propósito** (para investidores e para moradores) — já existe (2 cards); revisar depois
-5. **Por que nos escolher** (4 vantagens) — ⬜
-6. **FAQ** — ⬜
-7. **Formulário "Vamos trabalhar juntos"** — ⬜
-8. **Blog "Recentes"** — ⬜
-9. **Footer** — já existe; revisar depois
+## Ordem das seções (`app/page.tsx`)
+Navbar · **Hero** · **Sobre** · **Stats** · **Empreendimentos** · **Propósito** · **Why** · **Formulário** · **FAQ** · **Blog** · **Footer**
+(CtaFuturo foi **deletado** — o Formulário virou o CTA final.)
 
-## Estado atual do Hero (✅)
-- Imagem `absolute inset-0` full-bleed + parallax (scale começa em **1.0**, sem upscale; y 0→10%). **SEM overlay no desktop** (imagem clara). `quality={90}`.
-- Imagens: mobile = `hero-mobile.jpg` (vertical) via `md:hidden`; desktop/tablet (`md+`) = `hero.jpg` (pôr do sol, 1672×941, q92) via `hidden md:block`.
-- **Desktop**: painel = imagem chanfrada `/images/hero-panel.png` (cor #05151b) como bg (`-z-10 object-fill md:block`), `isolate` no painel. Painel `md:w-1/2` → borda direita = **linha central**; `px-0` → esquerda = linha 1. **3 linhas verticais** marcam o container **1350px**.
-- **Mobile**: imagem full-bleed atrás (limpa, **sem overlay/gradiente**) + painel **sólido `bg-petrol-950`** no topo (`relative z-10`) com a headline; imagem aparece limpa abaixo.
-- Conteúdo: h1 (Inter 440, ~66px, tracking -0.065em, `text-balance`), subtítulo (`text-balance`), `SplitButton tone="gold"` "Comece agora" (CTA row `pl-12`=48px só desktop), prova social (3 avatares reais + "Mais de 2 mil clientes satisfeitos").
-- Navbar: logo esq · links centro (17px Inter medium, sentence case) · `SplitButton tone="white"` dir. Transparente no topo → sólido #05151b ao rolar.
-- **Menu mobile**: hambúrguer abre **overlay full-screen branco** (`bg-paper`, z-60) com logo + X no topo e links grandes (44px) centralizados + CTA gold. Toggle por `open` (visible/opacity).
+## Seções (todas no DS novo)
+- **Hero** (`hero.tsx`) — imagem full-bleed + parallax (scale 1.0→1.12, sem upscale). Desktop: painel chanfrado `hero-panel.png` na metade esq, no **topo** (`md:top-0 md:pt-36`, ~63px abaixo do menu). Mobile: imagem atrás + painel sólido `bg-petrol-950` empurrado `mt-32` (respiro do menu). h1 inline `clamp(2.75rem→4.125rem)` (**mobile 44px**).
+- **Sobre** (`sobre.tsx`, Figma 6724:3462) — imagem chanfrada (`sobre.jpg`) + texto. **Mobile: `flex-col-reverse`** (texto em cima, imagem embaixo).
+- **Stats** (`stats.tsx`) — 3 números **52px** (era 86; fixo agora) + rótulo ao lado. Hairline no topo.
+- **Empreendimentos** (`empreendimentos.tsx`) — **carrossel** (Embla) de **5 cards** dark (`emp-1..5.webp`, imagens **3:4**), ícone gold por tipo (casa→`Home`/predio→`Building`). **Setas embaixo** (`controls="bottom"`), centralizadas, 52px. **Bleed nos 2 lados** (viewport vaza até a borda da tela via `viewportClassName` margem negativa + `containerClassName` padding-calha; 1º card alinhado ao container). **Scroll por wheel/trackpad** (plugin `embla-carousel-wheel-gestures`), sem scrollbar.
+- **Propósito** (`proposito.tsx`, Figma 6767:243) — **dark** (petrol-950) + 3 linhas verticais claras. Eyebrow + h2 branco + **imagem chanfrada (2 cantos: sup-dir + inf-esq)** que é um **`FadeCarousel`** de 3 interiores (`proposito-1..3.webp`): crossfade, **autoplay 5s + barra de progresso** sutil, setas com **blur** no canto inf-dir. 3 pilares (ícone `bg-paper/10` + título 23px + corpo) com ícones novos `Frame`/`Aperture`/`Columns`.
+- **Why** (`why.tsx`, Figma 6772:344) — header central + imagem chanfrada esq + **bento**. Estrutura = **2 colunas** (não grid 2×2): col-esq = 2 stats (25+/95%, números **52px**), col-dir = (prova social + Entrega) e **card escuro** "Espaços que duram". Assim o **mobile empilha coluna-a-coluna** na ordem certa.
+- **Formulário** (`form.tsx`, Figma 6773:850, `id="contato"`) — card branco chanfrado "Vamos trabalhar juntos" + campos underline + botão gold, sobre imagem de fundo (`form.webp`). Client (`onSubmit` preventDefault, sem backend).
+- **FAQ** (`faq.tsx`, Figma 6773:470) — client. Esq: eyebrow + "Ficou com dúvidas?" + botão gold. Dir: **accordion** (cards brancos, toggle **+/−** em CSS, 1º aberto, altura animada via `grid-rows-[0fr/1fr]`).
+- **Blog** (`blog.tsx`, Figma 6774:898 — o node "Section - Blog"; cuidado: 6774:899 é só as linhas-guia) — header central "Ideias recentes" + **3 cards** (`blog-1..3.webp` 4:3, categoria · data + título), grid 3→2→1. **Antes do footer.**
+- **Footer** (`footer.tsx`, Figma 6773:572) — petrol-950. Newsletter (input + INSCREVER) + 3 colunas (Contato/Navegação/Mais) + **marca d'água gigante** (componente `Logo` em `text-paper/[0.05]`, com `mb` p/ respiro da linha) + barra inferior. **Mobile**: Contato `col-span-2` (linha cheia), Navegação/Mais lado a lado.
 
-## Design system atual (inspirado na Calibre/figma do usuário)
-- **Fonte: Inter** (`--font-inter`); OpenType `cv11, cv05, ss10, ss08` no corpo.
-- **Cores**: `ink` #0a0b12 · `ink-soft` #2b2b2b · `ink-faint` #8a8a8a · `paper` #fbfbfb · `line` #e8e8e8 · `petrol` (950=#05151b, 900=#122e39) · `sage` · acento **`gold` #ffbb0f / `gold-bright` #ffc62e**.
-- **Títulos** (`.t-display/.t-h2/.t-h3/.t-h4`): peso **440**, caixa normal, line-height fechado (display 1.03 / h2 1.05), tracking -0.065em (h1/h2). Hero h1 é inline. Corpo: tracking -0.02em. Botão: -0.038em.
-- **Eyebrow**: `// label` (`<Eyebrow>`), **sentence case 15px**, cor `ink-soft`. Sub-rótulo tipo "NOSSA VISÃO" é inline (16px uppercase).
-- **Tamanhos atualizados (jun): h2 até 54px** (`--text-h2` clamp ...→3.375rem), **corpo 18px** (`--text-body` 1.125rem), `--text-eyebrow` 15px.
-- **Padding de seção em PX** (não clamp): `<Section>` = `py-[80px] md:py-[120px]`. Usuário prefere px p/ comunicar com precisão ("seção X = 100px"). Override por seção precisa do `md:` junto (ex.: `pb-[90px] md:pb-[90px]`).
-- Sobre: container `max-w-[1280px]` (Stats fica 1350). Body do Sobre = 16px (resto 18px). Chanfro da imagem = 6rem/96px.
-- **CTA**: `<SplitButton tone="gold|white" size>` (rótulo + caixa de seta, juntos, sem gap).
-- **Sem raio**: cards, imagens, botões retos (exceções: SplitButton 4/8px, avatares circulares).
-- Primitivos em `components/ui/`; seções em `components/sections/`; tokens em `app/globals.css`; doc em `DESIGN_SYSTEM.md`.
-
-## Padrões de seção observados nos exemplos (a aplicar)
-- Título de seção **54px** #0a0b12 · corpo **18px** #2b2b2b · sub-rótulo tipo "OUR VISION" 16px.
-- **Imagens com canto chanfrado** (igual painel do hero).
-- **CTA gold** "More about us".
-- **Stats**: números **86px** #0a0b12 (ex.: 180+/95%/15+) com rótulo ao lado.
-- **Linhas verticais** de coluna no fundo (estender do hero).
+## Design system (resumo)
+- **Fonte Inter**. Cores: `ink` #0a0b12 · `ink-soft` #2b2b2b · `ink-faint` #8a8a8a · `paper` #fbfbfb · `mist` #f5f6f7 · `line` #e8e8e8 · `petrol` (950=#05151b, 900=#122e39) · acento **`gold` #ffbb0f / `gold-bright`**.
+- Tipografia por classes `.t-display/.t-h2/.t-h3/.t-h4/.t-body/.t-small/.t-eyebrow` (peso 440, tracking fechado). **`--text-h2` min mobile = 2.5rem (40px)**; **h1 do hero mobile = 44px**.
+- `<Eyebrow>` = `// label` 15px (tons: petrol/sage/muted/**light** p/ fundo escuro). `<Section tone="paper|petrol|sage">` py-80/md:120. `<Container>` max-w 1350, px-6/md:10/lg:14.
+- **Chanfros** via `clip-path polygon` (sup-dir, ou 2 cantos). **Sem raio** geral (cards/imagens retos; exceções pontuais 1-2px). CTA = `<SplitButton tone gold|white>`.
+- Primitivos novos desta fase: `fade-carousel.tsx`, ícones `Frame/Aperture/Columns`; `carousel.tsx` ganhou wheel-gestures + `containerClassName`/`viewportClassName`.
 
 ## Operacional (importante)
-- Preview via MCP (`.claude/launch.json` nome "edile", porta 3000).
-- **Mudou `globals.css` OU adicionou classe Tailwind NOVA (utilitário inédito, ex.: `opacity-100`)? REINICIE o dev server** (Turbopack não recompila tokens nem gera utilitários novos via HMR): stop → matar porta 3000 → `rm -rf .next` → start.
-- Imagens HEIF/`.avif` quebram a otimização do Next → converter p/ jpg/webp com sharp.
-- **Qualidade de imagem**: Next 16 reotimiza em q75 por padrão E exige whitelist em `next.config` (`images.qualities: [75,90]`) p/ usar `quality={90}` no `<Image>`. Hero usa `quality={90}`. NÃO fazer upscale do source (degrada); reencodar do original em res nativa, q≥90. Hero parallax: scale começa em 1.0 (sem upscale). Source do hero é 1672px → em telas >1672 (1920/4K) fica levemente soft; pedir source maior se precisar.
-- O screenshot do preview às vezes trava na sessão; validar por `preview_eval`/`preview_inspect` (medições) quando isso acontecer.
-- Sempre `npm run lint` + `npm run build` limpos antes de fechar um passo.
+- Preview MCP `.claude/launch.json` "edile" (porta 3000, `autoPort:true`).
+- **Trocar imagem com MESMO nome → limpar `.next` + reiniciar** (cache do otimizador serve a antiga). Idem ao mudar `globals.css` ou usar utilitário Tailwind inédito (Turbopack). Imagem com nome NOVO aparece de primeira.
+- **`sharp` está nos node_modules** → usar p/ resize/crop/webp (scripts `.mjs` temporários). Imagens novas do Unsplash: via `WebFetch` na página de busca → URLs `images.unsplash.com/photo-...`.
+- **Preview headless tem `requestAnimationFrame` throttled** → carrosséis Embla, autoplay e screenshots **não pintam/travam**. Validar por **medição no DOM** (`preview_eval`); p/ estado do Embla, pegar a API via React fiber (`__reactFiber$` → hook com `canScrollNext`/`scrollTo`).
+- `next.config` exige `images.qualities: [75,90]` p/ `quality={90}`. Não fazer upscale de source.
+- Sempre `npm run lint` + `npm run build` limpos antes de fechar.
+- **Junction da memória nesta máquina**: o caminho tem `01.` (ponto) e o `setup-junction.ps1` NÃO normaliza ponto — o junction foi criado **manualmente** no caminho exato do harness (`...projects\C--Users-yagob-Documents-01--Projetos-Claude-Edile\memory`). Ver [[memory-sync-git]].
 
-## Próximo passo
-**Seção 4 — "Propósito" (para investidores e para moradores).** Já existe `components/sections/proposito.tsx` (2 cards) no DS ANTIGO — precisa ser refeita no DS novo (Inter, neutros, gold, `//` eyebrow, chanfros). Aguardar o usuário mandar o Figma da seção (ele tem conduzido por node-id do Figma `aVLsjWvrmgxDDxdZdu4sRI` + prints com inspetor). Depois: 5) Por que nos escolher (4 vantagens), 6) FAQ, 7) Formulário "Vamos trabalhar juntos", 8) Blog "Recentes", 9) revisar Footer.
-
-## Seções já no DS NOVO (concluídas): Hero, Sobre, Stats, Empreendimentos. Ainda no DS ANTIGO (revisar): Propósito, CTA-futuro, Footer. Ordem atual no `app/page.tsx`: Navbar · Hero · Sobre · Stats · Empreendimentos · Proposito · CtaFuturo · Footer.
+## Próximo / pendências de polimento
+- Trocar **copy e imagens** placeholder pelas reais (o usuário envia).
+- Formulário e newsletter sem backend (só UI). Links `#` a apontar.
+- Revisitar responsividade fina conforme o usuário aponta por print/anotação.
