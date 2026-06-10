@@ -17,8 +17,8 @@ export function Why() {
           <SectionIntro
             align="center"
             eyebrow="Por que a EDILE"
-            title="Confiança em cada etapa do seu projeto."
-            titleClassName="max-w-[580px] text-balance text-ink"
+            title="Responsabilidade em cada etapa, da fundação à entrega."
+            titleClassName="max-w-[600px] text-balance text-ink"
           />
         </Reveal>
 
@@ -45,29 +45,43 @@ export function Why() {
           <Reveal delay={0.1} className="flex-1 lg:flex">
             <div className="flex w-full flex-col border-t border-line sm:flex-row lg:h-full">
               {/* Coluna 1 — indicadores */}
+              {/* Números são placeholder — confirmar com a Edile. */}
               <div className="flex min-w-0 flex-col sm:flex-1 sm:border-r sm:border-line">
                 <Stat
                   variant="block"
-                  title="Equipe selecionada"
-                  body="Cada projeto é conduzido por profissionais experientes."
-                  value="25+"
-                  unit="Especialistas"
+                  className="max-lg:px-0 max-lg:pt-16"
+                  title="Rigor desde o terreno"
+                  body="Localizações premium e base jurídica impecável, antes do primeiro tijolo."
+                  value="100%"
+                  unit="Regiões premium"
                 />
                 <Stat
                   variant="block"
-                  title="Processo cuidadoso"
-                  body="Fluxos claros e etapas estruturadas garantem o melhor resultado."
-                  value="95%"
-                  unit="Satisfação"
+                  className="max-lg:px-0 max-lg:pt-16"
+                  title="Engenharia superior"
+                  body="Inovação e sustentabilidade em cada projeto."
+                  value="15+"
+                  unit="Anos de visão"
                 />
               </div>
 
               {/* Coluna 2 — prova social, entrega e destaque */}
               <div className="flex min-w-0 flex-col sm:flex-1">
-                <div className="flex flex-1 flex-col justify-between gap-8 border-b border-line p-6">
-                  <AvatarStack ring="paper" labelClassName="text-ink-soft" />
+                <div className="flex flex-1 flex-col justify-between gap-8 border-b border-line p-6 max-lg:px-0 max-lg:pt-16">
+                  {/* Prova social — placeholder (confirmar) */}
+                  <AvatarStack
+                    ring="paper"
+                    labelClassName="text-ink-soft"
+                    label={
+                      <>
+                        Famílias e investidores
+                        <br />
+                        em Indaiatuba
+                      </>
+                    }
+                  />
                   <div className="flex flex-col gap-1.5">
-                    <h3 className="t-h5 text-ink">Entrega confiável</h3>
+                    <h3 className="t-h5 text-ink">Cada assinatura honrada</h3>
                     <p className="t-lead text-ink-soft">
                       Prazos, orçamentos e expectativas sempre claros.
                     </p>
@@ -77,13 +91,13 @@ export function Why() {
                 {/* Card escuro de destaque */}
                 <a
                   href="#contato"
-                  className="group flex flex-1 items-end justify-between gap-4 bg-petrol-950 p-6 text-paper"
+                  className="group flex flex-1 items-end justify-between gap-4 bg-petrol-950 p-6 text-paper max-lg:pt-16"
                 >
                   <div className="flex flex-col gap-1.5">
-                    <h3 className="t-h4 text-paper">Espaços que duram</h3>
+                    <h3 className="t-h4 text-paper">Mais que imóveis, legados</h3>
                     <p className="t-lead text-paper/75">
-                      Projetamos ambientes que envelhecem bem e se adaptam à vida
-                      real.
+                      Criamos ativos que acompanham o tempo e elevam a qualidade
+                      de vida.
                     </p>
                   </div>
                   <ArrowUpRight className="size-7 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

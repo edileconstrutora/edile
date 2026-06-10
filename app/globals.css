@@ -68,9 +68,11 @@
   --text-h3: 1.875rem;
   --text-stat: 3.25rem; /* número de indicador (Stat) */
   --text-stat-lg: 5.375rem; /* 86px — número da faixa de stats no desktop */
-  --text-h2: clamp(2.5rem, 1.4rem + 3vw, 3.375rem); /* mobile 40px → até 54px */
-  --text-display-lg: clamp(2.75rem, 1rem + 4vw, 4.125rem); /* h1 do hero / título de seção em destaque */
-  --text-display: clamp(3rem, 1.5rem + 6.2vw, 5.75rem);
+  /* Tamanhos FIXOS no desktop (sem clamp/fluido). O menor do mobile é
+     aplicado via @media (max-width) nas classes .t-* abaixo. */
+  --text-h2: 3.375rem; /* 54px (desktop) */
+  --text-display-lg: 4.125rem; /* 66px (desktop) — h1 do hero / título em destaque */
+  --text-display: 5.75rem; /* 92px (desktop) */
 
   /* ---------- Raio (arquitetural, contido) ---------- */
   --radius-hair: 1px; /* fio (badges/cards quase retos) */
@@ -116,6 +118,11 @@
   ::selection {
     background: var(--color-petrol-900);
     color: var(--color-paper);
+  }
+
+  /* Evita "viúvas" (palavra única na última linha) em qualquer parágrafo. */
+  p {
+    text-wrap: pretty;
   }
 }
 
@@ -193,6 +200,20 @@
     line-height: 1.24;
     font-weight: 400;
     letter-spacing: -0.01em;
+  }
+
+  /* Mobile (< md = 768px): títulos num tamanho fixo menor.
+     No desktop os títulos são fixos (tokens acima) — não escalam com a largura. */
+  @media (max-width: 47.999rem) {
+    .t-display {
+      font-size: 3rem; /* 48px */
+    }
+    .t-display-lg {
+      font-size: 2.75rem; /* 44px */
+    }
+    .t-h2 {
+      font-size: 2.5rem; /* 40px */
+    }
   }
 }
 

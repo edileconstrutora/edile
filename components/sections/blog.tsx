@@ -4,24 +4,25 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionIntro } from "@/components/ui/section-intro";
 
+// Conteúdo dos posts é placeholder — substituir pelos artigos reais.
 const posts = [
   {
     image: "/images/blog-1.webp",
-    category: "Design",
+    category: "Mercado",
     date: "9 jun 2025",
-    title: "Escolhas de materiais que definem a longevidade dos interiores",
+    title: "Por que Indaiatuba é um dos endereços que mais valorizam no interior paulista",
   },
   {
     image: "/images/blog-2.webp",
-    category: "Arquitetura",
+    category: "Alto padrão",
     date: "2 jun 2025",
-    title: "Luz natural: o ponto de partida de todo bom projeto",
+    title: "Condomínio fechado: segurança e liberdade no mesmo endereço",
   },
   {
     image: "/images/blog-3.webp",
-    category: "Mercado",
+    category: "Engenharia",
     date: "26 mai 2025",
-    title: "O que realmente valoriza um imóvel de alto padrão",
+    title: "Sustentabilidade e tecnologia: o que faz um imóvel valorizar com o tempo",
   },
 ];
 
@@ -36,7 +37,7 @@ export function Blog() {
             eyebrow="Blog"
             title="Ideias recentes"
             titleClassName="text-ink"
-            description="Perspectivas sobre arquitetura, materiais, mercado e a forma de morar bem."
+            description="Perspectivas sobre o mercado de Indaiatuba, alto padrão e a arte de morar e investir bem."
             descriptionClassName="max-w-[460px]"
           />
         </Reveal>

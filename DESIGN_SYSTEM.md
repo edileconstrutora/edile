@@ -39,9 +39,9 @@ Escala generosa/premium (títulos grandes, corpo confortável). **Sempre via as 
 
 | Classe | Papel | Tamanho · peso · tracking |
 |---|---|---|
-| `.t-display` | Título de impacto (CTA grande). | clamp 3→5.75rem · 440 · -0.065em |
-| `.t-display-lg` | h1 do hero · título de seção em destaque (Empreendimentos). | clamp 2.75→4.125rem · 440 · -0.065em |
-| `.t-h2` | Título de seção (padrão). | clamp 2.5→3.375rem · 440 · -0.065em |
+| `.t-display` | Título de impacto (CTA grande). | 48px (mobile) / **92px (desktop)** · 440 · -0.065em |
+| `.t-display-lg` | h1 do hero · título de seção em destaque (Empreendimentos). | 44px / **66px** · 440 · -0.065em |
+| `.t-h2` | Título de seção (padrão). | 40px / **54px** · 440 · -0.065em |
 | `.t-h3` | Título grande (links do menu mobile). | 1.875rem · 440 · -0.05em |
 | `.t-h4` | Título de card / post / pilar. | 1.4375rem · 440 · -0.043em |
 | `.t-h5` | Subtítulo de card / bloco. | 1.1875rem · 440 · -0.038em |
@@ -49,7 +49,13 @@ Escala generosa/premium (títulos grandes, corpo confortável). **Sempre via as 
 | `.t-body-lg` / `.t-body` / `.t-lead` / `.t-small` | Texto corrido (caixa normal). | 1.25 / 1.125 / 1.0625 / 0.9375rem |
 | `.t-eyebrow` | Rótulo/kicker. Use via `<Eyebrow>` (formato `// RÓTULO`). | 0.9375rem · 400 · -0.01em |
 
-Os tokens também geram **utilitários de tamanho** (só `font-size`): `text-micro` (13px), `text-small`, `text-lead`, `text-body`, `text-body-lg`, `text-h5`. Use-os para casos pontuais (links de UI) ou para alternância responsiva — ex.: subtítulo do hero `text-body md:text-body-lg`. Leading via utilitários padrão (`leading-snug`/`leading-normal`/`leading-tight`).
+**Tamanhos fixos (não fluidos):** os títulos têm **px fixo no desktop** (≥768px) — não escalam com a largura da janela. O tamanho menor do mobile (<768px) é aplicado por `@media (max-width)` nas classes em `globals.css`. Assim, um título é sempre o mesmo px em qualquer tela desktop (diferenças entre máquinas = zoom do navegador ou escala do SO, não o site).
+
+Os tokens também geram **utilitários de tamanho** (só `font-size`): `text-micro` (13px), `text-small`, `text-lead`, `text-body`, `text-body-lg`, `text-h5`, `text-h3`, `text-h2`. Use-os para casos pontuais (links de UI) ou para alternância responsiva — ex.: subtítulo do hero `text-body md:text-body-lg`; título de card que precisa caber em 2 linhas no mobile `text-h3 sm:text-h2`. Leading via utilitários padrão (`leading-snug`/`leading-normal`/`leading-tight`).
+
+**Sem "viúvas" (órfãs):** nunca deixe uma palavra sozinha na última linha. Parágrafos (`p`) já recebem `text-wrap: pretty` no base (`globals.css`); títulos usam `text-balance`. Se ainda assim sobrar palavra solta, reescreva/encurte o texto para equilibrar as linhas.
+
+**Títulos com mais de 3 palavras:** sempre `text-balance` (quebra equilibrada em 2+ linhas — nunca 1 linha longa nem linhas desiguais). `<SectionIntro>` já aplica por padrão; em h2/h1 soltos, adicione `text-balance`. Para frases que devem ficar 1 por linha (ex.: CTA do form), use `<span className="whitespace-nowrap">` por frase em vez de `<br>`.
 
 ### Raio · Sombra · Layout · Motion
 - **Geometria quase reta.** Cantos-fio sutis via tokens: `rounded-hair` (1px), `rounded-xs` (2px), `rounded-sm` (4px) — badges, cards de conteúdo e botões. `IconButton` é circular (setas de slider). Cortes diagonais (chanfros) via `<Chamfer>`. Nunca `rounded-[Npx]`.

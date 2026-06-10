@@ -50,9 +50,9 @@ export function AvatarStack({
       <p className={cn("t-small leading-tight", labelClassName)}>
         {label ?? (
           <>
-            Mais de 2 mil
+            Famílias e investidores
             <br />
-            clientes satisfeitos
+            que confiam na Edile
           </>
         )}
       </p>

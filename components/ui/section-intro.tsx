@@ -32,7 +32,13 @@ export function SectionIntro({
   return (
     <div className={cn("flex flex-col", center && "items-center text-center", className)}>
       <Eyebrow tone={eyebrowTone}>{eyebrow}</Eyebrow>
-      <h2 className={cn("t-h2", center ? "mt-2" : "mt-3", titleClassName)}>
+      <h2
+        className={cn(
+          "t-h2 text-balance",
+          center ? "mt-2" : "mt-3",
+          titleClassName
+        )}
+      >
         {title}
       </h2>
       {description && (

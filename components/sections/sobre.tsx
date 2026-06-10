@@ -27,8 +27,8 @@ export function Sobre() {
           {/* Texto */}
           <Reveal delay={0.1} className="w-full flex-1 lg:max-w-[650px]">
             <SectionIntro
-              eyebrow="Sobre"
-              title="Espaços moldados com propósito, onde o design encontra o morar."
+              eyebrow="Quem somos"
+              title="Mais do que construir, traduzimos o desejo de viver bem."
               titleClassName="max-w-[600px] text-balance"
             />
 
@@ -38,10 +38,12 @@ export function Sobre() {
               </p>
               <div className="flex max-w-[500px] flex-col items-start gap-10">
                 <p className="t-body text-ink-soft">
-                  Desenvolvemos empreendimentos residenciais e comerciais que
-                  equilibram estética, função e durabilidade — criando espaços
-                  intencionais, refinados e profundamente conectados à forma como
-                  as pessoas vivem.
+                  Sediada em Indaiatuba, a Edile é incorporadora e construtora de
+                  condomínios e loteamentos de alto padrão. Nossa responsabilidade
+                  começa antes do primeiro tijolo — no rigor da escolha do
+                  terreno, em localizações premium e numa base jurídica impecável
+                  — para entregar engenharia superior e valorização patrimonial
+                  real.
                 </p>
                 <SplitButton href="#sobre" tone="gold" size="sm">
                   Saiba mais

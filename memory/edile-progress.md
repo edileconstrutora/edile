@@ -33,6 +33,8 @@ Navbar · **Hero** · **Sobre** · **Stats** · **Empreendimentos** · **Propós
 - `<Eyebrow>` = `// label` 15px (tons: petrol/sage/muted/**light** p/ fundo escuro). `<Section tone="paper|petrol|sage">` py-80/md:120 (mist via `className="bg-mist"`). `<Container>` max-w 1350, px-6/md:10/lg:14.
 - **Chanfros** via primitivo **`<Chamfer corner="tr|tr-bl" size>`** (nunca `clip-path` inline). Raios via tokens `rounded-hair`(1px)/`xs`(2px)/`sm`(4px) — **nunca `rounded-[Npx]`**. CTA = `<SplitButton tone gold|white>`.
 - **PENTE FINO (10/06/2026):** site 100% tokenizado/componentizado, **zero hardcode** de fonte/cor/raio fora de `globals.css` (`next build` limpo). Primitivos extraídos: **`SectionIntro`** (abre seção, align left/center — substituiu o `SectionHeader` morto, deletado), **`Chamfer`**, **`Stat`** (variant inline/block), **`AvatarStack`**, **`IconBadge`** (gold/translucent). Classes novas: `.t-display-lg/.t-h4/.t-h5/.t-lead/.t-stat` + `text-micro`. `.t-h4` agora = título de card 23px (antes 24px, fundido). 5 imagens órfãs deletadas (villagio.png/.jpg, sustentabilidade, visao, engenharia ~2,4 MB). `Button`/`Card` seguem como primitivos de reserva (não usados).
+- **Regras tipográficas (obrigatórias):** **sem viúvas** — `p` tem `text-wrap: pretty` no base; títulos `text-balance`. **Títulos >3 palavras** → sempre `text-balance` (2+ linhas equilibradas); `SectionIntro` aplica por padrão. Frase-por-linha sem `<br>`: `<span className="whitespace-nowrap">` por frase (ex.: h2 do form, que usa `text-h3 sm:text-h2` p/ caber em 2 linhas no mobile). `tailwind-merge` registra TODOS os tamanhos `--text-*` no grupo font-size (`lib/utils.ts`) — senão a cor do texto é descartada ao mesclar com `text-*`.
+- **`<Stat>` anima** (count-up 0→valor na entrada, 1x, via framer-motion `animate`+`useInView`, respeita reduced-motion). É client component. Preserva sufixo (+/%).
 - Primitivos de fases anteriores: `fade-carousel.tsx`, ícones `Frame/Aperture/Columns`; `carousel.tsx` com wheel-gestures + `containerClassName`/`viewportClassName`.
 
 ## Operacional (importante)
@@ -44,7 +46,15 @@ Navbar · **Hero** · **Sobre** · **Stats** · **Empreendimentos** · **Propós
 - Sempre `npm run lint` + `npm run build` limpos antes de fechar.
 - **Junction da memória nesta máquina**: o caminho tem `01.` (ponto) e o `setup-junction.ps1` NÃO normaliza ponto — o junction foi criado **manualmente** no caminho exato do harness (`...projects\C--Users-yagob-Documents-01--Projetos-Claude-Edile\memory`). Ver [[memory-sync-git]].
 
+## Identidade real da empresa (copy reformulada em 10/06/2026 a partir dos PDFs do cliente)
+- **EDILE Empreendimentos Imobiliários Ltda** · CNPJ 59.780.967/0001-86 · **Indaiatuba/SP** · IG **@edileconstrutora** · www.edile.com.br.
+- Incorporadora + construtora de **condomínios e loteamentos de alto padrão** (HORIZONTAL — não faz prédio/torre) em Indaiatuba e região (perto de Campinas/SP).
+- Eixos da copy: rigor desde o terreno (localização premium + base jurídica), **engenharia inteligente/tecnologia**, **sustentabilidade**, **valorização patrimonial / legado**, cliente no centro, confiança.
+- Slogan **"Responsabilidade com o seu amanhã."** (usado como assinatura no footer). Hero h1 = "Hoje, seu lar. Amanhã, seu legado." Banco de CTAs do BP disponível p/ variações.
+- Empreendimentos agora com tipos **condominio/loteamento** (ícones `Home`/`Plots` novo em icons.tsx; `Building` virou reserva não usada).
+
 ## Próximo / pendências de polimento
-- Trocar **copy e imagens** placeholder pelas reais (o usuário envia).
+- **Placeholders ainda a confirmar** (marcados com comentário no código): números da faixa de Stats e dos blocos do Why, prova social (AvatarStack), **nomes dos empreendimentos** (BP não trouxe nomes reais), telefone do footer.
+- Imagens dos empreendimentos/blog ainda são genéricas (trocar pelas reais).
 - Formulário e newsletter sem backend (só UI). Links `#` a apontar.
 - Revisitar responsividade fina conforme o usuário aponta por print/anotação.

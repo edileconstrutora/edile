@@ -27,9 +27,13 @@ export function Form() {
         <div className="flex py-16 md:py-24 lg:min-h-[720px] lg:items-center">
           <Reveal className="w-full max-w-[580px]">
             <Chamfer corner="tr" size="3rem" className="bg-paper p-8 sm:p-10 md:p-12">
-              <h2 className="t-h2 text-ink">Vamos trabalhar juntos</h2>
-              <p className="t-body mt-4 max-w-[340px] leading-snug text-ink-soft">
-                Envie sua mensagem e retornamos o mais breve possível.
+              <h2 className="t-h2 text-h3 text-ink sm:text-h2">
+                <span className="whitespace-nowrap">Viva no melhor.</span>{" "}
+                <span className="whitespace-nowrap">Invista no futuro.</span>
+              </h2>
+              <p className="t-body mt-4 max-w-[360px] leading-snug text-ink-soft">
+                Fale com a Edile e conheça os empreendimentos de alto padrão em
+                Indaiatuba.
               </p>
 
               <form

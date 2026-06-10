@@ -10,24 +10,24 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    q: "Quais serviços a EDILE oferece?",
-    a: "Atuamos na incorporação e construção de empreendimentos residenciais e comerciais de alto padrão — do projeto à entrega das chaves.",
+    q: "O que a Edile faz?",
+    a: "Somos incorporadora e construtora de condomínios e loteamentos de alto padrão em Indaiatuba e região — atuamos com rigor da escolha do terreno à entrega.",
   },
   {
-    q: "Como começa um projeto com a EDILE?",
-    a: "Tudo parte de uma conversa para entender seu objetivo, morar ou investir, seguida da apresentação dos empreendimentos e condições mais adequados ao seu perfil.",
+    q: "Por que investir em Indaiatuba?",
+    a: "A cidade está entre os endereços mais valorizados do interior paulista, próxima a Campinas e São Paulo, com demanda crescente por alto padrão e alta taxa de valorização.",
   },
   {
-    q: "É possível personalizar a unidade?",
-    a: "Sim. Em empreendimentos selecionados, oferecemos opções de plantas e acabamentos para adequar o imóvel ao seu estilo de vida.",
+    q: "Como começa um projeto com a Edile?",
+    a: "Tudo parte de uma conversa para entender seu objetivo, morar ou investir, e apresentar o empreendimento mais adequado ao seu perfil.",
   },
   {
-    q: "Vocês oferecem condições de financiamento?",
+    q: "Os empreendimentos têm potencial de valorização?",
+    a: "Sim. Escolhemos regiões premium pelo potencial de crescimento a longo prazo — cada projeto é pensado como um ativo que cresce em valor com o tempo.",
+  },
+  {
+    q: "A Edile oferece condições de pagamento?",
     a: "Trabalhamos com as principais instituições e também com planos diretos, com condições negociadas caso a caso.",
-  },
-  {
-    q: "Qual é o prazo médio de entrega?",
-    a: "Varia conforme o empreendimento, mas todos seguem cronogramas claros, comunicados de forma transparente desde o início.",
   },
 ];
 

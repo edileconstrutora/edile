@@ -76,21 +76,32 @@ export function Hero() {
             />
 
             <h1 className="t-display-lg text-balance text-paper">
-              Cada detalhe pensado para o incomum.
+              Hoje, seu lar. Amanhã, seu legado.
             </h1>
 
             <p className="mt-7 max-w-[30rem] text-balance text-body leading-normal text-paper/85 md:text-body-lg">
-              Arquitetura, acabamentos e experiências em sintonia com o alto
-              padrão — feitos para quem busca o extraordinário.
+              Incorporação de condomínios e loteamentos de alto padrão em
+              Indaiatuba — engenharia inteligente, sustentabilidade e
+              valorização que supera expectativas.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-6 md:mt-12 md:pl-12">
               <SplitButton href="#empreendimentos" tone="gold">
-                Comece agora
+                Conheça os empreendimentos
               </SplitButton>
 
-              {/* Prova social */}
-              <AvatarStack ring="petrol" labelClassName="text-paper/85" />
+              {/* Prova social — placeholder (confirmar) */}
+              <AvatarStack
+                ring="petrol"
+                labelClassName="text-paper/85"
+                label={
+                  <>
+                    Famílias e investidores
+                    <br />
+                    que escolheram a Edile
+                  </>
+                }
+              />
             </div>
           </motion.div>
         </Container>

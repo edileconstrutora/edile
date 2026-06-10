@@ -18,18 +18,18 @@ const interiores = [
 const pillars = [
   {
     Icon: Frame,
-    title: "Materiais honestos",
-    body: "Trabalhamos com texturas naturais e acabamentos refinados, escolhidos para envelhecer com elegância ao longo do tempo e do uso.",
+    title: "Engenharia inteligente",
+    body: "Tecnologia e engenharia aplicadas para que cada empreendimento evolua com você ao longo do tempo.",
   },
   {
     Icon: Aperture,
-    title: "Clareza espacial",
-    body: "Cada planta é desenhada para equilíbrio, fluidez e uma sensação de calma na rotina de quem vive o espaço.",
+    title: "Sustentabilidade",
+    body: "Projetos guiados por critérios severos de sustentabilidade, eficiência e infraestrutura de ponta.",
   },
   {
     Icon: Columns,
-    title: "Design duradouro",
-    body: "Priorizamos decisões atemporais em vez de tendências, garantindo ambientes que permanecem relevantes e funcionais.",
+    title: "Valorização real",
+    body: "Localizações premium e visão de longo prazo: ativos que crescem em valor real, não só em estética.",
   },
 ];
 
@@ -43,7 +43,7 @@ export function Proposito() {
             <SectionIntro
               eyebrow="Filosofia de projeto"
               eyebrowTone="light"
-              title="Espaços projetados com clareza, sobriedade e intenção."
+              title="Engenharia que valoriza o seu futuro."
               titleClassName="mt-4 text-balance text-paper"
             />
           </Reveal>

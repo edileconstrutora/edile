@@ -2,10 +2,11 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { Stat } from "@/components/ui/stat";
 
+// Números são placeholder — confirmar com a Edile.
 const stats = [
-  { value: "180+", label: "Empreendimentos entregues" },
-  { value: "95%", label: "Clientes satisfeitos" },
-  { value: "15+", label: "Anos de experiência" },
+  { value: "180+", label: "Empreendimentos de alto padrão" },
+  { value: "15+", label: "Anos em Indaiatuba e região" },
+  { value: "100%", label: "Foco em valorização" },
 ];
 
 export function Stats() {

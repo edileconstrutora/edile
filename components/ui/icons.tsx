@@ -67,6 +67,23 @@ export function Building(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function Plots(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 26 26"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <rect x="1" y="1" width="24" height="24" rx="2" />
+      <path d="M10 1v24M1 15.5h24M10 15.5 18 8" />
+    </svg>
+  );
+}
+
 export function ArrowUpRight(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base} {...props}>

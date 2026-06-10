@@ -10,14 +10,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "EDILE — Incorporadora de alto padrão",
+  title: "EDILE — Alto padrão em Indaiatuba",
   description:
-    "Arquitetura, acabamentos e experiências em sintonia com o alto padrão. Empreendimentos pensados para quem busca o incomum.",
+    "Incorporadora e construtora de condomínios e loteamentos de alto padrão em Indaiatuba e região. Engenharia, sustentabilidade e valorização patrimonial. Responsabilidade com o seu amanhã.",
   metadataBase: new URL("https://edile.com.br"),
   openGraph: {
-    title: "EDILE — Incorporadora de alto padrão",
+    title: "EDILE — Alto padrão em Indaiatuba",
     description:
-      "Arquitetura, acabamentos e experiências em sintonia com o alto padrão.",
+      "Condomínios e loteamentos de alto padrão em Indaiatuba. Responsabilidade com o seu amanhã.",
     locale: "pt_BR",
     type: "website",
   },

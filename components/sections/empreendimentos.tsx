@@ -7,10 +7,10 @@ import { Reveal } from "@/components/ui/reveal";
 import { Carousel } from "@/components/ui/carousel";
 import { Chamfer } from "@/components/ui/chamfer";
 import { IconBadge } from "@/components/ui/icon-badge";
-import { ArrowUpRight, Home, Building } from "@/components/ui/icons";
+import { ArrowUpRight, Home, Plots } from "@/components/ui/icons";
 
-// Ícone por tipo de empreendimento.
-const typeIcons = { casa: Home, predio: Building } as const;
+// Ícone por tipo de empreendimento (atuação horizontal: condomínios e loteamentos).
+const typeIcons = { condominio: Home, loteamento: Plots } as const;
 
 type Empreendimento = {
   type: keyof typeof typeIcons;
@@ -19,41 +19,42 @@ type Empreendimento = {
   description: string;
 };
 
+// Nomes dos empreendimentos são placeholder — substituir pelos reais da Edile.
 const empreendimentos: Empreendimento[] = [
   {
-    type: "casa",
-    name: "Villagio Residence",
+    type: "condominio",
+    name: "Reserva Indaiá",
     image: "/images/emp-1.webp",
     description:
-      "Casas geminadas de alto padrão imersas na natureza, onde madeira, pedra e vegetação se encontram em ambientes desenhados para a luz.",
+      "Condomínio fechado de alto padrão em região premium de Indaiatuba — a segurança e a liberdade de morar bem, com infraestrutura completa e valorização garantida.",
   },
   {
-    type: "casa",
-    name: "Casa Aurora",
+    type: "loteamento",
+    name: "Terra Nobre",
     image: "/images/emp-2.webp",
     description:
-      "Residências contemporâneas de linhas limpas e acabamento impecável, para quem busca privacidade sem abrir mão da sofisticação.",
+      "Loteamento de lotes amplos em localização estratégica, pronto para receber o seu projeto — base jurídica impecável e potencial de valorização a longo prazo.",
   },
   {
-    type: "predio",
-    name: "Reserva Botânica",
+    type: "condominio",
+    name: "Villa Toscana",
     image: "/images/emp-3.webp",
     description:
-      "Torre residencial com jardins suspensos em cada pavimento — sustentabilidade e vida urbana em equilíbrio com o verde.",
+      "Residências de linhas contemporâneas e engenharia inteligente, planejadas sob critérios severos de sustentabilidade e conforto para cada fase da vida.",
   },
   {
-    type: "casa",
-    name: "Villa Sereno",
+    type: "condominio",
+    name: "Bosque Sereno",
     image: "/images/emp-4.webp",
     description:
-      "Casa contemporânea de volumes brancos e amplos panos de vidro, integrada a piscina e jardim para a vida ao ar livre.",
+      "Casas integradas ao verde, com amplos panos de vidro e privacidade total — sofisticação que se traduz em qualidade de vida e patrimônio.",
   },
   {
-    type: "casa",
-    name: "Casa Horizonte",
+    type: "loteamento",
+    name: "Altos da Mata",
     image: "/images/emp-5.webp",
     description:
-      "Linhas horizontais e tijolo aparente em diálogo com a paisagem — privacidade e sofisticação em um só gesto.",
+      "Lotes em uma das frentes de maior crescimento de Indaiatuba — o endereço certo para morar com elegância ou investir com visão de futuro.",
   },
 ];
 
@@ -110,10 +111,12 @@ export function Empreendimentos() {
           <Eyebrow className="md:pb-2">Empreendimentos</Eyebrow>
 
           <div className="md:text-center">
-            <h2 className="t-display-lg text-ink">Projetos recentes</h2>
+            <h2 className="t-display-lg text-balance text-ink md:mx-auto md:max-w-[8em]">
+              Onde morar é também investir
+            </h2>
             <p className="t-body mt-4 max-w-[500px] leading-snug text-ink-soft md:mx-auto">
-              Uma seleção de projetos residenciais e comerciais que mostram nossa
-              forma de pensar o espaço.
+              Condomínios e loteamentos de alto padrão em regiões premium de
+              Indaiatuba — ativos pensados para crescer em valor.
             </p>
           </div>
 
