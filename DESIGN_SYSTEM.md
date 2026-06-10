@@ -10,7 +10,7 @@ Nada de cor, tamanho de fonte, espaçamento ou raio hardcoded fora de `app/globa
 1. **Minimalista e premium** — pouco ornamento, muito ar (espaço em branco), tipografia confiante.
 2. **Uma só família tipográfica** (Inter), hierarquia feita por tamanho/peso/tracking — nunca por trocar de fonte.
 3. **Calma cromática** — fundo off-white quente (`paper`), texto grafite, petróleo da marca como âncora, sage como acento.
-4. **Linhas como linguagem** — hairlines (`Divider`) e rótulos `/` estruturam as seções no lugar de caixas/bordas. Toda seção abre com `SectionHeader` (regra + `/` + título grande).
+4. **Linhas como linguagem** — hairlines (`Divider`) e rótulos `//` estruturam as seções no lugar de caixas/bordas. Toda seção abre com `<SectionIntro>` (rótulo `//` + título grande).
 5. **Movimento discreto** — reveals curtos, parallax sutil, micro-interações de hover. Sempre respeitando `prefers-reduced-motion`.
 
 ---
@@ -23,7 +23,7 @@ Nada de cor, tamanho de fonte, espaçamento ou raio hardcoded fora de `app/globa
 | `petrol-50 … 950` | Primária da marca. `petrol-900` (#122e39) = fundo hero/CTA. `petrol-50` = banda clara sutil. |
 | `sage-100 … 600` | Acento secundário (#5d7c7e = `sage-500`). Eyebrows, cards de feature. |
 | `gold` / `gold-bright` | Acento de CTA (#ffbb0f). Botão primário do hero (hover = `gold-bright`). |
-| `paper` | Fundo padrão (off-white quente #f6f5f2). |
+| `paper` | Fundo padrão (off-white #fbfbfb). `mist` (#f5f6f7) = banda de seção cinza-clara. |
 | `ink` / `ink-soft` / `ink-faint` | Texto principal / secundário / terciário. |
 | `line` | Bordas e divisores. |
 | `neutral-100 … 700` | Neutros de apoio. |
