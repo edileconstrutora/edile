@@ -74,6 +74,12 @@ Navbar · **Hero** · **Sobre** · **Stats** · **Empreendimentos** · **Propós
 - Primitivos novos/alterados: **`<TeamCard>`** (`components/ui/team-card.tsx` — retrato `Chamfer` quadrado + nome `t-h5` + cargo + seta); **`<Stat>` ganhou prop `tone` dark|light** (texto claro em fundo petrol); ícone **`Shield`** novo em `icons.tsx` (4º valor). Navbar: link "Quem somos" agora aponta p/ **`/sobre`** (modelo de link aceita `href` rota OU `hash` âncora via `linkHref`).
 - **Fotos da equipe** = 6 retratos do Unsplash (placeholder) em `public/images/team/p1..p6.webp` (600×600, sharp). **Nomes/cargos/números/imagens das seções são placeholder** — trocar pelos reais. Stats: 180+/95%/15+ (placeholder).
 
+## Handoff para o cliente (10/06/2026)
+- O site passa a ser editado pelo **cliente** (outra máquina), conversando com o Claude. Criado **`GUIA-DO-CLIENTE.md`** (raiz) com o passo a passo de toda edição de conteúdo + checklist do que falta finalizar; referenciado no **`CLAUDE.md`** (carregado automático) junto com a regra de audiência **Yago (designer) × cliente (guiar passo a passo)**.
+- **A memória local NÃO viaja** para a máquina do cliente (depende do junction manual desta máquina). A continuidade vem dos **arquivos commitados** (CLAUDE.md / DESIGN_SYSTEM.md / GUIA-DO-CLIENTE.md), não da memória.
+- **Pendência alta — Formulários:** contato (`form.tsx`) e newsletter (`footer.tsx`) são **só UI** (não enviam). Plano: ligar ao **Web3Forms** (grátis, sem backend) — POST `https://api.web3forms.com/submit` com `access_key` (pública). Cliente cria a key e pede pro Claude ligar.
+- Outras pendências (placeholders): textos oficiais, imagens reais, empreendimentos, equipe (fotos + IG individual), números das stats, telefone do rodapé, textos jurídicos (validar advogado), links soltos (`#`), e o **rodapé** ainda aponta "Empreendimentos/Sobre" para `/#...` (seções da home) em vez das páginas `/empreendimentos` e `/sobre`, e ainda tem "Investidores".
+
 ## Próximo / pendências de polimento
 - **Placeholders ainda a confirmar** (marcados com comentário no código): números da faixa de Stats e dos blocos do Why, prova social (AvatarStack), **nomes dos empreendimentos** (BP não trouxe nomes reais), telefone do footer.
 - Imagens dos empreendimentos/blog ainda são genéricas (trocar pelas reais).

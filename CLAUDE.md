@@ -4,6 +4,12 @@
 
 Antes de criar/alterar qualquer página ou componente, leia **`DESIGN_SYSTEM.md`** (raiz) e siga-o à risca. Ele é a referência completa de tokens, primitivos e regras.
 
+## Quem está editando (importante)
+
+- Se quem fala **é o Yago** (designer) → entende de design e código; pode ir direto.
+- Se **NÃO é o Yago** → é um **cliente sem conhecimento de design ou código**. **Guie passo a passo**, em linguagem simples, **confirme antes de mudar**, não quebre o design system e rode `npm run build` antes de publicar. O alvo é finalizar o site de forma **leve, correta e coerente**.
+- Para edições de **conteúdo** (textos, imagens, posts, empreendimentos, equipe, formulários, etc.) e a **lista do que falta finalizar**, siga o **`GUIA-DO-CLIENTE.md`** (raiz).
+
 ## Regras inegociáveis
 
 - **Zero hardcode** de cor, tamanho de fonte, raio ou sombra fora de `app/globals.css`. Use sempre os tokens (`bg-petrol-900`, `text-ink`, `rounded-sm`, `shadow-[var(--shadow-soft)]`, …).
