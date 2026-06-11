@@ -24,7 +24,7 @@ Você **não mexe em código**. Você **conversa com o Claude** (no Claude Code,
 
 Itens marcados como `placeholder` no código — devem virar o conteúdo **real** da Edile:
 
-- [ ] **Formulários** (contato + newsletter) — hoje **não enviam nada**. Precisam ser ligados ao **Web3Forms** (grátis). Ver seção "Formulários" abaixo. **Prioridade alta.**
+- [ ] **Formulários** (contato + newsletter) — **já ligados ao Web3Forms**; falta só preencher a **Access Key** (`NEXT_PUBLIC_WEB3FORMS_KEY`). Ver seção "Formulários" abaixo. **Prioridade alta.**
 - [ ] **Textos do site** — a copy atual está **quase certa**; revisar e ajustar para o texto oficial da Edile.
 - [ ] **Imagens** — várias são genéricas/placeholder; trocar pelas imagens reais.
 - [ ] **Empreendimentos** — nomes, status, localização, descrições, diferenciais e fotos são fictícios.
@@ -32,8 +32,7 @@ Itens marcados como `placeholder` no código — devem virar o conteúdo **real*
 - [ ] **Números (estatísticas)** — ex.: "180+ empreendimentos", "95%", "15+ anos" são chutados.
 - [ ] **Telefone do rodapé** — está `+55 19 0000-0000` (placeholder). E-mail, Instagram e cidade **já são reais**.
 - [ ] **Textos jurídicos** (Política de Privacidade e Termos de Uso) — texto-base genérico; **validar com o advogado/jurídico** da Edile.
-- [ ] **Links soltos** — "Trabalhe conosco" e alguns links do rodapé apontam para `#`. Definir destino.
-- [ ] **Links do rodapé** — "Empreendimentos" e "Sobre" no rodapé ainda levam às seções da home (`/#...`); hoje existem as páginas `/empreendimentos` e `/sobre`. "Investidores" pode sair (foi removido do menu). Vale alinhar.
+- [ ] **Links soltos** — "Trabalhe conosco" (rodapé) e "Indaiatuba, SP" apontam para `#`. Definir destino (ou remover o link).
 
 ---
 
@@ -67,14 +66,16 @@ Diga os números certos. Ex.: *"são 32 empreendimentos entregues e 18 anos de a
 Diga o telefone real. Ex.: *"o telefone é (19) 9999-9999"*.
 > **Claude:** `components/sections/footer.tsx`, coluna "Contato" (label + `href="tel:..."`). E-mail, Instagram e cidade já estão corretos.
 
-### 8. Formulários (Web3Forms) — **importante**
-Hoje os formulários de **contato** e de **newsletter** são só visuais: **não enviam e-mail**. Para funcionarem, use o **Web3Forms** (plano grátis, sem backend):
+### 8. Formulários (Web3Forms) — **só falta a chave**
+Os formulários de **contato** e **newsletter** **já estão ligados** ao **Web3Forms** (grátis, sem backend). Falta só a **Access Key** para os envios começarem a cair no e-mail da Edile:
 
 1. Acesse **https://web3forms.com**, informe o e-mail que vai **receber** as mensagens (ex.: `contato@edile.com.br`) e copie o **Access Key** gratuito.
-2. Diga ao Claude: ***"configura os formulários (contato e newsletter) com Web3Forms, minha access key é XXXXXXXX"**.*
-3. Pronto — os envios passam a cair no e-mail da Edile.
+2. **Local:** copie o arquivo `.env.example` para `.env.local` e preencha `NEXT_PUBLIC_WEB3FORMS_KEY=` com a chave. **Produção (Vercel):** adicione a mesma variável em *Project Settings → Environment Variables* e refaça o deploy.
+3. Não sabe mexer nisso? Diga ao Claude: ***"minha access key do Web3Forms é XXXXXXXX, me ajuda a configurar"**.*
 
-> **Claude (como ligar):** os formulários estão em `components/sections/form.tsx` (contato) e `components/sections/footer.tsx` (newsletter). Torne-os client components que fazem `POST` para `https://api.web3forms.com/submit` (JSON), com o campo `access_key` + os campos do form; trate estados de enviando/sucesso/erro com feedback simples ao usuário, sem quebrar o layout nem o `DESIGN_SYSTEM.md`. A access key do Web3Forms pode ficar no código (ela é pública por design), mas o ideal é uma variável de ambiente `NEXT_PUBLIC_WEB3FORMS_KEY`.
+Enquanto a chave não estiver definida, os formulários mostram "Formulário ainda não configurado" ao enviar.
+
+> **Claude (já implementado):** envio via `lib/web3forms.ts` (`submitToWeb3Forms`), usado por `components/sections/form.tsx` (contato) e `components/ui/newsletter-form.tsx` (newsletter, dentro do footer). Lê `process.env.NEXT_PUBLIC_WEB3FORMS_KEY`.
 
 ### 9. Textos jurídicos
 As páginas **Política de Privacidade** e **Termos de Uso** têm um texto-base genérico (LGPD), **marcado como placeholder no código**. **Não publique como definitivo sem revisão de um advogado.** Quando tiver o texto oficial, mande que o Claude substitui.

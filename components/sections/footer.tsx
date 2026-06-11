@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
-import { ArrowUpRight } from "@/components/ui/icons";
+import { NewsletterForm } from "@/components/ui/newsletter-form";
 
 type FooterLink = { label: string; href: string };
 
@@ -23,9 +23,8 @@ const columns: { title: string; links: FooterLink[] }[] = [
     title: "Navegação",
     links: [
       { label: "Início", href: "/" },
-      { label: "Empreendimentos", href: "/#empreendimentos" },
-      { label: "Sobre", href: "/#sobre" },
-      { label: "Investidores", href: "/#proposito" },
+      { label: "Empreendimentos", href: "/empreendimentos" },
+      { label: "Quem somos", href: "/sobre" },
     ],
   },
   {
@@ -51,24 +50,7 @@ export function Footer() {
               Receba novidades e lançamentos
             </p>
 
-            <form className="mt-8 w-full max-w-[360px]">
-              <div className="border-b border-paper/25 py-3">
-                <input
-                  type="email"
-                  placeholder="Seu e-mail"
-                  className="w-full bg-transparent text-micro text-paper placeholder:text-paper/50 focus:outline-none"
-                />
-              </div>
-              <button
-                type="button"
-                className="group mt-5 inline-flex items-center gap-2.5 text-micro uppercase tracking-wider text-paper"
-              >
-                Inscrever
-                <span className="inline-flex size-[18px] items-center justify-center rounded-xs border border-paper/40 bg-paper/15 transition-colors duration-300 group-hover:bg-paper/25">
-                  <ArrowUpRight className="size-3" />
-                </span>
-              </button>
-            </form>
+            <NewsletterForm />
           </div>
 
           {/* Colunas de links */}
