@@ -5,13 +5,17 @@ import { SectionIntro } from "@/components/ui/section-intro";
 import { TeamCard, type TeamMember } from "@/components/ui/team-card";
 
 // Nomes, cargos e fotos são placeholder — trocar pela equipe real da Edile.
+// PENDENTE: `href` deve ser o Instagram de CADA pessoa. Enquanto não houver as
+// URLs individuais, aponta para o IG institucional (@edileconstrutora) como
+// destino temporário — substituir por https://instagram.com/<perfil> de cada um.
+const IG_PENDENTE = "https://instagram.com/edileconstrutora";
 const team: TeamMember[] = [
-  { name: "Ricardo Almeida", role: "Fundador e CEO", photo: "/images/team/p1.webp" },
-  { name: "André Santos", role: "Diretor comercial", photo: "/images/team/p2.webp" },
-  { name: "Juliana Castro", role: "Arquiteta-chefe", photo: "/images/team/p3.webp" },
-  { name: "Marcos Vieira", role: "Engenheiro responsável", photo: "/images/team/p4.webp" },
-  { name: "Felipe Moraes", role: "Incorporação e novos negócios", photo: "/images/team/p5.webp" },
-  { name: "Patrícia Lima", role: "Relacionamento com clientes", photo: "/images/team/p6.webp" },
+  { name: "Ricardo Almeida", role: "Fundador e CEO", photo: "/images/team/p1.webp", href: IG_PENDENTE },
+  { name: "André Santos", role: "Diretor comercial", photo: "/images/team/p2.webp", href: IG_PENDENTE },
+  { name: "Juliana Castro", role: "Arquiteta-chefe", photo: "/images/team/p3.webp", href: IG_PENDENTE },
+  { name: "Marcos Vieira", role: "Engenheiro responsável", photo: "/images/team/p4.webp", href: IG_PENDENTE },
+  { name: "Felipe Moraes", role: "Incorporação e novos negócios", photo: "/images/team/p5.webp", href: IG_PENDENTE },
+  { name: "Patrícia Lima", role: "Relacionamento com clientes", photo: "/images/team/p6.webp", href: IG_PENDENTE },
 ];
 
 /**

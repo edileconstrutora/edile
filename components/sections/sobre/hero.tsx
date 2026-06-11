@@ -20,8 +20,8 @@ export function SobreHero() {
         sizes="100vw"
         className="object-cover"
       />
-      {/* Gradiente para legibilidade do texto */}
-      <div className="absolute inset-0 bg-gradient-to-t from-petrol-950 via-petrol-950/40 to-petrol-950/30" />
+      {/* Tinta chapada de petrol para legibilidade (sem gradiente) */}
+      <div className="absolute inset-0 bg-petrol-950/55" />
 
       <Container className="relative z-10 pb-16 pt-40 md:pb-24 md:pt-48">
         <Eyebrow tone="light">Alto padrão em Indaiatuba</Eyebrow>

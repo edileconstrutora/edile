@@ -188,3 +188,11 @@ export function Shield(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function Check(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <path d="M5 12.5 10 17.5 19 7" />
+    </svg>
+  );
+}

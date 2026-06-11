@@ -11,9 +11,9 @@ import { Menu, Close } from "@/components/ui/icons";
 
 // `href` = rota direta · `hash` = âncora de seção (vira "/#x" fora da home).
 const navLinks: { label: string; hash?: string; href?: string }[] = [
+  { label: "Empreendimentos", href: "/empreendimentos" },
   { label: "Quem somos", href: "/sobre" },
-  { label: "Empreendimentos", hash: "#empreendimentos" },
-  { label: "Investidores", hash: "#proposito" },
+  { label: "Blog", href: "/blog" },
 ];
 
 /**

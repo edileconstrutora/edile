@@ -22,11 +22,16 @@ export function PageHero({
   return (
     <Section className="bg-transparent pb-0 pt-40 md:pb-0 md:pt-[240px]">
       <Container className="relative">
-        {/* Eyebrow à esquerda · título+descrição na coluna central, texto à esquerda */}
-        <Reveal className="md:grid md:grid-cols-[1fr_auto_1fr] md:items-start md:gap-10">
+        {/* Rótulo numa coluna de largura fixa (só desktop) → o título sempre
+            começa no mesmo ponto em qualquer página. No mobile o hero empilha
+            (rótulo acima do título, largura cheia). */}
+        <Reveal className="md:grid md:grid-cols-[200px_1fr] md:items-start md:gap-10">
           <Eyebrow>{eyebrow}</Eyebrow>
-          <div className="mt-6 md:col-start-2 md:mt-0">
-            <h1 className="t-display text-balance text-ink">{title}</h1>
+          <div className="mt-6 md:mt-0">
+            {/* max-w impede que títulos longos esparramem pela coluna inteira */}
+            <h1 className="t-display max-w-[640px] text-balance text-ink">
+              {title}
+            </h1>
             {description && (
               <p className="t-body mt-6 max-w-[440px] text-ink-soft">
                 {description}

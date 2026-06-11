@@ -69,9 +69,12 @@ Duas decisões **independentes**: o **nível semântico** (a tag) e o **tamanho 
 |---|---|---|---|---|
 | **Declaração** — só rótulo + título (± 1 linha) | `t-display` | 92px | o título **é** o herói, sem CTA/subtítulo/capa competindo | `/sobre`, `/blog`, páginas legais (`PageHero`, `SobreHero`) |
 | **Landing/conversão** — título + CTA + prova social | `t-display-lg` | 66px | herói da home, título convive com painel de CTA/subtítulo/avatares | home (`Hero`) |
+| **Showcase de produto** — rótulo + título + tags + capa | `t-display-lg` | 66px | página de um produto em destaque (empreendimento), **não** um artigo: ganha mais presença que o editorial mesmo tendo meta + capa | detalhe de empreendimento (`/empreendimentos/[slug]`) |
 | **Documento/editorial** — título + metadados + capa | `t-h2` | 54px | título é conteúdo de um artigo/doc, cercado de meta/subtítulo/corpo | post do blog (`PostHero`) |
 
-**Página nova → 1 pergunta:** o herói é (a) só rótulo + título? → **92px** · (b) título + CTA/prova social? → **66px** · (c) título de um artigo/documento com metadados? → **54px**. Seções internas sempre `t-h2` (`SectionIntro`).
+> **Editorial vs showcase** (mesma estrutura, tamanho diferente): a escolha é por **intenção**. Artigo/conteúdo de leitura → 54px. Produto que vende (empreendimento) → 66px.
+
+**Página nova → 1 pergunta:** o herói é (a) só rótulo + título? → **92px** · (b) landing com CTA/prova social, ou showcase de produto (empreendimento)? → **66px** · (c) título de um artigo/documento de leitura? → **54px**. Seções internas sempre `t-h2` (`SectionIntro`).
 
 ### Raio · Sombra · Layout · Motion
 - **Geometria quase reta.** Cantos-fio sutis via tokens: `rounded-hair` (1px), `rounded-xs` (2px), `rounded-sm` (4px) — badges, cards de conteúdo e botões. `IconButton` é circular (setas de slider). Cortes diagonais (chanfros) via `<Chamfer>`. Nunca `rounded-[Npx]`.
@@ -88,7 +91,7 @@ Duas decisões **independentes**: o **nível semântico** (a tag) e o **tamanho 
 | `<Container>` | Largura máxima + padding lateral fluido. Envolve o conteúdo de toda seção. |
 | `<Section tone>` | Bloco com padding vertical (80px mobile · 120px desktop) e fundo (`paper`/`petrol`/`sage`). Para `mist`, passe `className="bg-mist"`. |
 | `<SectionIntro eyebrow? title description? align eyebrowTone>` | **Abre a seção**: rótulo `//` (opcional) + título (`t-h2`) + descrição opcional. Sem `eyebrow`, o título abre sozinho. `align`: `left` (padrão) / `center`. Use dentro de um `<Reveal>`. |
-| `<PageHero eyebrow title description?>` | **Hero de página interna** (ex.: /blog): rótulo `//` à esquerda + **h1** grande (`t-display`, 92px) + descrição na coluna central, texto à esquerda. Fundo transparente + respiro p/ a navbar (a página define fundo + linhas). |
+| `<PageHero eyebrow title description?>` | **Hero de página interna** (ex.: /blog): rótulo `//` numa **coluna de largura fixa (200px, só desktop)** + **h1** grande (`t-display`, 92px, `max-w` p/ não esparramar) + descrição ao lado — o título **começa sempre no mesmo ponto** em qualquer página. Mobile empilha (rótulo acima). Fundo transparente + respiro p/ a navbar. |
 | `<ColumnLines tone?>` | **3 linhas verticais** (bordas + centro) como grade de fundo. Ponha num pai `relative` — preenche a altura toda. `tone`: `dark` (fundo claro) / `light` (fundo escuro). |
 | `<Divider tone>` | Linha hairline para estruturar seções. tones: `dark` (fundo claro) / `light` (fundo escuro). |
 | `<Eyebrow tone>` | Kicker no formato `// RÓTULO`. tones: `petrol`/`sage`/`muted`/`light`. |
@@ -103,6 +106,7 @@ Duas decisões **independentes**: o **nível semântico** (a tag) e o **tamanho 
 | `<Carousel controls arrowTone>` | Carrossel (Embla) para conteúdo variado. Cada filho = um slide. |
 | `<FadeCarousel images alt>` | Carrossel de imagens em crossfade automático (barra de progresso). |
 | `<BlogCard slug image category date title>` | Card de post (imagem + categoria · data + título), linka para `/blog/[slug]`. Dados em `lib/posts/`. Usado na home, na página `/blog` e nos relacionados do post. Aceita spread de um `Post` (`{...p}`). |
+| `<EmpreendimentoCard …>` | Card de empreendimento (capa chanfrada + tipo · status + nome + resumo + seta), linka para `/empreendimentos/[slug]`. **Hover:** fundo `paper` → `petrol-950` com texto invertendo para claro. Dados em `lib/empreendimentos/`. Aceita spread de um `Empreendimento` (`{...e}`). |
 | `<PostHero category date title image excerpt>` | **Header de post do blog**: mesma grade do `PageHero`. Coluna central = h1 (`t-h2`, 54px) → subtítulo (`excerpt`) → tags em pílulas (`rounded-full`, data + categoria). Capa larga retangular (`rounded-hair`, **sem chanfro**) abaixo. |
 | `<PostBody content>` | **Corpo do post**: renderiza os blocos tipados (`Block[]` de `lib/posts`) com estilo 100% fixo — coluna de leitura de 720px centralizada. |
 | `<TeamCard name role photo href?>` | **Card de membro da equipe** (página `/sobre`): retrato quadrado `<Chamfer corner="tr">` + nome (`t-h5`) + cargo (`t-small`) + seta. Hover de scale na foto. `href` externo abre em nova aba. |

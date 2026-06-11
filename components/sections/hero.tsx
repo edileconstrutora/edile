@@ -87,7 +87,10 @@ export function Hero() {
 
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-6 md:mt-12 md:pl-12">
               <SplitButton href="#empreendimentos" tone="gold">
-                Conheça os empreendimentos
+                <span className="md:hidden">Ver empreendimentos</span>
+                <span className="hidden md:inline">
+                  Conheça os empreendimentos
+                </span>
               </SplitButton>
 
               {/* Prova social — placeholder (confirmar) */}

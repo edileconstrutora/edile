@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
@@ -8,55 +9,17 @@ import { Carousel } from "@/components/ui/carousel";
 import { Chamfer } from "@/components/ui/chamfer";
 import { IconBadge } from "@/components/ui/icon-badge";
 import { ArrowUpRight, Home, Plots } from "@/components/ui/icons";
+import {
+  empreendimentos,
+  type Empreendimento,
+  type EmpreendimentoType,
+} from "@/lib/empreendimentos";
 
-// Ícone por tipo de empreendimento (atuação horizontal: condomínios e loteamentos).
-const typeIcons = { condominio: Home, loteamento: Plots } as const;
-
-type Empreendimento = {
-  type: keyof typeof typeIcons;
-  name: string;
-  image: string;
-  description: string;
+// Ícone por tipo (atuação horizontal: condomínios e loteamentos).
+const typeIcons: Record<EmpreendimentoType, typeof Home> = {
+  condominio: Home,
+  loteamento: Plots,
 };
-
-// Nomes dos empreendimentos são placeholder — substituir pelos reais da Edile.
-const empreendimentos: Empreendimento[] = [
-  {
-    type: "condominio",
-    name: "Reserva Indaiá",
-    image: "/images/emp-1.webp",
-    description:
-      "Condomínio fechado de alto padrão em região premium de Indaiatuba — a segurança e a liberdade de morar bem, com infraestrutura completa e valorização garantida.",
-  },
-  {
-    type: "loteamento",
-    name: "Terra Nobre",
-    image: "/images/emp-2.webp",
-    description:
-      "Loteamento de lotes amplos em localização estratégica, pronto para receber o seu projeto — base jurídica impecável e potencial de valorização a longo prazo.",
-  },
-  {
-    type: "condominio",
-    name: "Villa Toscana",
-    image: "/images/emp-3.webp",
-    description:
-      "Residências de linhas contemporâneas e engenharia inteligente, planejadas sob critérios severos de sustentabilidade e conforto para cada fase da vida.",
-  },
-  {
-    type: "condominio",
-    name: "Bosque Sereno",
-    image: "/images/emp-4.webp",
-    description:
-      "Casas integradas ao verde, com amplos panos de vidro e privacidade total — sofisticação que se traduz em qualidade de vida e patrimônio.",
-  },
-  {
-    type: "loteamento",
-    name: "Altos da Mata",
-    image: "/images/emp-5.webp",
-    description:
-      "Lotes em uma das frentes de maior crescimento de Indaiatuba — o endereço certo para morar com elegância ou investir com visão de futuro.",
-  },
-];
 
 function EmpreendimentoCard({ item }: { item: Empreendimento }) {
   const TypeIcon = typeIcons[item.type];
@@ -88,13 +51,13 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
             <p className="t-body max-w-[44rem] leading-normal text-paper/70">
               {item.description}
             </p>
-            <a
-              href="#"
+            <Link
+              href={`/empreendimentos/${item.slug}`}
               className="inline-flex items-center gap-2.5 rounded-xs border border-paper/30 px-7 py-2.5 text-small text-paper transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ink"
             >
               Conhecer empreendimento
               <ArrowUpRight className="size-5" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -121,7 +84,7 @@ export function Empreendimentos() {
           </div>
 
           <div className="md:justify-self-end md:pb-2">
-            <SplitButton href="#" tone="gold" size="sm">
+            <SplitButton href="/empreendimentos" tone="gold" size="sm">
               Ver todos
             </SplitButton>
           </div>
