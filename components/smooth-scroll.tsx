@@ -1,7 +1,27 @@
 "use client";
 
-import { ReactLenis } from "lenis/react";
+import { ReactLenis, useLenis } from "lenis/react";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import type { PropsWithChildren } from "react";
+
+/**
+ * Volta ao topo a cada troca de rota. Sem isto, o Lenis mantém a posição
+ * virtual de scroll e a página nova "abre de baixo". Âncoras (`/#contato`)
+ * são respeitadas — não força o topo quando há hash na URL.
+ */
+function ScrollResetOnNavigate() {
+  const pathname = usePathname();
+  const lenis = useLenis();
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) return;
+    if (lenis) lenis.scrollTo(0, { immediate: true });
+    else if (typeof window !== "undefined") window.scrollTo(0, 0);
+  }, [pathname, lenis]);
+
+  return null;
+}
 
 /**
  * Provider global de scroll suave (Lenis).
@@ -21,6 +41,7 @@ export function SmoothScroll({ children }: PropsWithChildren) {
         smoothWheel: !prefersReduced,
       }}
     >
+      <ScrollResetOnNavigate />
       {children}
     </ReactLenis>
   );
