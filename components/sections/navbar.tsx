@@ -77,7 +77,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
           {/* CTA (direita, desktop) */}
           <div className="hidden lg:block">
             <SplitButton href={to("#contato")} tone="white" size="sm">
-              Comece agora
+              Portal de clientes
             </SplitButton>
           </div>
 
@@ -134,7 +134,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
             className="mt-8"
             onClick={() => setOpen(false)}
           >
-            Comece agora
+            Portal de clientes
           </SplitButton>
         </nav>
       </div>
