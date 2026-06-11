@@ -8,8 +8,9 @@ import { PageHero } from "@/components/ui/page-hero";
 import { LegalDoc, type LegalBlock } from "@/components/ui/legal-doc";
 
 export const metadata: Metadata = {
-  title: "Termos de uso — EDILE",
+  title: "Termos de uso",
   description: "As regras de uso do site da Edile.",
+  alternates: { canonical: "/termos-de-uso" },
 };
 
 // PLACEHOLDER — texto-base. VALIDAR com o jurídico da Edile antes de publicar.

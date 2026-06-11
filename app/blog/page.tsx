@@ -10,9 +10,10 @@ import { BlogCard } from "@/components/ui/blog-card";
 import { posts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Blog — EDILE",
+  title: "Blog",
   description:
     "Perspectivas sobre o mercado de Indaiatuba, alto padrão e a arte de morar e investir bem.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

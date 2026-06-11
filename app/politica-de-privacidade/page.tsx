@@ -8,9 +8,10 @@ import { PageHero } from "@/components/ui/page-hero";
 import { LegalDoc, type LegalBlock } from "@/components/ui/legal-doc";
 
 export const metadata: Metadata = {
-  title: "Política de privacidade — EDILE",
+  title: "Política de privacidade",
   description:
     "Como a Edile coleta, usa e protege os seus dados pessoais, em conformidade com a LGPD.",
+  alternates: { canonical: "/politica-de-privacidade" },
 };
 
 // PLACEHOLDER — texto-base orientado à LGPD. VALIDAR com o jurídico da Edile

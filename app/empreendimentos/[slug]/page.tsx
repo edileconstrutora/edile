@@ -29,11 +29,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const emp = getEmpreendimentoBySlug(slug);
   if (!emp) return {};
   return {
-    title: `${emp.name} — EDILE`,
+    title: emp.name,
     description: emp.description,
+    alternates: { canonical: `/empreendimentos/${emp.slug}` },
     openGraph: {
       title: emp.name,
       description: emp.description,
+      url: `/empreendimentos/${emp.slug}`,
       images: [{ url: emp.image }],
     },
   };

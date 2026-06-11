@@ -10,9 +10,10 @@ import { EmpreendimentoCard } from "@/components/ui/empreendimento-card";
 import { empreendimentos } from "@/lib/empreendimentos";
 
 export const metadata: Metadata = {
-  title: "Empreendimentos — EDILE",
+  title: "Empreendimentos",
   description:
     "Condomínios e loteamentos de alto padrão em Indaiatuba e região. Conheça os empreendimentos da Edile.",
+  alternates: { canonical: "/empreendimentos" },
 };
 
 export default function EmpreendimentosPage() {
