@@ -8,7 +8,7 @@ import { SobreBeliefs } from "@/components/sections/sobre/beliefs";
 import { SobreTeam } from "@/components/sections/sobre/team";
 
 export const metadata: Metadata = {
-  title: "Quem somos",
+  title: "Sobre Nós",
   description:
     "Incorporadora e construtora de condomínios e loteamentos de alto padrão em Indaiatuba. Conheça a Edile, nossos valores e o time por trás de cada entrega.",
   alternates: { canonical: "/sobre" },
