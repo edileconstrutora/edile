@@ -27,24 +27,24 @@ export function Hero() {
         style={{ y, scale }}
         className="absolute inset-0 overflow-hidden"
       >
-        {/* Mobile: imagem vertical */}
+        {/* Mobile */}
         <Image
-          src="/images/hero-mobile.jpg"
+          src="/images/hr-1.jpeg"
           alt="Empreendimento de alto padrão da EDILE"
           fill
           priority
           quality={90}
           sizes="100vw"
-          className="object-cover md:hidden"
+          className="object-cover object-center md:hidden"
         />
-        {/* Desktop: imagem horizontal */}
+        {/* Desktop */}
         <Image
-          src="/images/hero.jpg"
+          src="/images/edile-hrbg.jpeg"
           alt="Empreendimento de alto padrão da EDILE"
           fill
           quality={90}
           sizes="100vw"
-          className="hidden object-cover md:block"
+          className="hidden object-cover object-center md:block"
         />
       </motion.div>
 
