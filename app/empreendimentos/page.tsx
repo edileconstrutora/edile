@@ -20,14 +20,16 @@ export default function EmpreendimentosPage() {
   return (
     <>
       <Navbar solid />
-      <main className="relative overflow-hidden bg-mist">
-        <ColumnLines />
-        <PageHero
-          eyebrow="Empreendimentos"
-          title="Onde morar é também investir"
-          description="Condomínios e loteamentos de alto padrão em regiões premium de Indaiatuba — ativos pensados para crescer em valor."
-        />
-        <Section className="bg-transparent pt-14 md:pt-20">
+      <main className="relative overflow-hidden">
+        <div className="bg-mist">
+          <ColumnLines />
+          <PageHero
+            eyebrow="Empreendimentos"
+            title="Onde morar é também investir"
+            description="Condomínios e loteamentos de alto padrão em regiões premium de Indaiatuba — ativos pensados para crescer em valor."
+          />
+        </div>
+        <Section className="bg-paper pt-14 md:pt-20">
           <Container>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               {empreendimentos.map((e, i) => (

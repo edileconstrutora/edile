@@ -74,7 +74,7 @@ export function Empreendimentos() {
           <Eyebrow className="md:pb-2">Empreendimentos</Eyebrow>
 
           <div className="md:text-center">
-            <h2 className="t-h2 text-balance text-ink md:mx-auto md:max-w-[8em]">
+            <h2 className="t-h2 text-balance text-ink md:mx-auto md:max-w-[12em]">
               Escolha viver com sofisticação e visão de futuro.
             </h2>
             <p className="t-body mt-4 max-w-[500px] leading-snug text-ink-soft md:mx-auto">
