@@ -40,7 +40,6 @@ export function Footer() {
             <div className="mt-6 space-y-1 text-small text-paper/50">
               <p>Rua Armando Salles de Oliveira, 1953</p>
               <p>Indaiatuba — SP</p>
-              <p className="mt-3">CNPJ 59.780.967/0001-86</p>
             </div>
 
             <div className="mt-6 flex gap-4">

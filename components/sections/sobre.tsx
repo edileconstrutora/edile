@@ -36,23 +36,18 @@ export function Sobre() {
               titleClassName="max-w-[600px] text-balance"
             />
 
-            <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:gap-14">
-              <p className="shrink-0 t-small uppercase text-ink-soft sm:w-[90px]">
-                Nossa visão
+            <div className="mt-8 flex max-w-[500px] flex-col items-start gap-10">
+              <p className="t-body text-ink-soft">
+                Sediada em Indaiatuba, a Edile é incorporadora e construtora de
+                condomínios e loteamentos de alto padrão. Nossa responsabilidade
+                começa antes do primeiro tijolo — no rigor da escolha do
+                terreno, em localizações premium e numa base jurídica impecável
+                — para entregar engenharia superior e valorização patrimonial
+                real.
               </p>
-              <div className="flex max-w-[500px] flex-col items-start gap-10">
-                <p className="t-body text-ink-soft">
-                  Sediada em Indaiatuba, a Edile é incorporadora e construtora de
-                  condomínios e loteamentos de alto padrão. Nossa responsabilidade
-                  começa antes do primeiro tijolo — no rigor da escolha do
-                  terreno, em localizações premium e numa base jurídica impecável
-                  — para entregar engenharia superior e valorização patrimonial
-                  real.
-                </p>
-                <SplitButton href="/sobre" tone="gold" size="sm">
-                  Sobre a Edile
-                </SplitButton>
-              </div>
+              <SplitButton href="/sobre" tone="teal" size="sm">
+                Sobre a Edile
+              </SplitButton>
             </div>
           </Reveal>
         </div>

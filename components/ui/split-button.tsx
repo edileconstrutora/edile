@@ -3,12 +3,13 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "./icons";
 
-type Tone = "gold" | "white";
+type Tone = "gold" | "white" | "teal";
 type Size = "sm" | "md";
 
-const tones: Record<Tone, string> = {
-  gold: "bg-gold group-hover/sb:bg-gold-bright",
-  white: "bg-white group-hover/sb:bg-paper",
+const tones: Record<Tone, { bg: string; text: string }> = {
+  gold:  { bg: "bg-gold group-hover/sb:bg-gold-bright",           text: "text-ink" },
+  white: { bg: "bg-white group-hover/sb:bg-paper",                text: "text-ink" },
+  teal:  { bg: "bg-[#5E7C7E] group-hover/sb:bg-[#4e6a6c]",       text: "text-paper" },
 };
 
 // `md` é responsivo: tamanho `sm` no mobile, cheio a partir de md (desktop).
@@ -49,8 +50,9 @@ export function SplitButton({
     >
       <span
         className={cn(
-          "flex items-center whitespace-nowrap rounded-sm font-medium text-ink transition-colors duration-300",
-          tones[tone],
+          "flex items-center whitespace-nowrap rounded-sm font-medium transition-colors duration-300",
+          tones[tone].bg,
+          tones[tone].text,
           s.box,
           s.label
         )}
@@ -59,8 +61,9 @@ export function SplitButton({
       </span>
       <span
         className={cn(
-          "flex items-center justify-center rounded-sm text-ink transition-colors duration-300",
-          tones[tone],
+          "flex items-center justify-center rounded-sm transition-colors duration-300",
+          tones[tone].bg,
+          tones[tone].text,
           s.arrow
         )}
       >

@@ -39,7 +39,7 @@ export function Hero() {
         />
         {/* Desktop */}
         <Image
-          src="/images/edile-hrbg.jpeg"
+          src="/images/EDILE-BG1.png"
           alt="Empreendimento de alto padrão da EDILE"
           fill
           quality={90}
@@ -84,7 +84,7 @@ export function Hero() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-6 md:mt-12 md:pl-12">
-              <SplitButton href="#empreendimentos" tone="gold">
+              <SplitButton href="#empreendimentos" tone="teal">
                 <span className="md:hidden">Ver empreendimentos</span>
                 <span className="hidden md:inline">
                   Conheça os empreendimentos
