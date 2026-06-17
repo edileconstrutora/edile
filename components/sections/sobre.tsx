@@ -49,8 +49,8 @@ export function Sobre() {
                   — para entregar engenharia superior e valorização patrimonial
                   real.
                 </p>
-                <SplitButton href="#sobre" tone="gold" size="sm">
-                  Saiba mais
+                <SplitButton href="/sobre" tone="gold" size="sm">
+                  Sobre a Edile
                 </SplitButton>
               </div>
             </div>

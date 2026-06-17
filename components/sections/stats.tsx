@@ -4,8 +4,8 @@ import { Stat } from "@/components/ui/stat";
 
 // Números são placeholder — confirmar com a Edile.
 const stats = [
-  { value: "180+", label: "Empreendimentos de alto padrão" },
-  { value: "15+", label: "Anos em Indaiatuba e região" },
+  { value: "108+", label: "Imóveis entregues" },
+  { value: "12+", label: "Anos construindo imóveis" },
   { value: "100%", label: "Foco em valorização" },
 ];
 

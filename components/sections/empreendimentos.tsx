@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { SplitButton } from "@/components/ui/split-button";
 import { Reveal } from "@/components/ui/reveal";
 import { Carousel } from "@/components/ui/carousel";
 import { Chamfer } from "@/components/ui/chamfer";
@@ -70,23 +69,14 @@ export function Empreendimentos() {
     <Section id="empreendimentos" className="overflow-hidden bg-mist">
       <Container className="relative">
         {/* Cabeçalho */}
-        <Reveal className="mb-14 flex flex-col gap-8 md:mb-20 md:grid md:grid-cols-[1fr_auto_1fr] md:items-end md:gap-10">
-          <Eyebrow className="md:pb-2">Empreendimentos</Eyebrow>
-
-          <div className="md:text-center">
-            <h2 className="t-h2 text-balance text-ink md:mx-auto md:max-w-[12em]">
-              Escolha viver com sofisticação e visão de futuro.
-            </h2>
-            <p className="t-body mt-4 max-w-[500px] leading-snug text-ink-soft md:mx-auto">
-              A excelência de uma casa Edile se revela em cada detalhe.
-            </p>
-          </div>
-
-          <div className="md:justify-self-end md:pb-2">
-            <SplitButton href="/empreendimentos" tone="gold" size="sm">
-              Ver todos
-            </SplitButton>
-          </div>
+        <Reveal className="mb-14 flex flex-col gap-4 md:mb-20">
+          <Eyebrow>Empreendimentos</Eyebrow>
+          <h2 className="t-h2 text-balance text-ink max-w-[16em]">
+            Escolha viver com sofisticação e visão de futuro.
+          </h2>
+          <p className="t-body mt-2 max-w-[480px] leading-snug text-ink-soft">
+            A excelência de uma casa Edile se revela em cada detalhe.
+          </p>
         </Reveal>
 
         {/* Carrossel de cards */}

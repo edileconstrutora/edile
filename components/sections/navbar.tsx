@@ -68,7 +68,11 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               <Link
                 key={l.label}
                 href={linkHref(l)}
-                className="flex items-center gap-1.5 text-lead font-medium text-paper/85 transition-colors hover:text-paper"
+                className={
+                  l.whatsapp
+                    ? "flex items-center gap-1.5 rounded-full bg-[#25D366]/20 px-4 py-1.5 text-lead font-medium text-[#25D366] transition-colors hover:bg-[#25D366]/30"
+                    : "flex items-center gap-1.5 text-lead font-medium text-paper/85 transition-colors hover:text-paper"
+                }
               >
                 {l.whatsapp && (
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4">
