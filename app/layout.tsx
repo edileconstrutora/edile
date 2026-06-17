@@ -15,7 +15,7 @@ const SITE_URL = "https://edile.com.br";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Edile Incorporadora e Construtora",
+    default: "Edile - Responsabilidade com o seu amanhã",
     template: "%s — EDILE",
   },
   description:

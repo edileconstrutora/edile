@@ -14,7 +14,7 @@ export function Eyebrow({
   tone?: "petrol" | "sage" | "muted" | "light";
 }) {
   const tones = {
-    petrol: "text-ink-soft",
+    petrol: "text-petrol-700",
     sage: "text-ink-soft",
     muted: "text-ink-faint",
     light: "text-paper/70",

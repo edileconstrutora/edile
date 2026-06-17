@@ -14,7 +14,7 @@ const navLinks: { label: string; hash?: string; href?: string; whatsapp?: boolea
   { label: "Empreendimentos", href: "/empreendimentos" },
   { label: "Sobre Nós", href: "/sobre" },
   { label: "Blog", href: "/blog" },
-  { label: "WhatsApp", href: "https://wa.me/5519999999999", whatsapp: true },
+  { label: "Atendimento", href: "https://wa.me/5519999999999", whatsapp: true },
 ];
 
 /**

@@ -75,11 +75,10 @@ export function Empreendimentos() {
 
           <div className="md:text-center">
             <h2 className="t-h2 text-balance text-ink md:mx-auto md:max-w-[8em]">
-              Onde morar é também investir
+              Escolha viver com sofisticação e visão de futuro.
             </h2>
             <p className="t-body mt-4 max-w-[500px] leading-snug text-ink-soft md:mx-auto">
-              Condomínios e loteamentos de alto padrão em regiões premium de
-              Indaiatuba — ativos pensados para crescer em valor.
+              A excelência de uma casa Edile se revela em cada detalhe.
             </p>
           </div>
 

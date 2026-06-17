@@ -198,8 +198,9 @@
   .t-eyebrow {
     font-size: var(--text-eyebrow);
     line-height: 1.24;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   /* Mobile (< md = 768px): títulos num tamanho fixo menor.
