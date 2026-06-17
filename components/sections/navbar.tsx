@@ -145,26 +145,28 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="https://wa.me/5519999999999"
-            onClick={() => setOpen(false)}
-            className="group/sb inline-flex items-stretch"
-          >
-            <span className="flex h-11 items-center whitespace-nowrap rounded-sm bg-[#5E7C7E] px-5 text-lead font-medium text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
-              Atendimento
-            </span>
-            <span className="flex size-11 items-center justify-center rounded-sm bg-[#5E7C7E] text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
-              {WA_ICON}
-            </span>
-          </Link>
-          <SplitButton
-            href={to("#contato")}
-            tone="white"
-            className="mt-8"
-            onClick={() => setOpen(false)}
-          >
-            Portal de clientes
-          </SplitButton>
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <Link
+              href="https://wa.me/5519999999999"
+              onClick={() => setOpen(false)}
+              className="group/sb inline-flex w-64 items-stretch"
+            >
+              <span className="flex h-11 flex-1 items-center justify-center whitespace-nowrap rounded-sm bg-[#5E7C7E] px-5 text-lead font-medium text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
+                Atendimento
+              </span>
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-sm bg-[#5E7C7E] text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
+                {WA_ICON}
+              </span>
+            </Link>
+            <SplitButton
+              href={to("#contato")}
+              tone="white"
+              className="w-64"
+              onClick={() => setOpen(false)}
+            >
+              <span className="flex-1 text-center">Portal de clientes</span>
+            </SplitButton>
+          </div>
         </nav>
       </div>
     </>

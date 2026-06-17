@@ -46,7 +46,7 @@ export function Sobre() {
                 real.
               </p>
               <SplitButton href="/sobre" tone="teal" size="sm">
-                Sobre a Edile
+                Saiba mais
               </SplitButton>
             </div>
           </Reveal>
