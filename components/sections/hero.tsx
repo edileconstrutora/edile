@@ -80,7 +80,7 @@ export function Hero() {
             </h1>
 
             <p className="mt-7 max-w-[30rem] text-balance text-body leading-normal text-paper/85 md:text-body-lg">
-              Residenciais exclusivos em Indaiatuba/SP: o privilégio de viver o extraordinário com quem você ama e a tranquilidade de um investimento sólido.
+              Residenciais exclusivos em Indaiatuba. O privilégio de viver o extraordinário com quem você ama, com a tranquilidade de um investimento sólido.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-6 md:mt-12 md:pl-12">
