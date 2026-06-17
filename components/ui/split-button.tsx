@@ -8,7 +8,7 @@ type Size = "sm" | "md";
 
 const tones: Record<Tone, { bg: string; text: string }> = {
   gold:  { bg: "bg-gold group-hover/sb:bg-gold-bright",           text: "text-ink" },
-  white: { bg: "bg-white group-hover/sb:bg-paper",                text: "text-ink" },
+  white: { bg: "bg-[#06151C] group-hover/sb:bg-[#0e2330]",       text: "text-paper" },
   teal:  { bg: "bg-[#5E7C7E] group-hover/sb:bg-[#4e6a6c]",       text: "text-paper" },
 };
 

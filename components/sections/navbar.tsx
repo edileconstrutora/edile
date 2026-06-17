@@ -148,14 +148,18 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
           <Link
             href="https://wa.me/5519999999999"
             onClick={() => setOpen(false)}
-            className="t-h3 flex items-center gap-2 transition-colors hover:text-ink-soft"
+            className="group/sb inline-flex items-stretch"
           >
-            {WA_ICON}
-            Atendimento
+            <span className="flex h-11 items-center whitespace-nowrap rounded-sm bg-[#5E7C7E] px-5 text-lead font-medium text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
+              Atendimento
+            </span>
+            <span className="flex size-11 items-center justify-center rounded-sm bg-[#5E7C7E] text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
+              {WA_ICON}
+            </span>
           </Link>
           <SplitButton
             href={to("#contato")}
-            tone="gold"
+            tone="white"
             className="mt-8"
             onClick={() => setOpen(false)}
           >

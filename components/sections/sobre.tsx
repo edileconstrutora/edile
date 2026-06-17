@@ -32,7 +32,7 @@ export function Sobre() {
           <Reveal delay={0.1} className="w-full flex-1 lg:max-w-[650px]">
             <SectionIntro
               eyebrow="Sobre Nós"
-              title="Mais do que construir, traduzimos o desejo de viver bem."
+              title="Sobre a Edile"
               titleClassName="max-w-[600px] text-balance"
             />
 
