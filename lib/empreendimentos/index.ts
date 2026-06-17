@@ -28,18 +28,21 @@ export type Empreendimento = {
   gallery: string[];
   /** Diferenciais/destaques listados na página de detalhe. */
   highlights: string[];
+  /** Sobrescreve o link padrão /empreendimentos/[slug] quando definido. */
+  href?: string;
 };
 
 export const empreendimentos: Empreendimento[] = [
   {
-    slug: "reserva-indaia",
+    slug: "helvetia-residence",
     type: "condominio",
-    name: "Reserva Indaiá",
+    name: "Helvétia Residence",
     image: "/images/emp-1.webp",
     description:
       "Condomínio fechado de alto padrão em região premium de Indaiatuba — a segurança e a liberdade de morar bem, com infraestrutura completa e valorização garantida.",
     status: "Em obras",
     location: "Indaiatuba, SP",
+    href: "/helvetiaresidence",
     gallery: ["/images/emp-1.webp", "/images/proposito-1.webp", "/images/why.webp"],
     highlights: [
       "Portaria e segurança 24 horas",

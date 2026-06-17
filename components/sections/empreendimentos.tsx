@@ -51,7 +51,7 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
               {item.description}
             </p>
             <Link
-              href={`/empreendimentos/${item.slug}`}
+              href={item.href ?? `/empreendimentos/${item.slug}`}
               className="inline-flex items-center gap-2.5 rounded-xs border border-paper/30 px-7 py-2.5 text-small text-paper transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ink"
             >
               Conhecer empreendimento

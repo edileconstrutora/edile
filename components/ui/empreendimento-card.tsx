@@ -24,11 +24,12 @@ export function EmpreendimentoCard({
   image,
   description,
   status,
+  href,
 }: Empreendimento) {
   const TypeIcon = typeIcons[type];
   return (
     <Link
-      href={`/empreendimentos/${slug}`}
+      href={href ?? `/empreendimentos/${slug}`}
       className="group flex h-full flex-col gap-5 rounded-xs bg-paper p-3 transition-colors duration-500 ease-[var(--ease-out-soft)] hover:bg-petrol-950"
     >
       <Chamfer corner="tr" size="3rem" className="aspect-[4/3] w-full">
