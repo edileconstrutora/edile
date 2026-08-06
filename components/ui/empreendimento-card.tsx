@@ -13,10 +13,6 @@ const typeIcons: Record<EmpreendimentoType, typeof Home> = {
   loteamento: Plots,
 };
 
-/**
- * Card de empreendimento (grade da página `/empreendimentos`): capa chanfrada +
- * (tipo · status) + nome + resumo + seta. Linka para `/empreendimentos/[slug]`.
- */
 export function EmpreendimentoCard({
   slug,
   type,
@@ -30,8 +26,9 @@ export function EmpreendimentoCard({
   return (
     <Link
       href={href ?? `/empreendimentos/${slug}`}
-      className="group flex h-full flex-col gap-5 rounded-xs bg-paper p-3 transition-colors duration-500 ease-[var(--ease-out-soft)] hover:bg-petrol-950"
+      className="group flex h-full flex-col gap-5 rounded-xs bg-paper p-3"
     >
+      {/* Imagem com overlay cinza claro no hover (substitui mudança de fundo) */}
       <Chamfer corner="tr" size="3rem" className="aspect-[4/3] w-full">
         <Image
           src={image}
@@ -40,21 +37,21 @@ export function EmpreendimentoCard({
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover transition-transform duration-500 ease-[var(--ease-out-soft)] group-hover:scale-[1.03]"
         />
+        <div className="absolute inset-0 bg-gray-200/30 opacity-0 transition-opacity duration-300 ease-[var(--ease-out-soft)] group-hover:opacity-100" />
       </Chamfer>
+
       <div className="flex flex-1 flex-col gap-3 px-2 pb-2">
-        <div className="flex items-center gap-2.5 text-small text-ink-soft transition-colors duration-500 group-hover:text-paper/70">
+        <div className="flex items-center gap-2.5 text-small text-ink-soft">
           <TypeIcon className="size-4" />
           <span>{typeLabel[type]}</span>
-          <span className="size-1.5 rounded-full bg-ink-faint/70 transition-colors duration-500 group-hover:bg-paper/40" />
+          <span className="size-1.5 rounded-full bg-ink-faint/70" />
           <span>{status}</span>
         </div>
         <div className="flex items-start justify-between gap-3">
-          <h3 className="t-h4 text-ink transition-colors duration-500 group-hover:text-paper">
-            {name}
-          </h3>
-          <ArrowUpRight className="mt-1 size-5 shrink-0 text-ink-faint transition-[transform,color] duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-paper" />
+          <h3 className="t-h4 text-ink">{name}</h3>
+          <ArrowUpRight className="mt-1 size-5 shrink-0 text-ink-faint transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </div>
-        <p className="t-body text-ink-soft transition-colors duration-500 group-hover:text-paper/75">
+        <p className="t-body text-ink-soft">
           <span className="line-clamp-2">{description}</span>
         </p>
       </div>

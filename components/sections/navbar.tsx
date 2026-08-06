@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
 import { SplitButton } from "@/components/ui/split-button";
-import { Menu, Close } from "@/components/ui/icons";
+import { Menu, Close, ArrowUpRight } from "@/components/ui/icons";
 
 const navLinks: { label: string; hash?: string; href?: string }[] = [
   { label: "Início", href: "/" },
@@ -109,7 +109,13 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               </span>
             </Link>
             <div className="hidden lg:block">
-              <SplitButton href={to("#contato")} tone="white" size="sm">
+              <SplitButton
+                href="https://cliente.edile.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                tone="white"
+                size="sm"
+              >
                 Portal do Cliente
               </SplitButton>
             </div>
@@ -166,30 +172,28 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
             ))}
           </div>
 
-          {/* Botões de ação */}
+          {/* Botões de ação — ghost outlined, brancos, mesma largura */}
           <div className="flex flex-col gap-3 px-6 pt-8">
             <Link
               href="https://wa.me/5519999999999"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="group/sb inline-flex w-full items-stretch"
+              className="flex h-12 w-full items-center justify-between rounded-sm border border-paper/50 px-5 text-lead font-medium text-paper transition-colors duration-200 hover:border-paper hover:bg-paper/10"
             >
-              <span className="flex h-12 flex-1 items-center justify-center whitespace-nowrap rounded-sm bg-[#5E7C7E] px-5 text-lead font-medium text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
-                Atendimento
-              </span>
-              <span className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-[#5E7C7E] text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
-                {WA_ICON}
-              </span>
+              <span>Atendimento</span>
+              {WA_ICON}
             </Link>
-            <SplitButton
-              href={to("#contato")}
-              tone="gold"
-              className="w-full"
+            <Link
+              href="https://cliente.edile.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
+              className="flex h-12 w-full items-center justify-between rounded-sm border border-paper/50 px-5 text-lead font-medium text-paper transition-colors duration-200 hover:border-paper hover:bg-paper/10"
             >
-              Portal do Cliente
-            </SplitButton>
+              <span>Portal do Cliente</span>
+              <ArrowUpRight className="size-5" />
+            </Link>
           </div>
 
           {/* Rodapé: redes sociais alinhadas com mesma margem */}
