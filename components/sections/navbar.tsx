@@ -52,9 +52,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,border-color] duration-500 ease-[var(--ease-out-soft)]",
-          solid || scrolled
-            ? "border-b border-paper/10 bg-petrol-950/80 backdrop-blur-xl backdrop-saturate-150"
-            : "border-b border-transparent bg-transparent"
+          "border-b border-paper/10 bg-petrol-950/80 backdrop-blur-xl backdrop-saturate-150"
         )}
       >
         <Container className="relative flex h-20 items-center justify-between text-paper">
@@ -94,7 +92,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               </span>
             </Link>
             <SplitButton href={to("#contato")} tone="white" size="sm">
-              Portal de clientes
+              Entrar
             </SplitButton>
           </div>
 
@@ -164,7 +162,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               className="w-64"
               onClick={() => setOpen(false)}
             >
-              <span className="flex-1 text-center">Portal de clientes</span>
+              <span className="flex-1 text-center">Entrar</span>
             </SplitButton>
           </div>
         </nav>

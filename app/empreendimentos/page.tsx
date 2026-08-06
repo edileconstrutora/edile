@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
-import { PageHero } from "@/components/ui/page-hero";
-import { ColumnLines } from "@/components/ui/column-lines";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { EmpreendimentoCard } from "@/components/ui/empreendimento-card";
 import { empreendimentos } from "@/lib/empreendimentos";
 
@@ -19,16 +19,29 @@ export const metadata: Metadata = {
 export default function EmpreendimentosPage() {
   return (
     <>
-      <Navbar solid />
-      <main className="relative overflow-hidden">
-        <div className="bg-mist">
-          <ColumnLines />
-          <PageHero
-            eyebrow="Empreendimentos"
-            title="Onde morar é também investir"
-            description="Condomínios e loteamentos de alto padrão em regiões premium de Indaiatuba — ativos pensados para crescer em valor."
+      <Navbar />
+      <main>
+        {/* Hero escuro — mesmo padrão do /sobre */}
+        <section className="relative flex min-h-[64svh] items-end overflow-hidden bg-petrol-950 md:min-h-[72svh]">
+          <Image
+            src="/images/hero.jpg"
+            alt="Empreendimentos de alto padrão da EDILE em Indaiatuba"
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="object-cover"
           />
-        </div>
+          <div className="absolute inset-0 bg-petrol-950/55" />
+          <Container className="relative z-10 pb-16 pt-40 md:pb-24 md:pt-48">
+            <Eyebrow tone="light">Empreendimentos</Eyebrow>
+            <h1 className="t-display mt-5 max-w-[900px] text-balance text-paper">
+              Onde morar é também investir.
+            </h1>
+          </Container>
+        </section>
+
+        {/* Grade de empreendimentos */}
         <Section className="bg-paper pt-14 md:pt-20">
           <Container>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">

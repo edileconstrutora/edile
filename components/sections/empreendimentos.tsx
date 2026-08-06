@@ -6,7 +6,6 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { Reveal } from "@/components/ui/reveal";
 import { Carousel } from "@/components/ui/carousel";
 import { Chamfer } from "@/components/ui/chamfer";
-import { IconBadge } from "@/components/ui/icon-badge";
 import { ArrowUpRight, Home, Plots } from "@/components/ui/icons";
 import {
   empreendimentos,
@@ -41,10 +40,6 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
         </div>
 
         <div className="flex flex-1 flex-col justify-between gap-8">
-          <IconBadge tone="gold">
-            <TypeIcon className="size-8" />
-          </IconBadge>
-
           <div className="flex flex-col items-start gap-6">
             <h3 className="t-h4 text-paper">{item.name}</h3>
             <p className="t-body max-w-[44rem] leading-normal text-paper/70">

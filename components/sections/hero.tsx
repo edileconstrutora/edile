@@ -39,15 +39,6 @@ export function Hero() {
         />
       </motion.div>
 
-      {/* Linhas verticais — container 1350px (apenas desktop) */}
-      <div className="pointer-events-none absolute inset-0 hidden md:block">
-        <Container className="relative h-full px-0">
-          <span className="absolute inset-y-0 left-0 w-px bg-paper/15" />
-          <span className="absolute inset-y-0 left-1/2 w-px bg-paper/15" />
-          <span className="absolute inset-y-0 right-0 w-px bg-paper/15" />
-        </Container>
-      </div>
-
       {/* Conteúdo — mobile: sobre a imagem (topo) · desktop: painel chanfrado na base-esquerda */}
       <div className="relative z-10 order-1 md:absolute md:inset-x-0 md:top-0 md:flex md:pt-36">
         <Container className="w-full md:px-0 lg:px-0">

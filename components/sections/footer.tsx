@@ -46,6 +46,8 @@ export function Footer() {
               <Link
                 href="https://instagram.com/edileconstrutora"
                 aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-paper/50 transition-colors hover:text-paper"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5">
@@ -55,6 +57,8 @@ export function Footer() {
               <Link
                 href="mailto:contato@edile.com.br"
                 aria-label="E-mail"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-paper/50 transition-colors hover:text-paper"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5">
@@ -96,6 +100,8 @@ export function Footer() {
                 <li>
                   <Link
                     href="https://instagram.com/edileconstrutora"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-small text-paper/70 transition-colors hover:text-paper"
                   >
                     @edileconstrutora
@@ -104,6 +110,8 @@ export function Footer() {
                 <li>
                   <Link
                     href="https://wa.me/5519999999999"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-small text-paper/70 transition-colors hover:text-paper"
                   >
                     Atendimento WhatsApp
