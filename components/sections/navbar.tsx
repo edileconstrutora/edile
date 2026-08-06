@@ -11,6 +11,7 @@ import { Menu, Close } from "@/components/ui/icons";
 
 // `href` = rota direta · `hash` = âncora de seção (vira "/#x" fora da home).
 const navLinks: { label: string; hash?: string; href?: string }[] = [
+  { label: "Início", href: "/" },
   { label: "Empreendimentos", href: "/empreendimentos" },
   { label: "Sobre a Edile", href: "/sobre" },
   { label: "Blog", href: "/blog" },
@@ -92,7 +93,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               </span>
             </Link>
             <SplitButton href={to("#contato")} tone="white" size="sm">
-              Entrar
+              Portal do Cliente
             </SplitButton>
           </div>
 
@@ -110,7 +111,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
       {/* Overlay de menu (mobile) */}
       <div
         className={cn(
-          "fixed inset-0 z-[60] flex flex-col bg-paper text-ink lg:hidden",
+          "fixed inset-0 z-[60] flex flex-col bg-petrol-950 text-paper lg:hidden",
           "transition-opacity duration-300 ease-[var(--ease-out-soft)]",
           open ? "visible opacity-100" : "invisible opacity-0"
         )}
@@ -138,7 +139,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               key={l.label}
               href={linkHref(l)}
               onClick={() => setOpen(false)}
-              className="t-h3 transition-colors hover:text-ink-soft"
+              className="t-h3 text-paper transition-colors hover:text-paper/70"
             >
               {l.label}
             </Link>
@@ -158,11 +159,11 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
             </Link>
             <SplitButton
               href={to("#contato")}
-              tone="white"
+              tone="gold"
               className="w-64"
               onClick={() => setOpen(false)}
             >
-              <span className="flex-1 text-center">Entrar</span>
+              Portal do Cliente
             </SplitButton>
           </div>
         </nav>
