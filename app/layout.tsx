@@ -90,6 +90,11 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${inter.variable} h-full antialiased`}
     >
+      <head>
+        <meta name="adopt-website-id" content="60972132-eb59-4286-8ad4-99fdee48c4a8" />
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script src="//tag.goadopt.io/injector.js?website_code=60972132-eb59-4286-8ad4-99fdee48c4a8" className="adopt-injector" />
+      </head>
       <body className="min-h-full flex flex-col bg-paper text-ink">
         <JsonLd />
         <SmoothScroll>{children}</SmoothScroll>
