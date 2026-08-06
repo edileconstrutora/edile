@@ -97,12 +97,12 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-paper text-ink">
         <JsonLd />
         <SmoothScroll>{children}</SmoothScroll>
-        <Script
-          src="//tag.goadopt.io/injector.js?website_code=60972132-eb59-4286-8ad4-99fdee48c4a8"
-          className="adopt-injector"
-          strategy="afterInteractive"
-        />
       </body>
+      <Script
+        src="https://tag.goadopt.io/injector.js?website_code=60972132-eb59-4286-8ad4-99fdee48c4a8"
+        className="adopt-injector"
+        strategy="beforeInteractive"
+      />
     </html>
   );
 }
