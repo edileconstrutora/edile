@@ -1,7 +1,7 @@
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
-import { SectionIntro } from "@/components/ui/section-intro";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { Chamfer } from "@/components/ui/chamfer";
 import { FadeCarousel } from "@/components/ui/fade-carousel";
 import { Stat } from "@/components/ui/stat";
@@ -18,25 +18,15 @@ export function Sobre() {
   return (
     <Section tone="paper" id="sobre">
       <Container>
-        <Reveal className="mb-12 flex flex-col items-center text-center md:mb-16">
-          <SectionIntro
-            align="center"
-            eyebrow="Por que a EDILE"
-            title={
-              <>
-                <span className="whitespace-nowrap">Responsabilidade em cada etapa,</span>{" "}
-                <span className="whitespace-nowrap">da fundação à entrega.</span>
-              </>
-            }
-            titleClassName="max-w-[640px] text-balance text-ink"
-          />
-          <p className="t-body mt-6 max-w-[560px] text-ink-soft">
+        <Reveal className="mb-14 flex flex-col gap-4 md:mb-20">
+          <Eyebrow>Sobre a Edile</Eyebrow>
+          <h2 className="t-h2 max-w-[16em] text-balance text-ink">
+            Responsabilidade em cada etapa, da fundação à entrega.
+          </h2>
+          <p className="t-body mt-2 max-w-[480px] leading-snug text-ink-soft">
             Fundada em Indaiatuba, a Edile incorpora e constrói condomínios e
             loteamentos de alto padrão com responsabilidade desde o primeiro
-            passo. Escolhemos localizações premium, garantimos base jurídica
-            sólida e entregamos engenharia superior — para que cada cliente
-            receba não apenas um imóvel, mas um patrimônio real que cresce com
-            o tempo.
+            passo — da escolha do terreno até a entrega das chaves.
           </p>
         </Reveal>
 

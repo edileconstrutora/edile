@@ -28,8 +28,27 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
       size="4rem"
       className="h-full bg-petrol-950 p-6"
     >
-      <div className="flex flex-col-reverse gap-7 md:flex-row md:gap-8">
-        <div className="relative aspect-[3/4] w-full overflow-hidden md:w-[340px] md:shrink-0">
+      <div className="flex flex-col gap-7 md:flex-row md:gap-8">
+        {/* Texto — topo no mobile (order-1), direita no desktop (md:order-2) */}
+        <div className="flex flex-1 flex-col items-start gap-4 md:order-2 md:justify-between">
+          <div className="flex flex-col items-start gap-4">
+            <h3 className="t-h4 text-paper">{item.name}</h3>
+            <p className="t-body max-w-[44rem] leading-normal text-paper/70">
+              {item.description}
+            </p>
+          </div>
+          {/* Botão visível apenas no desktop */}
+          <Link
+            href={item.href ?? `/empreendimentos/${item.slug}`}
+            className="hidden items-center gap-2.5 rounded-xs border border-paper/30 px-7 py-2.5 text-small text-paper transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ink md:inline-flex"
+          >
+            Conhecer empreendimento
+            <ArrowUpRight className="size-5" />
+          </Link>
+        </div>
+
+        {/* Imagem — meio no mobile (order-2), esquerda no desktop (md:order-1) */}
+        <div className="relative aspect-[3/4] w-full overflow-hidden md:order-1 md:w-[340px] md:shrink-0">
           <Image
             src={item.image}
             alt={item.name}
@@ -39,21 +58,14 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
           />
         </div>
 
-        <div className="flex flex-1 flex-col justify-between gap-8">
-          <div className="flex flex-col items-start gap-6">
-            <h3 className="t-h4 text-paper">{item.name}</h3>
-            <p className="t-body max-w-[44rem] leading-normal text-paper/70">
-              {item.description}
-            </p>
-            <Link
-              href={item.href ?? `/empreendimentos/${item.slug}`}
-              className="inline-flex items-center gap-2.5 rounded-xs border border-paper/30 px-7 py-2.5 text-small text-paper transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ink"
-            >
-              Conhecer empreendimento
-              <ArrowUpRight className="size-5" />
-            </Link>
-          </div>
-        </div>
+        {/* Botão visível apenas no mobile — aparece depois da imagem */}
+        <Link
+          href={item.href ?? `/empreendimentos/${item.slug}`}
+          className="inline-flex items-center gap-2.5 rounded-xs border border-paper/30 px-7 py-2.5 text-small text-paper transition-colors duration-300 hover:border-paper hover:bg-paper hover:text-ink md:hidden"
+        >
+          Conhecer empreendimento
+          <ArrowUpRight className="size-5" />
+        </Link>
       </div>
     </Chamfer>
   );
