@@ -18,12 +18,26 @@ export function Sobre() {
   return (
     <Section tone="paper" id="sobre">
       <Container>
-        <Reveal className="mb-12 md:mb-16">
+        <Reveal className="mb-12 flex flex-col items-center text-center md:mb-16">
           <SectionIntro
+            align="center"
             eyebrow="Por que a EDILE"
-            title="Responsabilidade em cada etapa, da fundação à entrega."
-            titleClassName="max-w-[520px] text-balance text-ink"
+            title={
+              <>
+                <span className="whitespace-nowrap">Responsabilidade em cada etapa,</span>{" "}
+                <span className="whitespace-nowrap">da fundação à entrega.</span>
+              </>
+            }
+            titleClassName="max-w-[640px] text-balance text-ink"
           />
+          <p className="t-body mt-6 max-w-[560px] text-ink-soft">
+            Fundada em Indaiatuba, a Edile incorpora e constrói condomínios e
+            loteamentos de alto padrão com responsabilidade desde o primeiro
+            passo. Escolhemos localizações premium, garantimos base jurídica
+            sólida e entregamos engenharia superior — para que cada cliente
+            receba não apenas um imóvel, mas um patrimônio real que cresce com
+            o tempo.
+          </p>
         </Reveal>
 
         <div className="flex flex-col gap-10 lg:flex-row lg:items-stretch lg:gap-[72px]">

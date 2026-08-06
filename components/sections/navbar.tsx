@@ -9,7 +9,6 @@ import { Logo } from "@/components/ui/logo";
 import { SplitButton } from "@/components/ui/split-button";
 import { Menu, Close } from "@/components/ui/icons";
 
-// `href` = rota direta · `hash` = âncora de seção (vira "/#x" fora da home).
 const navLinks: { label: string; hash?: string; href?: string }[] = [
   { label: "Início", href: "/" },
   { label: "Empreendimentos", href: "/empreendimentos" },
@@ -23,20 +22,25 @@ const WA_ICON = (
   </svg>
 );
 
-/**
- * `solid` força o fundo escuro sempre (use em páginas de fundo claro, onde
- * a navbar transparente ficaria ilegível). Na home (hero escuro) deixe sem.
- */
+const IG_ICON = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+  </svg>
+);
+
+const YT_ICON = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-5">
+    <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </svg>
+);
+
 export function Navbar({ solid = false }: { solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const onHome = pathname === "/";
 
-  // Âncoras funcionam a partir de qualquer página: na home usa "#x",
-  // fora dela usa "/#x" (volta pra home e rola até a seção).
   const to = (hash: string) => (onHome ? hash : `/${hash}`);
-  // Rota direta usa `href`; âncora usa `hash` (resolvida por `to`).
   const linkHref = (l: { hash?: string; href?: string }) =>
     l.href ?? to(l.hash ?? "#top");
   const homeHref = onHome ? "#top" : "/";
@@ -48,6 +52,12 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Bloqueia scroll do body quando menu mobile está aberto
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
     <>
       <header
@@ -56,8 +66,12 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
           "border-b border-paper/10 bg-petrol-950/80 backdrop-blur-xl backdrop-saturate-150"
         )}
       >
-        <Container className="relative flex h-20 items-center justify-between text-paper">
-          {/* Logo (esquerda) */}
+        {/*
+          Layout de 3 colunas via flexbox — sem absolute no nav,
+          eliminando colisão entre logo, links e CTAs em qualquer tamanho.
+        */}
+        <Container className="flex h-20 items-center gap-4 text-paper">
+          {/* Logo (esquerda — shrink-0 para não comprimir) */}
           <Link
             href={homeHref}
             aria-label="EDILE — início"
@@ -66,24 +80,26 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
             <Logo className="h-7 w-auto" />
           </Link>
 
-          {/* Links (centro, desktop) */}
-          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
+          {/* Links (centro — flex-1 com justify-center garante que nunca toca logo/CTA) */}
+          <nav className="hidden flex-1 items-center justify-center gap-8 lg:flex">
             {navLinks.map((l) => (
               <Link
                 key={l.label}
                 href={linkHref(l)}
-                className="text-lead font-medium text-paper/85 transition-colors hover:text-paper"
+                className="whitespace-nowrap text-lead font-medium text-paper/85 transition-colors hover:text-paper"
               >
                 {l.label}
               </Link>
             ))}
           </nav>
 
-          {/* CTAs (direita, desktop) */}
-          <div className="hidden items-center gap-3 lg:flex">
+          {/* CTAs (direita, desktop) + hambúrguer (mobile) — sempre no fim do flex */}
+          <div className="ml-auto flex items-center gap-3">
             <Link
               href="https://wa.me/5519999999999"
-              className="group/sb inline-flex items-stretch"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/sb hidden items-stretch lg:inline-flex"
             >
               <span className="flex h-11 items-center whitespace-nowrap rounded-sm bg-[#5E7C7E] px-5 text-lead font-medium text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
                 Atendimento
@@ -92,35 +108,37 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
                 {WA_ICON}
               </span>
             </Link>
-            <SplitButton href={to("#contato")} tone="white" size="sm">
-              Portal do Cliente
-            </SplitButton>
+            <div className="hidden lg:block">
+              <SplitButton href={to("#contato")} tone="white" size="sm">
+                Portal do Cliente
+              </SplitButton>
+            </div>
+            <button
+              onClick={() => setOpen(true)}
+              aria-label="Abrir menu"
+              className="flex size-10 items-center justify-center lg:hidden"
+            >
+              <Menu className="size-6" />
+            </button>
           </div>
-
-          {/* Hambúrguer (mobile) */}
-          <button
-            onClick={() => setOpen(true)}
-            aria-label="Abrir menu"
-            className="flex size-10 items-center justify-center lg:hidden"
-          >
-            <Menu className="size-6" />
-          </button>
         </Container>
       </header>
 
-      {/* Overlay de menu (mobile) */}
+      {/* Menu mobile — fundo petrol, links à esquerda, redes sociais no rodapé */}
       <div
         className={cn(
           "fixed inset-0 z-[60] flex flex-col bg-petrol-950 text-paper lg:hidden",
-          "transition-opacity duration-300 ease-[var(--ease-out-soft)]",
+          "transition-[opacity,visibility] duration-300 ease-[var(--ease-out-soft)]",
           open ? "visible opacity-100" : "invisible opacity-0"
         )}
       >
-        <Container className="flex h-20 shrink-0 items-center justify-between">
+        {/* Topo: logo + fechar */}
+        <Container className="flex h-20 shrink-0 items-center justify-between border-b border-paper/10">
           <Link
             href={homeHref}
             aria-label="EDILE — início"
             onClick={() => setOpen(false)}
+            className="text-paper"
           >
             <Logo className="h-7 w-auto" />
           </Link>
@@ -133,38 +151,74 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
           </button>
         </Container>
 
-        <nav className="flex flex-1 flex-col items-center justify-center gap-3">
-          {navLinks.map((l) => (
-            <Link
-              key={l.label}
-              href={linkHref(l)}
-              onClick={() => setOpen(false)}
-              className="t-h3 text-paper transition-colors hover:text-paper/70"
-            >
-              {l.label}
-            </Link>
-          ))}
-          <div className="mt-8 flex flex-col items-center gap-3">
+        {/* Links — alinhados à esquerda com mesma margem dos botões */}
+        <nav className="flex flex-1 flex-col overflow-y-auto">
+          <div className="flex flex-col">
+            {navLinks.map((l) => (
+              <Link
+                key={l.label}
+                href={linkHref(l)}
+                onClick={() => setOpen(false)}
+                className="border-b border-paper/10 px-6 py-5 text-[1.75rem] font-[440] tracking-[-0.045em] text-paper transition-colors hover:text-paper/70"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Botões de ação */}
+          <div className="flex flex-col gap-3 px-6 pt-8">
             <Link
               href="https://wa.me/5519999999999"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="group/sb inline-flex w-64 items-stretch"
+              className="group/sb inline-flex w-full items-stretch"
             >
-              <span className="flex h-11 flex-1 items-center justify-center whitespace-nowrap rounded-sm bg-[#5E7C7E] px-5 text-lead font-medium text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
+              <span className="flex h-12 flex-1 items-center justify-center whitespace-nowrap rounded-sm bg-[#5E7C7E] px-5 text-lead font-medium text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
                 Atendimento
               </span>
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-sm bg-[#5E7C7E] text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-sm bg-[#5E7C7E] text-paper transition-colors duration-300 group-hover/sb:bg-[#4e6a6c]">
                 {WA_ICON}
               </span>
             </Link>
             <SplitButton
               href={to("#contato")}
               tone="gold"
-              className="w-64"
+              className="w-full"
               onClick={() => setOpen(false)}
             >
               Portal do Cliente
             </SplitButton>
+          </div>
+
+          {/* Rodapé: redes sociais alinhadas com mesma margem */}
+          <div className="mt-auto border-t border-paper/10 px-6 py-6">
+            <p className="mb-4 text-small font-semibold uppercase tracking-widest text-paper/40">
+              Siga a Edile
+            </p>
+            <div className="flex items-center gap-5">
+              <Link
+                href="https://instagram.com/edileconstrutora"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                aria-label="Instagram"
+                className="text-paper/60 transition-colors hover:text-paper"
+              >
+                {IG_ICON}
+              </Link>
+              <Link
+                href="https://youtube.com/@edileconstrutora"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                aria-label="YouTube"
+                className="text-paper/60 transition-colors hover:text-paper"
+              >
+                {YT_ICON}
+              </Link>
+            </div>
           </div>
         </nav>
       </div>

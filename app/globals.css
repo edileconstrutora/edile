@@ -203,6 +203,17 @@
     text-transform: uppercase;
   }
 
+  /* Impede palavras longas de vazar o container em qualquer tamanho de tela. */
+  .t-display,
+  .t-display-lg,
+  .t-h2,
+  .t-h3,
+  .t-h4,
+  .t-h5 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
   /* Mobile (< md = 768px): títulos num tamanho fixo menor.
      No desktop os títulos são fixos (tokens acima) — não escalam com a largura. */
   @media (max-width: 47.999rem) {
@@ -213,7 +224,10 @@
       font-size: 2.75rem; /* 44px */
     }
     .t-h2 {
-      font-size: 2.5rem; /* 40px */
+      font-size: 2.25rem; /* 36px */
+    }
+    .t-h3 {
+      font-size: 1.5rem; /* 24px */
     }
   }
 }

@@ -5,7 +5,6 @@ import { SobreHero } from "@/components/sections/sobre/hero";
 import { SobrePurpose } from "@/components/sections/sobre/purpose";
 import { SobreApproach } from "@/components/sections/sobre/approach";
 import { SobreBeliefs } from "@/components/sections/sobre/beliefs";
-import { SobreTeam } from "@/components/sections/sobre/team";
 
 export const metadata: Metadata = {
   title: "Sobre Nós",
@@ -17,14 +16,12 @@ export const metadata: Metadata = {
 export default function SobrePage() {
   return (
     <>
-      {/* Navbar transparente sobre o hero escuro (como na home) */}
       <Navbar />
       <main>
         <SobreHero />
         <SobrePurpose />
         <SobreApproach />
         <SobreBeliefs />
-        <SobreTeam />
       </main>
       <Footer />
     </>
