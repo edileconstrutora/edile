@@ -110,7 +110,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
             </Link>
             <div className="hidden lg:block">
               <SplitButton
-                href="https://cliente.edile.com.br"
+                href="https://admin.edile.com.br/"
                 target="_blank"
                 rel="noopener noreferrer"
                 tone="white"
@@ -185,7 +185,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
               {WA_ICON}
             </Link>
             <Link
-              href="https://cliente.edile.com.br"
+              href="https://admin.edile.com.br/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
