@@ -103,32 +103,20 @@ export default function HelvetiaResidencePage() {
             HERO SECTION — Inspired by Danube Dubai Inquiry reference design
            ========================================================================= */}
         <section className="relative min-h-[92svh] overflow-hidden bg-[#3a4124] pt-10 pb-16 md:pt-14 md:pb-24">
-          {/* Background image & gradient overlays matching reference dark olive tone */}
-          <Image
-            src="/images/edile-hrbg.jpeg"
-            alt="Helvétia Residence — Empreendimento Edile"
-            fill
-            priority
-            quality={92}
-            sizes="100vw"
-            className="object-cover opacity-20 mix-blend-overlay z-0"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#2a301a] via-[#3a4124]/90 to-[#2a301a]/85 z-0" />
-
-          {/* Right 50% Translucent Tree Image (Behind Form Box) */}
-          <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 overflow-hidden pointer-events-none z-0">
+          {/* Full-width subtle Tree background image (predominantly green, no seam/transition line) */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
             <Image
               src="/images/hr-hero-tree.jpg"
               alt="Helvétia Residence Paisagismo"
               fill
               priority
-              quality={95}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover opacity-60 md:opacity-75"
+              quality={90}
+              sizes="100vw"
+              className="object-cover object-right opacity-20 md:opacity-25"
             />
-            {/* Smooth gradient overlays to blend the tree image smoothly into the olive background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#3a4124] via-[#3a4124]/30 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#2a301a] via-transparent to-[#2a301a]/60" />
+            {/* Soft green overlays to ensure complete green tone & maximum text legibility on mobile/desktop */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#3a4124] via-[#3a4124]/85 to-[#3a4124]/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#2a301a] via-[#3a4124]/40 to-[#2a301a]/80" />
           </div>
 
           <Container className="relative z-10">
@@ -147,23 +135,23 @@ export default function HelvetiaResidencePage() {
                   />
                 </div>
 
-                <p className="t-body-lg text-paper/90 max-w-[560px] leading-relaxed">
-                  O mais exclusivo condomínio fechado de Indaiatuba. Lotes de alto padrão com fiação 100% subterrânea, lazer estilo resort e segurança de nível internacional.
+                <p className="t-body-lg text-paper/95 max-w-[560px] leading-relaxed">
+                  O mais exclusivo condomínio fechado de Indaiatuba. Lotes e casas de alto padrão com fiação 100% subterrânea, lazer estilo resort e segurança de nível internacional.
                 </p>
 
                 {/* Highlights Bullet List */}
                 <div className="mt-8 space-y-3.5">
                   {[
-                    "Lotes residenciais de 500m² a 1.200m² com topografia privilegiada",
-                    "Rede elétrica e de dados inteiramente subterrâneas",
-                    "Clube privativo com quadras de tênis em saibro, spa e piscinas",
-                    "Localização nobre ao lado do Helvetia Riding Center e a 5 min de Viracopos",
+                    "Casas de alto padrão de 250m² a 300m² com topografia privilegiada",
+                    "Rede elétrica e dados inteiramente subterrâneas",
+                    "Área privativa com quadra de tênis, academia e piscina",
+                    "Localização nobre e a 15 minutos de Viracopos",
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className="mt-1 flex size-5 shrink-0 items-center justify-center rounded-full bg-[#c9ac8b]/30 text-[#f5ebd9]">
                         <CheckCircle className="size-3.5" />
                       </div>
-                      <span className="t-body text-paper/90">{item}</span>
+                      <span className="t-body text-paper/95 font-medium">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -171,7 +159,7 @@ export default function HelvetiaResidencePage() {
                 {/* Social Proof Stack */}
                 <div className="mt-10 pt-8 border-t border-paper/15 flex flex-wrap items-center gap-4">
                   <AvatarStack ring="petrol" />
-                  <div className="text-small text-paper/80">
+                  <div className="text-small text-paper/85">
                     <strong className="text-paper font-semibold block">+120 famílias e investidores</strong>
                     já garantiram cota de atendimento VIP
                   </div>
@@ -196,8 +184,8 @@ export default function HelvetiaResidencePage() {
           <Container>
             <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8 items-center justify-between">
               <Stat
-                value="500m²"
-                label="Área dos lotes a partir de"
+                value="250m²"
+                label="Área das casas a partir de"
                 tone="dark"
               />
               <Stat
@@ -206,7 +194,7 @@ export default function HelvetiaResidencePage() {
                 tone="dark"
               />
               <Stat
-                value="5 min"
+                value="15 min"
                 label="Do Aeroporto de Viracopos"
                 tone="dark"
               />
