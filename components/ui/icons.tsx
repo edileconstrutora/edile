@@ -196,3 +196,75 @@ export function Check(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function CheckCircle(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
+export function ShieldCheck(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <path d="M12 3.25 19 5.75v5.5c0 4.4-3 6.9-7 8.25-4-1.35-7-3.85-7-8.25v-5.5L12 3.25Z" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
+export function PhoneCall(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+export function Zap(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+    </svg>
+  );
+}
+
+export function Trees(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <path d="M10 10v.5A3.5 3.5 0 0 1 6.5 14H6a3 3 0 0 0-3 3v2a1 1 0 0 0 1 1h6" />
+      <path d="M14 6.5A3.5 3.5 0 0 1 17.5 10H18a3 3 0 0 1 3 3v2a1 1 0 0 1-1 1h-6" />
+      <path d="M12 2v20" />
+    </svg>
+  );
+}
+
+export function Compass(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <circle cx="12" cy="12" r="10" />
+      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+    </svg>
+  );
+}
+
+export function MapPin(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+export function Clock(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...glyph} {...props}>
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  );
+}
+
