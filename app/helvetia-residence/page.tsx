@@ -100,10 +100,10 @@ export default function HelvetiaResidencePage() {
     <>
       <main className="relative overflow-hidden bg-paper">
         {/* =========================================================================
-            HERO SECTION — High-converting template inspired by Danube Dubai Inquiry
+            HERO SECTION — Inspired by Danube Dubai Inquiry reference design
            ========================================================================= */}
-        <section className="relative min-h-[92svh] overflow-hidden bg-petrol-950 pt-16 pb-16 md:pt-24 md:pb-24">
-          {/* Background image & gradient overlays */}
+        <section className="relative min-h-[92svh] overflow-hidden bg-[#3a4124] pt-10 pb-16 md:pt-14 md:pb-24">
+          {/* Background image & gradient overlays matching reference dark olive tone */}
           <Image
             src="/images/edile-hrbg.jpeg"
             alt="Helvétia Residence — Empreendimento Edile"
@@ -111,24 +111,27 @@ export default function HelvetiaResidencePage() {
             priority
             quality={92}
             sizes="100vw"
-            className="object-cover opacity-35"
+            className="object-cover opacity-25 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-petrol-950 via-petrol-950/70 to-petrol-950/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2a301a] via-[#3a4124]/90 to-[#2a301a]/85" />
 
           <Container className="relative z-10">
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-              {/* Left Column: Value Prop & Copy */}
+              {/* Left Column: Official Logo & Copy */}
               <Reveal className="flex flex-col text-paper">
-                <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3.5 py-1 text-micro font-medium text-gold backdrop-blur-sm self-start">
-                  <span className="size-1.5 rounded-full bg-gold animate-pulse" />
-                  <span>CADASTRO PARA FASE DE LANÇAMENTO</span>
+                {/* Logotipo Helvétia Residence */}
+                <div className="mb-6">
+                  <Image
+                    src="/images/logo-hr.png"
+                    alt="Helvétia Residence Logo"
+                    width={320}
+                    height={100}
+                    priority
+                    className="h-16 md:h-20 w-auto object-contain drop-shadow-md"
+                  />
                 </div>
 
-                <h1 className="t-display-lg mt-5 font-normal text-balance text-paper leading-[1.08]">
-                  Helvétia Residence
-                </h1>
-
-                <p className="t-body-lg mt-4 text-paper/85 max-w-[560px] leading-relaxed">
+                <p className="t-body-lg text-paper/90 max-w-[560px] leading-relaxed">
                   O mais exclusivo condomínio fechado de Indaiatuba. Lotes de alto padrão com fiação 100% subterrânea, lazer estilo resort e segurança de nível internacional.
                 </p>
 
@@ -141,7 +144,7 @@ export default function HelvetiaResidencePage() {
                     "Localização nobre ao lado do Helvetia Riding Center e a 5 min de Viracopos",
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <div className="mt-1 flex size-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold">
+                      <div className="mt-1 flex size-5 shrink-0 items-center justify-center rounded-full bg-[#c9ac8b]/30 text-[#f5ebd9]">
                         <CheckCircle className="size-3.5" />
                       </div>
                       <span className="t-body text-paper/90">{item}</span>
@@ -152,18 +155,18 @@ export default function HelvetiaResidencePage() {
                 {/* Social Proof Stack */}
                 <div className="mt-10 pt-8 border-t border-paper/15 flex flex-wrap items-center gap-4">
                   <AvatarStack ring="petrol" />
-                  <div className="text-small text-paper/75">
+                  <div className="text-small text-paper/80">
                     <strong className="text-paper font-semibold block">+120 famílias e investidores</strong>
                     já garantiram cota de atendimento VIP
                   </div>
                 </div>
               </Reveal>
 
-              {/* Right Column: Lead Form */}
+              {/* Right Column: Lead Form (White Box with light grey inputs) */}
               <Reveal delay={0.15} className="w-full">
                 <HelvetiaLeadForm
-                  title="Receba a Apresentação Exclusiva & Tabela VIP"
-                  subtitle="Preencha os dados abaixo para receber o book em PDF, plantas técnicas e condições facilitadas de lançamento."
+                  title="Solicite Informações VIP"
+                  subtitle="Preencha os dados abaixo para receber o book em PDF, plantas e tabela exclusiva de lançamento."
                 />
               </Reveal>
             </div>
@@ -171,30 +174,30 @@ export default function HelvetiaResidencePage() {
         </section>
 
         {/* =========================================================================
-            STATS & INDICATORS BAR
+            STATS & INDICATORS BAR — Second Scroll with #c9ac8b background
            ========================================================================= */}
-        <section className="border-y border-paper/10 bg-petrol-900 text-paper py-10 md:py-14">
+        <section className="border-y border-[#b89977] bg-[#c9ac8b] text-[#122e39] py-10 md:py-14 shadow-md">
           <Container>
             <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
               <Stat
                 value="500m²"
                 label="Área dos lotes a partir de"
-                tone="light"
+                tone="dark"
               />
               <Stat
                 value="100%"
                 label="Fiação 100% subterrânea"
-                tone="light"
+                tone="dark"
               />
               <Stat
                 value="5 min"
                 label="Do Aeroporto de Viracopos"
-                tone="light"
+                tone="dark"
               />
               <Stat
                 value="24h"
                 label="Segurança & Portaria blindada"
-                tone="light"
+                tone="dark"
               />
             </div>
           </Container>
