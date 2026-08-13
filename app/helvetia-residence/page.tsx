@@ -136,7 +136,7 @@ export default function HelvetiaResidencePage() {
                 </div>
 
                 <p className="t-body-lg text-paper/95 max-w-[560px] leading-relaxed">
-                  O mais exclusivo condomínio fechado de Indaiatuba. Lotes e casas de alto padrão com fiação 100% subterrânea, lazer estilo resort e segurança de nível internacional.
+                  O mais exclusivo condomínio fechado de Indaiatuba. Casas de alto padrão com fiação 100% subterrânea, lazer estilo resort e segurança de nível internacional.
                 </p>
 
                 {/* Highlights Bullet List */}
@@ -156,12 +156,12 @@ export default function HelvetiaResidencePage() {
                   ))}
                 </div>
 
-                {/* Social Proof Stack */}
-                <div className="mt-10 pt-8 border-t border-paper/15 flex flex-wrap items-center gap-4">
+                {/* Social Proof Stack (Desktop: inside left column) */}
+                <div className="hidden lg:flex mt-10 pt-8 border-t border-paper/15 items-center gap-4">
                   <AvatarStack ring="petrol" />
                   <div className="text-small text-paper/85">
-                    <strong className="text-paper font-semibold block">+120 famílias e investidores</strong>
-                    já garantiram cota de atendimento VIP
+                    <strong className="text-paper font-semibold block">Famílias e Investidores que confiam na Edile</strong>
+                    +120 famílias e investidores já garantiram cota de atendimento VIP
                   </div>
                 </div>
               </Reveal>
@@ -172,6 +172,15 @@ export default function HelvetiaResidencePage() {
                   title="Solicite Informações VIP"
                   subtitle="Preencha os dados abaixo para receber o book em PDF, plantas e tabela exclusiva de lançamento."
                 />
+
+                {/* Social Proof Stack (Mobile: below form) */}
+                <div className="flex lg:hidden mt-6 items-center justify-center gap-3.5 rounded-sm bg-[#2a301a]/80 border border-paper/15 p-4 text-center backdrop-blur-sm">
+                  <AvatarStack ring="petrol" />
+                  <div className="text-small text-paper/90 text-left">
+                    <strong className="text-paper font-semibold block text-xs">Famílias e Investidores que confiam na Edile</strong>
+                    <span className="text-xs text-paper/80">+120 famílias já garantiram cota VIP</span>
+                  </div>
+                </div>
               </Reveal>
             </div>
           </Container>
