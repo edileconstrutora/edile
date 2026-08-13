@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
@@ -99,12 +98,11 @@ const LOCALIZACAO_PONTOS = [
 export default function HelvetiaResidencePage() {
   return (
     <>
-      <Navbar />
       <main className="relative overflow-hidden bg-paper">
         {/* =========================================================================
             HERO SECTION — High-converting template inspired by Danube Dubai Inquiry
            ========================================================================= */}
-        <section className="relative min-h-[92svh] overflow-hidden bg-petrol-950 pt-28 pb-16 md:pt-36 md:pb-24">
+        <section className="relative min-h-[92svh] overflow-hidden bg-petrol-950 pt-16 pb-16 md:pt-24 md:pb-24">
           {/* Background image & gradient overlays */}
           <Image
             src="/images/edile-hrbg.jpeg"
