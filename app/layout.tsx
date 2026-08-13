@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { JsonLd } from "@/components/seo/json-ld";
 import "./globals.css";
@@ -45,9 +44,6 @@ export const metadata: Metadata = {
     "valorização patrimonial",
   ],
   category: "real estate",
-  other: {
-    "adopt-website-id": "60972132-eb59-4286-8ad4-99fdee48c4a8",
-  },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -98,11 +94,6 @@ export default function RootLayout({
         <JsonLd />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
-      <Script
-        src="https://tag.goadopt.io/injector.js?website_code=60972132-eb59-4286-8ad4-99fdee48c4a8"
-        className="adopt-injector"
-        strategy="beforeInteractive"
-      />
     </html>
   );
 }
