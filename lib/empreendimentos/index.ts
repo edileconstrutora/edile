@@ -37,12 +37,12 @@ export const empreendimentos: Empreendimento[] = [
     slug: "helvetia-residence",
     type: "condominio",
     name: "Helvétia Residence",
-    image: "/images/emp-1.webp",
+    image: "/images/emp-helvetia-residence.webp",
     description:
       "Condomínio fechado de alto padrão em região premium de Indaiatuba — a segurança e a liberdade de morar bem, com infraestrutura completa e valorização garantida.",
     status: "Em obras",
     location: "Indaiatuba, SP",
-    href: "/helvetiaresidence",
+    href: "https://www.edile.com.br/helvetia-residence",
     gallery: ["/images/emp-1.webp", "/images/proposito-1.webp", "/images/why.webp"],
     highlights: [
       "Portaria e segurança 24 horas",
@@ -54,8 +54,8 @@ export const empreendimentos: Empreendimento[] = [
   {
     slug: "terra-nobre",
     type: "loteamento",
-    name: "Terra Nobre",
-    image: "/images/emp-2.webp",
+    name: "Ville Saint Clair",
+    image: "/images/emp-ville-saint-clair.webp",
     description:
       "Loteamento de lotes amplos em localização estratégica, pronto para receber o seu projeto — base jurídica impecável e potencial de valorização a longo prazo.",
     status: "Lançamento",
