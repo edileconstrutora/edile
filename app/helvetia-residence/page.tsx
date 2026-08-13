@@ -89,10 +89,9 @@ const TIPOLOGIAS = [
 ];
 
 const LOCALIZACAO_PONTOS = [
-  { tempo: "3 min", local: "Helvetia Riding Center & Polo Club", desc: "Tradição equestre internacional" },
-  { tempo: "5 min", local: "Aeroporto Int. de Viracopos", desc: "Acesso rápido sem trânsito" },
-  { tempo: "8 min", local: "Parque Ecológico de Indaiatuba", desc: "Lazer e qualidade de vida" },
-  { tempo: "15 min", local: "Campinas (Via Santos Dumont)", desc: "Conexão rápida com os principais polos" },
+  { tempo: "15 min", local: "Aeroporto Int. de Viracopos", desc: "Acesso rápido sem trânsito" },
+  { tempo: "20 min", local: "Campinas (Via Santos Dumont)", desc: "Conexão rápida com os principais polos" },
+  { tempo: "3 min", local: "Parque Ecológico de Indaiatuba", desc: "Lazer, esportes e qualidade de vida" },
 ];
 
 export default function HelvetiaResidencePage() {
@@ -142,9 +141,9 @@ export default function HelvetiaResidencePage() {
                 {/* Highlights Bullet List */}
                 <div className="mt-8 space-y-3.5">
                   {[
-                    "Casas de alto padrão de 250m² a 300m² com topografia privilegiada",
+                    "Casas de alto padrão de 250m² a 300m²",
                     "Rede elétrica e dados inteiramente subterrâneas",
-                    "Área de lazer com quadra de tênis, academia e piscina",
+                    "Área de lazer com quadra de tênis, academia e espaço gourmet",
                     "Localização nobre e a 15 minutos de Viracopos",
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
@@ -375,6 +374,7 @@ export default function HelvetiaResidencePage() {
                 eyebrowTone="light"
                 title="A conveniência de estar perto de tudo, cercado por tranquilidade."
                 description="Indaiatuba é eleita constantemente uma das cidades mais seguras e com melhor qualidade de vida do Brasil."
+                descriptionClassName="text-[#ffffff]"
               />
             </Reveal>
 
