@@ -39,6 +39,7 @@ export const empreendimentos: Empreendimento[] = [
     slug: "helvetia-residence",
     type: "condominio",
     name: "Helvétia Residence",
+    subtitle: "Condomínio de casas",
     image: "/images/emp-helvetia-residence.webp",
     description:
       "Condomínio fechado de alto padrão em região premium de Indaiatuba: a segurança e a liberdade de morar bem, com infraestrutura completa e valorização garantida.",
@@ -57,6 +58,7 @@ export const empreendimentos: Empreendimento[] = [
     slug: "terra-nobre",
     type: "loteamento",
     name: "Ville Saint Clair",
+    subtitle: "Condomínio de casas",
     image: "/images/emp-ville-saint-clair.webp",
     description:
       "Loteamento de lotes amplos em localização estratégica, pronto para receber o seu projeto, com base jurídica impecável e potencial de valorização a longo prazo.",
@@ -91,8 +93,9 @@ export const empreendimentos: Empreendimento[] = [
   {
     slug: "bosque-sereno",
     type: "condominio",
-    name: "Bosque Sereno",
-    image: "/images/emp-4.webp",
+    name: "Jardins di Roma",
+    subtitle: "Unidade Residencial",
+    image: "/images/emp-jardins-di-roma.webp",
     description:
       "Casas integradas ao verde, com amplos panos de vidro e privacidade total: sofisticação que se traduz em qualidade de vida e patrimônio.",
     status: "Em obras",
