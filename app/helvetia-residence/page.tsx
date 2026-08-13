@@ -169,15 +169,17 @@ export default function HelvetiaResidencePage() {
               {/* Right Column: Lead Form (White Box with light grey inputs) */}
               <Reveal delay={0.15} className="w-full">
                 <HelvetiaLeadForm
-                  title="Solicite Informações VIP"
+                  title="Conheça sua nova casa"
                   subtitle="Preencha os dados abaixo para receber o book em PDF, plantas e tabela exclusiva de lançamento."
                 />
 
-                {/* Social Proof Stack (Mobile: below form, right-aligned with white text) */}
-                <div className="flex lg:hidden mt-6 items-center justify-end gap-3.5 rounded-sm bg-[#1b2010]/90 border border-white/20 p-4 text-right backdrop-blur-md ml-auto max-w-sm">
-                  <div className="text-small text-white text-right">
-                    <strong className="text-white font-semibold block text-xs">Famílias e Investidores que confiam na Edile</strong>
-                    <span className="text-xs text-white/90">+120 famílias já garantiram cota VIP</span>
+                {/* Social Proof Stack (Mobile: below form, right-aligned, 4 lines of white text) */}
+                <div className="flex lg:hidden mt-6 items-center justify-end gap-3.5 rounded-sm bg-[#1b2010]/95 border border-white/20 p-3.5 text-right backdrop-blur-md ml-auto max-w-[290px]">
+                  <div className="text-xs text-white text-right leading-tight">
+                    <span className="font-semibold block text-white">Famílias e Investidores</span>
+                    <span className="font-semibold block text-white">que confiam na Edile</span>
+                    <span className="block text-white mt-1">+120 famílias já garantiram</span>
+                    <span className="block text-white">sua cota VIP</span>
                   </div>
                   <AvatarStack ring="petrol" />
                 </div>
@@ -234,7 +236,7 @@ export default function HelvetiaResidencePage() {
                 <Chamfer corner="tr" size="3.5rem" className="aspect-[4/3] w-full shadow-lg">
                   <Image
                     src="/images/hr-1.jpeg"
-                    alt="Helvétia Residence — Projeto urbanístico de alto padrão"
+                    alt="Helvétia Residence Projeto urbanístico de alto padrão"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
@@ -251,7 +253,7 @@ export default function HelvetiaResidencePage() {
                     Localizado em uma das regiões mais valorizadas de Indaiatuba, o Helvétia Residence harmoniza um projeto paisagístico autoral com alta tecnologia construtiva. Cada casa foi posicionada para otimizar a ventilação natural e a iluminação solar.
                   </p>
                   <p className="t-body leading-relaxed text-ink-soft">
-                    A Edile Incorporadora conduz todas as etapas — do rigor na escolha do terreno até a entrega das chaves — com método, transparência e responsabilidade jurídica absoluta.
+                    A Edile Incorporadora conduz todas as etapas, do rigor na escolha do terreno até a entrega das chaves, com método, transparência e responsabilidade jurídica absoluta.
                   </p>
 
                   <div className="pt-4 flex items-center gap-4">
@@ -394,7 +396,7 @@ export default function HelvetiaResidencePage() {
                 <Chamfer corner="tr" size="3rem" className="aspect-[4/3] w-full">
                   <Image
                     src="/images/proposito-1.webp"
-                    alt="Helvétia Residence — Localização privilegiada em Indaiatuba"
+                    alt="Helvétia Residence Localização privilegiada em Indaiatuba"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"

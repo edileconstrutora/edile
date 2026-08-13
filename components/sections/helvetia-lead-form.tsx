@@ -13,7 +13,7 @@ interface HelvetiaLeadFormProps {
 
 export function HelvetiaLeadForm({
   className,
-  title = "Solicite Informações VIP",
+  title = "Conheça sua nova casa",
   subtitle = "Preencha abaixo para receber o book em PDF, plantas e a tabela de lançamento diretamente no seu WhatsApp.",
   sourceLocation = "Helvetia Residence Landing Page",
 }: HelvetiaLeadFormProps) {
