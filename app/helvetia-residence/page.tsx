@@ -173,15 +173,19 @@ export default function HelvetiaResidencePage() {
                   subtitle="Preencha os dados abaixo para receber o book em PDF, plantas e tabela exclusiva de lançamento."
                 />
 
-                {/* Social Proof Box (Mobile: full width matching form, clean white #FFFFFF text) */}
-                <div className="flex lg:hidden mt-5 w-full items-center justify-between gap-4 rounded-md bg-[#181d0e]/95 border border-white/25 p-4 text-right backdrop-blur-md shadow-xl">
-                  <AvatarStack ring="petrol" label={<></>} className="shrink-0" />
-                  <div className="text-right text-white">
-                    <strong className="block text-xs sm:text-sm font-semibold text-[#FFFFFF] leading-snug">
+                {/* Social Proof Stack (Mobile: below form, exact design matching user reference image) */}
+                <div className="flex lg:hidden mt-6 pt-5 border-t border-white/15 items-center justify-between gap-3 w-full text-white">
+                  <AvatarStack
+                    ring="petrol"
+                    labelClassName="text-white text-xs leading-tight font-normal max-w-[110px]"
+                    className="shrink-0"
+                  />
+                  <div className="text-right text-white max-w-[210px] sm:max-w-[260px]">
+                    <strong className="text-white font-bold block text-xs sm:text-sm leading-snug">
                       Famílias e Investidores que confiam na Edile
                     </strong>
-                    <span className="block text-xs text-[#FFFFFF] mt-1">
-                      +120 famílias já garantiram cota VIP
+                    <span className="block text-xs text-white/90 leading-snug mt-1">
+                      +120 famílias e investidores já garantiram cota de atendimento VIP
                     </span>
                   </div>
                 </div>
