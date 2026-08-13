@@ -73,24 +73,6 @@ export const empreendimentos: Empreendimento[] = [
     ],
   },
   {
-    slug: "villa-toscana",
-    type: "condominio",
-    name: "Helvétia Park",
-    subtitle: "Unidade Residencial",
-    image: "/images/emp-helvetia-park.webp",
-    description:
-      "Residências de linhas contemporâneas e engenharia inteligente, planejadas sob critérios severos de sustentabilidade e conforto para cada fase da vida.",
-    status: "Pronto para morar",
-    location: "Indaiatuba, SP",
-    gallery: ["/images/emp-3.webp", "/images/proposito-3.webp", "/images/why.webp"],
-    highlights: [
-      "Arquitetura contemporânea",
-      "Engenharia inteligente e sustentável",
-      "Acabamento de alto padrão",
-      "Pronto para morar",
-    ],
-  },
-  {
     slug: "bosque-sereno",
     type: "condominio",
     name: "Jardins di Roma",
@@ -106,6 +88,24 @@ export const empreendimentos: Empreendimento[] = [
       "Privacidade e amplos jardins",
       "Lazer e bem-estar",
       "Segurança 24 horas",
+    ],
+  },
+  {
+    slug: "villa-toscana",
+    type: "condominio",
+    name: "Helvétia Park",
+    subtitle: "Unidade Residencial",
+    image: "/images/emp-helvetia-park.webp",
+    description:
+      "Residências de linhas contemporâneas e engenharia inteligente, planejadas sob critérios severos de sustentabilidade e conforto para cada fase da vida.",
+    status: "Pronto para morar",
+    location: "Indaiatuba, SP",
+    gallery: ["/images/emp-3.webp", "/images/proposito-3.webp", "/images/why.webp"],
+    highlights: [
+      "Arquitetura contemporânea",
+      "Engenharia inteligente e sustentável",
+      "Acabamento de alto padrão",
+      "Pronto para morar",
     ],
   },
   {
