@@ -60,31 +60,31 @@ const DIFERENCIAIS = [
 
 const TIPOLOGIAS = [
   {
-    tag: "MAIS PROCURADO",
-    title: "Lotes Prime",
-    area: "500m² a 650m²",
-    front: "15m a 18m de testada",
+    tag: "MAIS PROCURADA",
+    title: "Signature",
+    area: "280m² a 300m²",
+    front: "Planta Integrada & Autoral",
     description:
-      "Ideais para projetos arquitetônicos autorais com plantas integradas, ampla área de lazer privativa e garagens para 4 carros.",
-    highlights: ["Topografia plana", "Excelente insolação", "Próximo ao clube"],
+      "Arquitetura sofisticada com 4 suítes, conceito aberto, ampla área gourmet privativa e integração harmoniosa com a piscina.",
+    highlights: ["4 Suítes espaçosas", "Área gourmet integrativa", "Piscina privativa"],
   },
   {
     tag: "VISTA EXCLUSIVA",
-    title: "Lotes Horizon",
-    area: "700m² a 850m²",
-    front: "18m a 22m de testada",
+    title: "Nature",
+    area: "250m² a 300m²",
+    front: "Conexão com a Natureza",
     description:
-      "Posicionados estrategicamente em frente às áreas de preservação permanente (APP), garantindo privacidade total e vista limpa.",
-    highlights: ["Frente para área verde", "Privacidade máxima", "Lotes mais amplos"],
+      "Desenvolvida para valorizar a ventilação e iluminação natural, com vista panorâmica para a vegetação e total privacidade.",
+    highlights: ["Amplas aberturas de vidro", "Privacidade total", "Conforto térmico natural"],
   },
   {
     tag: "COLEÇÃO ESPECIAL",
-    title: "Exclusive Estate",
-    area: "900m² a 1.200m²",
-    front: "A partir de 25m de testada",
+    title: "Urban",
+    area: "250m² a 300m²",
+    front: "Design Contemporâneo",
     description:
-      "A máxima expressão de espaço e sofisticação no Helvétia Residence. Perfeito para verdadeiras mansões de alto padrão.",
-    highlights: ["Testada generosa", "Potencial de ampliação", "Cota limitada"],
+      "Linhas modernas e funcionais com excelente aproveitamento de espaço, perfeita para quem busca praticidade com alto padrão.",
+    highlights: ["Design contemporâneo", "Suítes reversíveis", "Acabamento premium"],
   },
 ];
 
@@ -102,8 +102,8 @@ export default function HelvetiaResidencePage() {
         {/* =========================================================================
             HERO SECTION — Inspired by Danube Dubai Inquiry reference design
            ========================================================================= */}
-        <section className="relative min-h-[92svh] overflow-hidden bg-[#3a4124] pt-10 pb-16 md:pt-14 md:pb-24">
-          {/* Full-width subtle Tree background image (predominantly green, no seam/transition line) */}
+        <section className="relative min-h-[92svh] overflow-hidden bg-gradient-to-b from-[#1b2010] to-[#3b4123] pt-10 pb-16 md:pt-14 md:pb-24">
+          {/* Full-width subtle Tree background image (smooth gradient from #1b2010 to #3b4123) */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
             <Image
               src="/images/hr-hero-tree.jpg"
@@ -112,11 +112,11 @@ export default function HelvetiaResidencePage() {
               priority
               quality={90}
               sizes="100vw"
-              className="object-cover object-right opacity-20 md:opacity-25"
+              className="object-cover object-right opacity-20 md:opacity-25 mix-blend-overlay"
             />
-            {/* Soft green overlays to ensure complete green tone & maximum text legibility on mobile/desktop */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#3a4124] via-[#3a4124]/85 to-[#3a4124]/40" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#2a301a] via-[#3a4124]/40 to-[#2a301a]/80" />
+            {/* Soft overlays with 1b2010 -> 3b4123 gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1b2010] via-[#1b2010]/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#3b4123] via-transparent to-[#1b2010]/90" />
           </div>
 
           <Container className="relative z-10">
@@ -173,13 +173,13 @@ export default function HelvetiaResidencePage() {
                   subtitle="Preencha os dados abaixo para receber o book em PDF, plantas e tabela exclusiva de lançamento."
                 />
 
-                {/* Social Proof Stack (Mobile: below form) */}
-                <div className="flex lg:hidden mt-6 items-center justify-center gap-3.5 rounded-sm bg-[#2a301a]/80 border border-paper/15 p-4 text-center backdrop-blur-sm">
-                  <AvatarStack ring="petrol" />
-                  <div className="text-small text-paper/90 text-left">
-                    <strong className="text-paper font-semibold block text-xs">Famílias e Investidores que confiam na Edile</strong>
-                    <span className="text-xs text-paper/80">+120 famílias já garantiram cota VIP</span>
+                {/* Social Proof Stack (Mobile: below form, right-aligned with white text) */}
+                <div className="flex lg:hidden mt-6 items-center justify-end gap-3.5 rounded-sm bg-[#1b2010]/90 border border-white/20 p-4 text-right backdrop-blur-md ml-auto max-w-sm">
+                  <div className="text-small text-white text-right">
+                    <strong className="text-white font-semibold block text-xs">Famílias e Investidores que confiam na Edile</strong>
+                    <span className="text-xs text-white/90">+120 famílias já garantiram cota VIP</span>
                   </div>
+                  <AvatarStack ring="petrol" />
                 </div>
               </Reveal>
             </div>
@@ -248,7 +248,7 @@ export default function HelvetiaResidencePage() {
                     Uma localização ícone no interior paulista com infraestrutura de nível internacional.
                   </h3>
                   <p className="t-body leading-relaxed text-ink-soft">
-                    Localizado em uma das regiões mais valorizadas de Indaiatuba, o Helvétia Residence harmoniza um projeto paisagístico autoral com alta tecnologia construtiva. Cada lote foi posicionado para otimizar a ventilação natural e a iluminação solar.
+                    Localizado em uma das regiões mais valorizadas de Indaiatuba, o Helvétia Residence harmoniza um projeto paisagístico autoral com alta tecnologia construtiva. Cada casa foi posicionada para otimizar a ventilação natural e a iluminação solar.
                   </p>
                   <p className="t-body leading-relaxed text-ink-soft">
                     A Edile Incorporadora conduz todas as etapas — do rigor na escolha do terreno até a entrega das chaves — com método, transparência e responsabilidade jurídica absoluta.
@@ -302,15 +302,15 @@ export default function HelvetiaResidencePage() {
         </Section>
 
         {/* =========================================================================
-            LOT OPTIONS / TYPOLOGIES
+            HOUSE OPTIONS / TYPOLOGIES
            ========================================================================= */}
         <Section className="bg-paper">
           <Container>
             <Reveal>
               <SectionIntro
-                eyebrow="OPÇÕES DE LOTES"
-                title="Metragens projetadas para acomodar a sua arquitetura dos sonhos."
-                description="Selecione a tipologia que melhor se adapta às necessidades da sua família."
+                eyebrow="OPÇÕES DE CASAS"
+                title="Três plantas projetadas para acomodar sua família."
+                description="Selecione o modelo de casa que melhor se adapta às necessidades da sua família."
               />
             </Reveal>
 
@@ -345,7 +345,7 @@ export default function HelvetiaResidencePage() {
                         href="#cadastro"
                         className="flex w-full items-center justify-center gap-2 rounded-xs border border-petrol-900 bg-transparent px-4 py-3 text-lead font-medium text-petrol-900 transition-colors hover:bg-petrol-900 hover:text-paper"
                       >
-                        <span>Consultar Lotes Disponíveis</span>
+                        <span>Consultar Casas Disponíveis</span>
                         <ArrowUpRight className="size-4" />
                       </a>
                     </div>
