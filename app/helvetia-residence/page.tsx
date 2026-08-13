@@ -158,8 +158,8 @@ export default function HelvetiaResidencePage() {
 
                 {/* Social Proof Stack (Desktop: inside left column) */}
                 <div className="hidden lg:flex mt-10 pt-8 border-t border-paper/15 items-center gap-4">
-                  <AvatarStack ring="petrol" />
-                  <div className="text-small text-paper/85">
+                  <AvatarStack ring="petrol" label={<></>} />
+                  <div className="text-small text-paper/90">
                     <strong className="text-paper font-semibold block">Famílias e Investidores que confiam na Edile</strong>
                     +120 famílias e investidores já garantiram cota de atendimento VIP
                   </div>
@@ -173,15 +173,17 @@ export default function HelvetiaResidencePage() {
                   subtitle="Preencha os dados abaixo para receber o book em PDF, plantas e tabela exclusiva de lançamento."
                 />
 
-                {/* Social Proof Stack (Mobile: below form, right-aligned, 4 lines of white text) */}
-                <div className="flex lg:hidden mt-6 items-center justify-end gap-3.5 rounded-sm bg-[#1b2010]/95 border border-white/20 p-3.5 text-right backdrop-blur-md ml-auto max-w-[290px]">
-                  <div className="text-xs text-white text-right leading-tight">
-                    <span className="font-semibold block text-white">Famílias e Investidores</span>
-                    <span className="font-semibold block text-white">que confiam na Edile</span>
-                    <span className="block text-white mt-1">+120 famílias já garantiram</span>
-                    <span className="block text-white">sua cota VIP</span>
+                {/* Social Proof Box (Mobile: full width matching form, clean white #FFFFFF text) */}
+                <div className="flex lg:hidden mt-5 w-full items-center justify-between gap-4 rounded-md bg-[#181d0e]/95 border border-white/25 p-4 text-right backdrop-blur-md shadow-xl">
+                  <AvatarStack ring="petrol" label={<></>} className="shrink-0" />
+                  <div className="text-right text-white">
+                    <strong className="block text-xs sm:text-sm font-semibold text-[#FFFFFF] leading-snug">
+                      Famílias e Investidores que confiam na Edile
+                    </strong>
+                    <span className="block text-xs text-[#FFFFFF] mt-1">
+                      +120 famílias já garantiram cota VIP
+                    </span>
                   </div>
-                  <AvatarStack ring="petrol" />
                 </div>
               </Reveal>
             </div>
