@@ -111,23 +111,39 @@ export default function HelvetiaResidencePage() {
             priority
             quality={92}
             sizes="100vw"
-            className="object-cover opacity-25 mix-blend-overlay"
+            className="object-cover opacity-20 mix-blend-overlay z-0"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#2a301a] via-[#3a4124]/90 to-[#2a301a]/85" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2a301a] via-[#3a4124]/90 to-[#2a301a]/85 z-0" />
+
+          {/* Right 50% Translucent Tree Image (Behind Form Box) */}
+          <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 overflow-hidden pointer-events-none z-0">
+            <Image
+              src="/images/hr-hero-tree.jpg"
+              alt="Helvétia Residence Paisagismo"
+              fill
+              priority
+              quality={95}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover opacity-60 md:opacity-75"
+            />
+            {/* Smooth gradient overlays to blend the tree image smoothly into the olive background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#3a4124] via-[#3a4124]/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#2a301a] via-transparent to-[#2a301a]/60" />
+          </div>
 
           <Container className="relative z-10">
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               {/* Left Column: Official Logo & Copy */}
               <Reveal className="flex flex-col text-paper">
-                {/* Logotipo Helvétia Residence */}
-                <div className="mb-6">
+                {/* Logotipo Helvétia Residence (Ampliado e Centralizado) */}
+                <div className="mb-6 md:mb-8 flex justify-center w-full">
                   <Image
                     src="/images/logo-hr.png"
                     alt="Helvétia Residence Logo"
-                    width={320}
-                    height={100}
+                    width={600}
+                    height={200}
                     priority
-                    className="h-16 md:h-20 w-auto object-contain drop-shadow-md"
+                    className="h-32 sm:h-40 md:h-48 lg:h-52 w-auto object-contain drop-shadow-2xl"
                   />
                 </div>
 
@@ -176,9 +192,9 @@ export default function HelvetiaResidencePage() {
         {/* =========================================================================
             STATS & INDICATORS BAR — Second Scroll with #c9ac8b background
            ========================================================================= */}
-        <section className="border-y border-[#b89977] bg-[#c9ac8b] text-[#122e39] py-10 md:py-14 shadow-md">
+        <section className="border-y border-[#b89977] bg-[#c9ac8b] text-[#122e39] py-8 md:py-12 shadow-md">
           <Container>
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8 items-center justify-between">
               <Stat
                 value="500m²"
                 label="Área dos lotes a partir de"

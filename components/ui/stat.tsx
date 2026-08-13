@@ -107,11 +107,11 @@ export function Stat({
   }
 
   return (
-    <div className={cn("flex items-center gap-4", className)}>
-      <p className={cn("t-stat md:text-stat-lg", strong)}>
+    <div className={cn("flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3.5", className)}>
+      <p className={cn("text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight shrink-0 leading-none", strong)}>
         <AnimatedValue value={value} />
       </p>
-      <p className={cn("t-body max-w-[8rem] leading-snug", soft)}>{label}</p>
+      <p className={cn("text-xs sm:text-sm font-medium leading-snug max-w-[9rem]", soft)}>{label}</p>
     </div>
   );
 }
