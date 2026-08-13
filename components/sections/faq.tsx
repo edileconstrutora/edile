@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     q: "O que a Edile faz?",
-    a: "Somos incorporadora e construtora de condomínios e loteamentos de alto padrão em Indaiatuba e região — atuamos com rigor da escolha do terreno à entrega.",
+    a: "Somos incorporadora e construtora de condomínios e loteamentos de alto padrão em Indaiatuba e região. Atuamos com rigor da escolha do terreno à entrega.",
   },
   {
     q: "Por que investir em Indaiatuba?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Os empreendimentos têm potencial de valorização?",
-    a: "Sim. Escolhemos regiões premium pelo potencial de crescimento a longo prazo — cada projeto é pensado como um ativo que cresce em valor com o tempo.",
+    a: "Sim. Escolhemos regiões premium pelo potencial de crescimento a longo prazo: cada projeto é pensado como um ativo que cresce em valor com o tempo.",
   },
   {
     q: "A Edile oferece condições de pagamento?",

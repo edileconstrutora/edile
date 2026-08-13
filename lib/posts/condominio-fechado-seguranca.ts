@@ -24,7 +24,7 @@ export const post: Post = {
     },
     {
       type: "paragraph",
-      text: "É essa combinação — proteção invisível e cotidiano leve — que explica por que famílias que experimentam o formato raramente voltam atrás. A segurança deixa de ser preocupação diária e vira pano de fundo da vida.",
+      text: "É essa combinação, proteção invisível e cotidiano leve, que explica por que famílias que experimentam o formato raramente voltam atrás. A segurança deixa de ser preocupação diária e vira pano de fundo da vida.",
     },
   ],
 };

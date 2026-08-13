@@ -12,7 +12,7 @@ export const post: Post = {
   content: [
     {
       type: "paragraph",
-      text: "Um imóvel não valoriza apenas pela localização. A forma como ele foi concebido — da orientação solar à infraestrutura elétrica — define se ele vai envelhecer bem ou se tornar obsoleto em uma década.",
+      text: "Um imóvel não valoriza apenas pela localização. A forma como ele foi concebido, da orientação solar à infraestrutura elétrica, define se ele vai envelhecer bem ou se tornar obsoleto em uma década.",
     },
     {
       type: "heading",
@@ -24,7 +24,7 @@ export const post: Post = {
     },
     {
       type: "quote",
-      text: "Construir bem é construir uma vez — e deixar o tempo trabalhar a favor do patrimônio.",
+      text: "Construir bem é construir uma vez, e deixar o tempo trabalhar a favor do patrimônio.",
     },
     {
       type: "paragraph",

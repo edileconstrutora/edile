@@ -39,7 +39,7 @@ export function Footer() {
 
             <div className="mt-6 space-y-1 text-small text-paper/50">
               <p>Rua Armando Salles de Oliveira, 1953</p>
-              <p>Indaiatuba — SP</p>
+              <p>Indaiatuba, SP</p>
             </div>
 
             <div className="mt-6 flex items-center gap-4">

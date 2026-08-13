@@ -29,7 +29,7 @@ export function SobrePurpose() {
             <p className="t-h4 text-balance leading-snug text-paper">
               Em Indaiatuba, a Edile incorpora e constrói condomínios e
               loteamentos de alto padrão. Nossa responsabilidade começa antes do
-              primeiro tijolo — no rigor do terreno e na base jurídica — para
+              primeiro tijolo, no rigor do terreno e na base jurídica, para
               entregar engenharia superior e valorização patrimonial real.
             </p>
             <SplitButton href="/#contato" tone="gold" className="mt-9">

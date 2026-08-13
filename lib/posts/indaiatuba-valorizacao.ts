@@ -31,7 +31,7 @@ export const post: Post = {
     },
     {
       type: "quote",
-      text: "Valorização consistente não vem de especulação — vem de cidade bem planejada e demanda real.",
+      text: "Valorização consistente não vem de especulação. Vem de cidade bem planejada e demanda real.",
       cite: "Equipe EDILE",
     },
     {

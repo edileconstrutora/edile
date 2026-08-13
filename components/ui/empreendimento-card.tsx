@@ -17,6 +17,7 @@ export function EmpreendimentoCard({
   slug,
   type,
   name,
+  subtitle,
   image,
   description,
   status,
@@ -48,7 +49,10 @@ export function EmpreendimentoCard({
           <span>{status}</span>
         </div>
         <div className="flex items-start justify-between gap-3">
-          <h3 className="t-h4 text-ink">{name}</h3>
+          <div className="flex flex-col gap-0.5">
+            <h3 className="t-h4 text-ink">{name}</h3>
+            {subtitle && <span className="t-small text-ink-faint">{subtitle}</span>}
+          </div>
           <ArrowUpRight className="mt-1 size-5 shrink-0 text-ink-faint transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </div>
         <p className="t-body text-ink-soft">

@@ -26,7 +26,7 @@ export function Sobre() {
           <p className="t-body mt-2 max-w-[480px] leading-snug text-ink-soft">
             Fundada em Indaiatuba, a Edile incorpora e constrói condomínios e
             loteamentos de alto padrão com responsabilidade desde o primeiro
-            passo — da escolha do terreno até a entrega das chaves.
+            passo, da escolha do terreno até a entrega das chaves.
           </p>
         </Reveal>
 
@@ -40,7 +40,7 @@ export function Sobre() {
             >
               <FadeCarousel
                 images={sobreImages}
-                alt="Edile — sede e ambientes"
+                alt="Edile, sede e ambientes"
                 sizes="(max-width: 1024px) 100vw, 490px"
               />
             </Chamfer>

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Edile Empreendimentos | Construtora e Incorporadora",
-    template: "%s — EDILE",
+    template: "%s | EDILE",
   },
   description:
     "Incorporadora e construtora de condomínios e loteamentos de alto padrão em Indaiatuba e região. Engenharia, sustentabilidade e valorização patrimonial. Responsabilidade com o seu amanhã.",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: SITE_URL,
     siteName: "EDILE",
-    title: "EDILE — Incorporadora de alto padrão em Indaiatuba",
+    title: "EDILE | Incorporadora de alto padrão em Indaiatuba",
     description:
       "Condomínios e loteamentos de alto padrão em Indaiatuba. Responsabilidade com o seu amanhã.",
     images: [
@@ -58,13 +58,13 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "EDILE — Responsabilidade com o seu amanhã",
+        alt: "EDILE: Responsabilidade com o seu amanhã",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "EDILE — Incorporadora de alto padrão em Indaiatuba",
+    title: "EDILE | Incorporadora de alto padrão em Indaiatuba",
     description:
       "Condomínios e loteamentos de alto padrão em Indaiatuba. Responsabilidade com o seu amanhã.",
     images: ["/og.png"],

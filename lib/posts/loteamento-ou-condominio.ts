@@ -20,7 +20,7 @@ export const post: Post = {
     },
     {
       type: "paragraph",
-      text: "Prazo para construir, apetite por acompanhar obra, necessidade de lazer imediato e perfil da vizinhança são os critérios práticos. Não existe formato superior — existe o formato certo para cada momento de vida.",
+      text: "Prazo para construir, apetite por acompanhar obra, necessidade de lazer imediato e perfil da vizinhança são os critérios práticos. Não existe formato superior. Existe o formato certo para cada momento de vida.",
     },
     {
       type: "paragraph",

@@ -74,7 +74,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
           {/* Logo (esquerda — shrink-0 para não comprimir) */}
           <Link
             href={homeHref}
-            aria-label="EDILE — início"
+            aria-label="EDILE, início"
             className="shrink-0 text-paper"
           >
             <Logo className="h-7 w-auto" />
@@ -142,7 +142,7 @@ export function Navbar({ solid = false }: { solid?: boolean }) {
         <Container className="flex h-20 shrink-0 items-center justify-between border-b border-paper/10">
           <Link
             href={homeHref}
-            aria-label="EDILE — início"
+            aria-label="EDILE, início"
             onClick={() => setOpen(false)}
             className="text-paper"
           >

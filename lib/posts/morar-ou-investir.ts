@@ -8,7 +8,7 @@ export const post: Post = {
   date: "14 mai 2025",
   image: "/images/proposito-1.webp",
   excerpt:
-    "Morar bem e investir bem não são caminhos opostos. Entenda os critérios que orientam cada decisão — e onde os dois objetivos se encontram.",
+    "Morar bem e investir bem não são caminhos opostos. Entenda os critérios que orientam cada decisão, e onde os dois objetivos se encontram.",
   content: [
     {
       type: "paragraph",
@@ -24,7 +24,7 @@ export const post: Post = {
     },
     {
       type: "paragraph",
-      text: "O erro mais comum é decidir apenas pelo preço do metro quadrado. No longo prazo, o que define o resultado é a qualidade do endereço — e ela não aparece na planilha.",
+      text: "O erro mais comum é decidir apenas pelo preço do metro quadrado. No longo prazo, o que define o resultado é a qualidade do endereço, e ela não aparece na planilha.",
     },
   ],
 };

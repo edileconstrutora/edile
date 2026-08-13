@@ -21,7 +21,7 @@ const blocks: LegalBlock[] = [
   { type: "heading", text: "1. Quem somos" },
   {
     type: "paragraph",
-    text: "Esta Política de Privacidade descreve como a EDILE Empreendimentos Imobiliários Ltda. (CNPJ 59.780.967/0001-86), com sede em Indaiatuba/SP, trata os dados pessoais coletados por meio deste site, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).",
+    text: "Esta Política de Privacidade descreve como a EDILE Empreendimentos Imobiliários Ltda. (CNPJ 59.780.967/0001-86), com sede em Indaiatuba/SP, trata os dados pessoais coletados por meio deste site, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, LGPD).",
   },
   { type: "heading", text: "2. Dados que coletamos" },
   {

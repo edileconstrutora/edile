@@ -37,7 +37,7 @@ export function SobreApproach() {
             <p className="t-body mt-6 max-w-[560px] text-ink-soft">
               Trabalhamos lado a lado com arquitetos, engenheiros e parceiros
               para transformar localizações premium em empreendimentos coesos,
-              funcionais e valorizados — da primeira análise à entrega das
+              funcionais e valorizados, da primeira análise à entrega das
               chaves.
             </p>
           </div>

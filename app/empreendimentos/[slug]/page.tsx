@@ -60,6 +60,9 @@ export default async function EmpreendimentoPage({ params }: Props) {
               <h1 className="t-display-lg mt-4 max-w-[760px] text-balance text-ink">
                 {emp.name}
               </h1>
+              {emp.subtitle && (
+                <p className="t-lead mt-2 text-ink-soft">{emp.subtitle}</p>
+              )}
               <div className="mt-5 flex flex-wrap items-center gap-2.5">
                 {[emp.status, emp.location].map((tag) => (
                   <span
@@ -143,7 +146,7 @@ export default async function EmpreendimentoPage({ params }: Props) {
                   >
                     <Image
                       src={src}
-                      alt={`${emp.name} — imagem ${i + 1}`}
+                      alt={`${emp.name}, imagem ${i + 1}`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 660px"
                       className="object-cover"

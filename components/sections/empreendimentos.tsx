@@ -32,7 +32,12 @@ function EmpreendimentoCard({ item }: { item: Empreendimento }) {
         {/* Texto — topo no mobile (order-1), direita no desktop (md:order-2) */}
         <div className="flex flex-1 flex-col items-start gap-4 md:order-2 md:justify-between">
           <div className="flex flex-col items-start gap-4">
-            <h3 className="t-h4 text-paper">{item.name}</h3>
+            <div className="flex flex-col gap-1">
+              <h3 className="t-h4 text-paper">{item.name}</h3>
+              {item.subtitle && (
+                <span className="t-small text-paper/60">{item.subtitle}</span>
+              )}
+            </div>
             <p className="t-body max-w-[44rem] leading-normal text-paper/70">
               {item.description}
             </p>
