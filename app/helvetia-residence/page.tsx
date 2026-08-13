@@ -144,7 +144,7 @@ export default function HelvetiaResidencePage() {
                   {[
                     "Casas de alto padrão de 250m² a 300m² com topografia privilegiada",
                     "Rede elétrica e dados inteiramente subterrâneas",
-                    "Área privativa com quadra de tênis, academia e piscina",
+                    "Área de lazer com quadra de tênis, academia e piscina",
                     "Localização nobre e a 15 minutos de Viracopos",
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
