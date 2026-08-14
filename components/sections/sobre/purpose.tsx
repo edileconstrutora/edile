@@ -9,9 +9,9 @@ import { Stat } from "@/components/ui/stat";
 
 // Números são placeholder — confirmar com a Edile.
 const stats = [
-  { value: "180+", label: "Empreendimentos entregues" },
-  { value: "95%", label: "Clientes satisfeitos" },
-  { value: "15+", label: "Anos de atuação" },
+  { value: "108", label: "Unidades entregues" },
+  { value: "04", label: "Certificações" },
+  { value: "12+", label: "Anos de atuação" },
 ];
 
 /**
