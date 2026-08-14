@@ -10,18 +10,18 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 export function SobreHero() {
   return (
     <section className="relative flex min-h-[64svh] items-end overflow-hidden bg-petrol-950 md:min-h-[72svh]">
-      {/* Imagem de fundo — placeholder (trocar pela real) */}
+      {/* Imagem de fundo gráfica oficial */}
       <Image
-        src="/images/hero.jpg"
-        alt="Empreendimento de alto padrão da EDILE em Indaiatuba"
+        src="/images/sobre-hero-bg.png"
+        alt="Construímos hoje o legado de amanhã — EDILE"
         fill
         priority
-        quality={90}
+        quality={95}
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-center"
       />
-      {/* Tinta chapada de petrol para legibilidade (sem gradiente) */}
-      <div className="absolute inset-0 bg-petrol-950/55" />
+      {/* Overlay de proteção para perfeita legibilidade do texto */}
+      <div className="absolute inset-0 bg-petrol-950/25" />
 
       <Container className="relative z-10 pb-16 pt-40 md:pb-24 md:pt-48">
         <Eyebrow tone="light">Alto padrão em Indaiatuba</Eyebrow>
