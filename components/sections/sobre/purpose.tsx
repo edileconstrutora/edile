@@ -33,7 +33,7 @@ export function SobrePurpose() {
               entregar engenharia superior e valorização patrimonial real.
             </p>
             <SplitButton href="/#contato" tone="gold" className="mt-9">
-              Fale conosco
+              Conheça nosso escritório
             </SplitButton>
           </div>
         </Reveal>
@@ -56,8 +56,8 @@ export function SobrePurpose() {
             </Chamfer>
             <Chamfer corner="tr" size="4rem" className="aspect-[4/3] w-[58%]">
               <Image
-                src="/images/proposito-1.webp"
-                alt="Ambiente de projeto EDILE"
+                src="/images/sobre-escritorio.jpg"
+                alt="Sede e Escritório EDILE em Indaiatuba"
                 fill
                 sizes="(max-width: 1024px) 58vw, 420px"
                 className="object-cover"
