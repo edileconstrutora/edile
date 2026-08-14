@@ -47,8 +47,8 @@ export function SobrePurpose() {
               className="aspect-[3/4] w-[42%]"
             >
               <Image
-                src="/images/sobre.jpg"
-                alt="Interior de alto padrão EDILE"
+                src="/images/sobre-card-left.png"
+                alt="Identidade Arquitetônica EDILE"
                 fill
                 sizes="(max-width: 1024px) 42vw, 280px"
                 className="object-cover"
