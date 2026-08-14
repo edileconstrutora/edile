@@ -61,7 +61,7 @@ export const empreendimentos: Empreendimento[] = [
     subtitle: "Condomínio de casas",
     image: "/images/emp-ville-saint-clair.webp",
     description:
-      "Loteamento de lotes amplos em localização estratégica, pronto para receber o seu projeto, com base jurídica impecável e potencial de valorização a longo prazo.",
+      "Villagio de casas em localização impecável, a menos de 5 minutos do parque ecológico, e potencial de valorização a longo prazo.",
     status: "Lançamento",
     location: "Indaiatuba, SP",
     gallery: ["/images/emp-2.webp", "/images/proposito-2.webp", "/images/sobre.jpg"],
@@ -79,7 +79,7 @@ export const empreendimentos: Empreendimento[] = [
     subtitle: "Unidade Residencial",
     image: "/images/emp-jardins-di-roma.webp",
     description:
-      "Casas integradas ao verde, com amplos panos de vidro e privacidade total: sofisticação que se traduz em qualidade de vida e patrimônio.",
+      "Casa integrada ao verde, com vista para natureza e privacidade total: sofisticação que se traduz em qualidade de vida e patrimônio.",
     status: "Em obras",
     location: "Indaiatuba, SP",
     gallery: ["/images/emp-4.webp", "/images/sobre.jpg", "/images/proposito-1.webp"],
@@ -97,7 +97,7 @@ export const empreendimentos: Empreendimento[] = [
     subtitle: "Unidade Residencial",
     image: "/images/emp-helvetia-park.webp",
     description:
-      "Residências de linhas contemporâneas e engenharia inteligente, planejadas sob critérios severos de sustentabilidade e conforto para cada fase da vida.",
+      "Residência de linhas contemporâneas e engenharia inteligente, planejadas sob critérios severos de sustentabilidade e conforto para uma família grande.",
     status: "Pronto para morar",
     location: "Indaiatuba, SP",
     gallery: ["/images/emp-3.webp", "/images/proposito-3.webp", "/images/why.webp"],
