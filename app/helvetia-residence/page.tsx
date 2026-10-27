@@ -224,53 +224,63 @@ export default function HelvetiaResidencePage() {
         </section>
 
         {/* =========================================================================
-            ABOUT & CONCEPT — Urbanismo & Arquitetura Edile
+            ABOUT & CONCEPT — Full-bleed Split Banner (Villa Anna Style Reference)
            ========================================================================= */}
-        <Section className="bg-paper">
-          <Container>
-            <Reveal>
-              <SectionIntro
-                eyebrow="O CONCEITO"
-                title="Engenharia superior e respeito ao seu patrimônio em cada m²."
-                description="O Helvétia Residence foi desenhado para quem busca espaço, privacidade e uma atmosfera de refúgio sem abrir mão da proximidade com os grandes centros urbanos."
+        <section className="relative w-full overflow-hidden bg-[#585e35]">
+          <div className="grid w-full grid-cols-1 lg:grid-cols-2 items-stretch">
+            {/* Left Column: Full-Bleed Edge-to-Edge Image */}
+            <div className="relative min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[640px] xl:min-h-[700px] w-full">
+              <Image
+                src="/images/hr-1.jpeg"
+                alt="Portaria e infraestrutura do Helvétia Residence"
+                fill
+                priority
+                quality={90}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
               />
-            </Reveal>
-
-            <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:items-center">
-              <Reveal>
-                <Chamfer corner="tr" size="3.5rem" className="aspect-[4/3] w-full shadow-lg">
-                  <Image
-                    src="/images/hr-1.jpeg"
-                    alt="Portaria e infraestrutura do Helvétia Residence"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </Chamfer>
-              </Reveal>
-
-              <Reveal delay={0.1}>
-                <div className="space-y-6">
-                  <h3 className="t-h3 font-normal text-ink text-balance">
-                    Uma localização ícone no interior paulista com infraestrutura de nível internacional.
-                  </h3>
-                  <p className="t-body leading-relaxed text-ink-soft">
-                    Localizado em uma das regiões mais valorizadas de Indaiatuba, o Helvétia Residence harmoniza um projeto paisagístico autoral com alta tecnologia construtiva. Cada casa foi posicionada para otimizar a ventilação natural e a iluminação solar.
-                  </p>
-                  <p className="t-body leading-relaxed text-ink-soft">
-                    A Edile Incorporadora conduz todas as etapas, do rigor na escolha do terreno até a entrega das chaves, com método, transparência e responsabilidade jurídica absoluta.
-                  </p>
-
-                  <div className="pt-4 flex items-center gap-4">
-                    <SplitButton href="#cadastro" tone="gold">
-                      Garantir Condições de Lançamento
-                    </SplitButton>
-                  </div>
-                </div>
-              </Reveal>
             </div>
-          </Container>
-        </Section>
+
+            {/* Right Column: Full-Bleed Olive Green Typographic Showcase */}
+            <div className="flex flex-col justify-center bg-[#585e35] text-paper px-8 py-14 sm:px-12 sm:py-16 md:px-16 md:py-20 lg:px-14 xl:px-20">
+              <h2 className="font-serif italic font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[2.6rem] xl:text-[3.1rem] leading-[1.14] text-[#f8f5ee] tracking-tight">
+                Condomínio fechado de<br />
+                casas personalizadas
+              </h2>
+
+              <div className="mt-6 sm:mt-8 space-y-1">
+                <p className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight">
+                  250m² a 300m²
+                </p>
+                <p className="font-serif font-normal text-2xl sm:text-3xl text-[#eae3d5]">
+                  (4 suítes)
+                </p>
+              </div>
+
+              <div className="mt-5 sm:mt-6">
+                <p className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
+                  Piscina Privativa
+                </p>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-white/20">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-small sm:text-lead font-medium text-[#f1ede4]">
+                  <span>• Lotes a partir de 500m²</span>
+                  <span>• Fiação 100% subterrânea</span>
+                  <span>• Segurança 24h</span>
+                </div>
+                <p className="text-small sm:text-body text-white/85 max-w-xl leading-relaxed mt-2">
+                  Engenharia superior e respeito ao seu patrimônio em uma localização ícone no interior paulista.
+                </p>
+                <div className="mt-6">
+                  <SplitButton href="#cadastro" tone="gold">
+                    Garantir Condições de Lançamento
+                  </SplitButton>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* =========================================================================
             AMENITIES & DIFFERENTIALS SHOWCASE
