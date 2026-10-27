@@ -243,22 +243,22 @@ export default function HelvetiaResidencePage() {
 
             {/* Right Column: Full-Bleed Typographic Showcase (matching hero green) */}
             <div className="flex flex-col justify-center bg-gradient-to-b from-[#1b2010] to-[#3b4123] text-paper px-8 py-14 sm:px-12 sm:py-16 md:px-16 md:py-20 lg:px-14 xl:px-20">
-              <h2 className="font-serif italic font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[2.6rem] xl:text-[3.1rem] leading-[1.14] text-[#f8f5ee] tracking-tight">
+              <h2 className="font-montserrat font-medium text-3xl sm:text-4xl md:text-5xl lg:text-[2.6rem] xl:text-[3.1rem] leading-[1.15] text-[#f8f5ee] tracking-tight">
                 Condomínio fechado de<br />
                 casas personalizadas
               </h2>
 
               <div className="mt-6 sm:mt-8 space-y-1">
-                <p className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight">
+                <p className="font-montserrat font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight">
                   250m² a 300m²
                 </p>
-                <p className="font-serif font-normal text-2xl sm:text-3xl text-[#eae3d5]">
+                <p className="font-montserrat font-normal text-2xl sm:text-3xl text-[#eae3d5]">
                   (4 suítes)
                 </p>
               </div>
 
               <div className="mt-5 sm:mt-6">
-                <p className="font-serif font-bold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
+                <p className="font-montserrat font-bold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
                   Piscina Privativa
                 </p>
               </div>
