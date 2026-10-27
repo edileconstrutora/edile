@@ -241,7 +241,7 @@ export default function HelvetiaResidencePage() {
                 <Chamfer corner="tr" size="3.5rem" className="aspect-[4/3] w-full shadow-lg">
                   <Image
                     src="/images/hr-1.jpeg"
-                    alt="Helvétia Residence Projeto urbanístico de alto padrão"
+                    alt="Portaria e infraestrutura do Helvétia Residence"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
