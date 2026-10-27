@@ -226,7 +226,7 @@ export default function HelvetiaResidencePage() {
         {/* =========================================================================
             ABOUT & CONCEPT — Full-bleed Split Banner (Villa Anna Style Reference)
            ========================================================================= */}
-        <section className="relative w-full overflow-hidden bg-[#585e35]">
+        <section className="relative w-full overflow-hidden bg-[#1b2010]">
           <div className="grid w-full grid-cols-1 lg:grid-cols-2 items-stretch">
             {/* Left Column: Full-Bleed Edge-to-Edge Image */}
             <div className="relative min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[640px] xl:min-h-[700px] w-full">
@@ -241,8 +241,8 @@ export default function HelvetiaResidencePage() {
               />
             </div>
 
-            {/* Right Column: Full-Bleed Olive Green Typographic Showcase */}
-            <div className="flex flex-col justify-center bg-[#585e35] text-paper px-8 py-14 sm:px-12 sm:py-16 md:px-16 md:py-20 lg:px-14 xl:px-20">
+            {/* Right Column: Full-Bleed Typographic Showcase (matching hero green) */}
+            <div className="flex flex-col justify-center bg-gradient-to-b from-[#1b2010] to-[#3b4123] text-paper px-8 py-14 sm:px-12 sm:py-16 md:px-16 md:py-20 lg:px-14 xl:px-20">
               <h2 className="font-serif italic font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[2.6rem] xl:text-[3.1rem] leading-[1.14] text-[#f8f5ee] tracking-tight">
                 Condomínio fechado de<br />
                 casas personalizadas
